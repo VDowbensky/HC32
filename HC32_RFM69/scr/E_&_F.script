@@ -1,0 +1,5 @@
+r
+erase
+loadbin "C:\...XXXX.bin", 0x400000
+verifybin "C:\...XXXX.bin", 0x400000
+exit

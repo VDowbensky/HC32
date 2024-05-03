@@ -1,0 +1,883 @@
+Dependencies for Project 'zzz', Target 'hc32l130f8ua': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\source\main.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\include\main.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+F (.\source\myeeprom.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\myeeprom.o --omf_browse .\objects\myeeprom.crf --depend .\objects\myeeprom.d)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+F (.\source\mygpio.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\mygpio.o --omf_browse .\objects\mygpio.crf --depend .\objects\mygpio.d)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+F (.\source\myspi.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\myspi.o --omf_browse .\objects\myspi.crf --depend .\objects\myspi.d)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+F (.\source\mytimers.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\mytimers.o --omf_browse .\objects\mytimers.crf --depend .\objects\mytimers.d)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+F (.\source\myuart.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\myuart.o --omf_browse .\objects\myuart.crf --depend .\objects\myuart.d)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\uart.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+F (.\source\RFM69.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\rfm69.o --omf_browse .\objects\rfm69.crf --depend .\objects\rfm69.d)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+F (.\source\testmode.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\testmode.o --omf_browse .\objects\testmode.crf --depend .\objects\testmode.d)
+I (.\include\testmode.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+I (.\lib\inc\uart.h)(0x5DE0A12E)
+F (.\source\uart_commands.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\uart_commands.o --omf_browse .\objects\uart_commands.crf --depend .\objects\uart_commands.d)
+I (.\include\uart_commands.h)(0x5DE0A12E)
+I (.\include\main.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\include\mygpio.h)(0x5DE0A12E)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\include\mytimers.h)(0x5DE0A12E)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\include\myuart.h)(0x5DE0A12E)
+I (.\include\RFM69.h)(0x5DE0A12E)
+I (.\include\macro.h)(0x5DE0A12E)
+I (.\include\user_settings.h)(0x5DE0A12E)
+I (.\include\myspi.h)(0x5DE0A12E)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\include\myeeprom.h)(0x5DE0A12E)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\include\testmode.h)(0x5DE0A12E)
+F (.\lib\src\adc.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\adc.o --omf_browse .\objects\adc.crf --depend .\objects\adc.d)
+I (.\lib\inc\adc.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\adt.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\adt.o --omf_browse .\objects\adt.crf --depend .\objects\adt.d)
+I (.\lib\inc\adt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\aes.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\aes.o --omf_browse .\objects\aes.crf --depend .\objects\aes.d)
+I (.\lib\inc\aes.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\bgr.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\bgr.o --omf_browse .\objects\bgr.crf --depend .\objects\bgr.d)
+I (.\lib\inc\bgr.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\bt.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\bt.o --omf_browse .\objects\bt.crf --depend .\objects\bt.d)
+I (.\lib\inc\bt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\crc.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\crc.o --omf_browse .\objects\crc.crf --depend .\objects\crc.d)
+I (.\lib\inc\crc.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+F (.\lib\src\ddl.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\ddl.o --omf_browse .\objects\ddl.crf --depend .\objects\ddl.d)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\debug.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\debug.o --omf_browse .\objects\debug.crf --depend .\objects\debug.d)
+I (.\lib\inc\debug.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\dmac.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\dmac.o --omf_browse .\objects\dmac.crf --depend .\objects\dmac.d)
+I (.\lib\inc\dmac.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\flash.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\flash.o --omf_browse .\objects\flash.crf --depend .\objects\flash.d)
+I (.\lib\inc\flash.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\gpio.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (.\lib\inc\gpio.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\hdiv.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\hdiv.o --omf_browse .\objects\hdiv.crf --depend .\objects\hdiv.d)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\lib\inc\hdiv.h)(0x5DE0A12E)
+F (.\lib\src\i2c.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (.\lib\inc\i2c.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\lcd.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (.\lib\inc\lcd.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\lpm.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\lpm.o --omf_browse .\objects\lpm.crf --depend .\objects\lpm.d)
+I (.\lib\inc\lpm.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\lpt.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\lpt.o --omf_browse .\objects\lpt.crf --depend .\objects\lpt.d)
+I (.\lib\inc\lpt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\lpuart.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\lpuart.o --omf_browse .\objects\lpuart.crf --depend .\objects\lpuart.d)
+I (.\lib\inc\lpuart.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\lvd.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\lvd.o --omf_browse .\objects\lvd.crf --depend .\objects\lvd.d)
+I (.\lib\inc\lvd.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\opa.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\opa.o --omf_browse .\objects\opa.crf --depend .\objects\opa.d)
+I (.\lib\inc\opa.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\pca.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\pca.o --omf_browse .\objects\pca.crf --depend .\objects\pca.d)
+I (.\lib\inc\pca.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\pcnt.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\pcnt.o --omf_browse .\objects\pcnt.crf --depend .\objects\pcnt.d)
+I (.\lib\inc\pcnt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\reset.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\reset.o --omf_browse .\objects\reset.crf --depend .\objects\reset.d)
+I (.\lib\inc\reset.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\rng.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\rng.o --omf_browse .\objects\rng.crf --depend .\objects\rng.d)
+I (.\lib\inc\rng.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\rtc.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\rtc.o --omf_browse .\objects\rtc.crf --depend .\objects\rtc.d)
+I (.\lib\inc\rtc.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\spi.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+I (.\lib\inc\spi.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\sysctrl.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\sysctrl.o --omf_browse .\objects\sysctrl.crf --depend .\objects\sysctrl.d)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+F (.\lib\src\timer3.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\timer3.o --omf_browse .\objects\timer3.crf --depend .\objects\timer3.d)
+I (.\lib\inc\timer3.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\trim.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\trim.o --omf_browse .\objects\trim.crf --depend .\objects\trim.d)
+I (.\lib\inc\trim.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\uart.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (.\lib\inc\uart.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\vc.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\vc.o --omf_browse .\objects\vc.crf --depend .\objects\vc.d)
+I (.\lib\inc\vc.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\wdt.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\wdt.o --omf_browse .\objects\wdt.crf --depend .\objects\wdt.d)
+I (.\lib\inc\wdt.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\lib\src\interrupts_hc32l136.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\interrupts_hc32l136.o --omf_browse .\objects\interrupts_hc32l136.crf --depend .\objects\interrupts_hc32l136.d)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (.\common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (.\common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+F (.\common\system_hc32l136.c)(0x5DE0A12E)(--gnu -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I .\common -I .\source -I .\include -I .\lib\inc -I .\lib\src-I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include-D__UVISION_VERSION="538" -D_RTE_ -D_RTE_-o .\objects\system_hc32l136.o --omf_browse .\objects\system_hc32l136.crf --depend .\objects\system_hc32l136.d)
+I (common\base_types.h)(0x5DE0A12E)
+I (C:\Keil_v535\ARM\ARMCC\include\stdio.h)(0x602569C4)
+I (C:\Keil_v535\ARM\ARMCC\include\string.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stddef.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\stdint.h)(0x602569CE)
+I (C:\Keil_v535\ARM\ARMCC\include\assert.h)(0x602569C8)
+I (common\hc32l136.h)(0x5DE0A12E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F912E)
+I (common\system_hc32l136.h)(0x5DE0A12E)
+I (.\lib\inc\sysctrl.h)(0x5DE0A12E)
+I (.\lib\inc\ddl.h)(0x5DE0A12E)
+I (.\include\ddl_device.h)(0x5DE0A12E)
+I (.\lib\inc\interrupts_hc32l136.h)(0x5DE0A12E)
+F (.\common\startup_hc32l136.s)(0x5DE0A12E)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\_hc32l130f8ua-IC:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\Admin\AppData\Local\Arm\Packs\HDSC\HC32L130\1.0.1\Device\Include--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_hc32l136.lst --xref -o .\objects\startup_hc32l136.o --depend .\objects\startup_hc32l136.d)
