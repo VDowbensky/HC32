@@ -1,0 +1,22 @@
+Dependencies for Project 'HC32L130F8UA', Target 'HC32L130F8UA_Release': (DO NOT MODIFY !)
+F (.\startup_hc32l130f8ua.s)(0x5B9BDBC6)(--cpu Cortex-M0+ --li -g --apcs=interwork -I.\RTE\_HC32L130F8UA_Release-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\Device\ARM\ARMCM0plus\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "ARMCM0P SETA 1"-o .\output\release\startup_hc32l130f8ua.o --depend .\output\release\startup_hc32l130f8ua.d)
+F (..\..\common\system_hc32l130f8ua.c)(0x5B9BDBC6)(-c --cpu Cortex-M0+ --li -g -O0 --apcs=interwork --split_sections -I ..\..\common -I ..\source-I.\RTE\_HC32L130F8UA_Release-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="526" -D_RTE_ -DARMCM0P-o .\output\release\system_hc32l130f8ua.o --omf_browse .\output\release\system_hc32l130f8ua.crf --depend .\output\release\system_hc32l130f8ua.d)
+I (..\..\common\base_types.h)(0x5AA6786A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599F218C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599F218A)
+I (..\..\common\hc32l130f8ua.h)(0x5B9BDBC6)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h)(0x5B61B6D4)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h)(0x5B1F84E4)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5B588A16)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5B61B6D4)
+I (..\..\common\system_hc32l130f8ua.h)(0x5B9BDBC6)
+F (..\source\main.c)(0x5B9BDBC6)(-c --cpu Cortex-M0+ --li -g -O0 --apcs=interwork --split_sections -I ..\..\common -I ..\source-I.\RTE\_HC32L130F8UA_Release-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="526" -D_RTE_ -DARMCM0P-o .\output\release\main.o --omf_browse .\output\release\main.crf --depend .\output\release\main.d)
+I (..\..\common\hc32l130f8ua.h)(0x5B9BDBC6)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h)(0x5B61B6D4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h)(0x5B1F84E4)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5B588A16)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5B61B6D4)

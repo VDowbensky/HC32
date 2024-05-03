@@ -1,0 +1,7 @@
+--cpu Cortex-M0+
+".\output\release\startup_hc32l130f8ua.o"
+".\output\release\system_hc32l130f8ua.o"
+".\output\release\main.o"
+--strict --scatter ".\output\release\HC32L130F8UA.sct"
+--keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info
+--list ".\output\release\HC32L130F8UA.map" -o .\output\release\HC32L130F8UA.axf
