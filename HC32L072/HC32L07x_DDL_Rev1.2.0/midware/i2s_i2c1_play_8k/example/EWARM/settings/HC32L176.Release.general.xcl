@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\bin\armjlink2.dll" 
+
+"D:\MCU\HC32L176\样例\i2s\i2s_i2c1_play_8k\example\EWARM\output\release\Exe\hc32l176.out" 
+
+--plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\arm\bin\armbat.dll" 
+
+--flash_loader="D:\MCU\HC32L176\样例\i2s\i2s_i2c1_play_8k\example\EWARM\config\flashloader\HC32L176.board" 
+
+
+
+

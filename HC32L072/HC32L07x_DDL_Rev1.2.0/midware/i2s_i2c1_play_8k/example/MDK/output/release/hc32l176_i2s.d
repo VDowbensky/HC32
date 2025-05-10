@@ -1,0 +1,9 @@
+.\output\release\hc32l176_i2s.o: ..\..\driver\src\hc32l176_i2s.c
+.\output\release\hc32l176_i2s.o: ..\..\driver\inc\hc32l176_i2s.h
+.\output\release\hc32l176_i2s.o: ..\..\common\hc32l176.h
+.\output\release\hc32l176_i2s.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h
+.\output\release\hc32l176_i2s.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\release\hc32l176_i2s.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+.\output\release\hc32l176_i2s.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+.\output\release\hc32l176_i2s.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+.\output\release\hc32l176_i2s.o: ..\..\wm8731\inc\data_sound_8k_i2s.h

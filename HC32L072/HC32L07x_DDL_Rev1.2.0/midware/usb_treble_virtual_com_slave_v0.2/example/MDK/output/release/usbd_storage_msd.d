@@ -1,0 +1,14 @@
+.\output\release\usbd_storage_msd.o: ..\source\usbd_storage_msd.c
+.\output\release\usbd_storage_msd.o: ..\..\usb_lib\device_class\msc\inc\usbd_msc_mem.h
+.\output\release\usbd_storage_msd.o: ..\..\usb_lib\device_core\usbd_def.h
+.\output\release\usbd_storage_msd.o: ..\..\usb_lib\device_core\usbd_conf.h
+.\output\release\usbd_storage_msd.o: ..\source\usb_conf.h
+.\output\release\usbd_storage_msd.o: ..\..\common\hc32l176.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+.\output\release\usbd_storage_msd.o: ..\..\hardware_driver\inc\s25fl132k_spi_flash.h
+.\output\release\usbd_storage_msd.o: ..\..\fat\FAT.h
+.\output\release\usbd_storage_msd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -1,0 +1,9 @@
+.\output\release\s25fl132k_spi_flash.o: ..\..\hardware_driver\scr\s25fl132k_spi_flash.c
+.\output\release\s25fl132k_spi_flash.o: ..\..\hardware_driver\inc\s25fl132k_spi_flash.h
+.\output\release\s25fl132k_spi_flash.o: ..\..\common\hc32l176.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+.\output\release\s25fl132k_spi_flash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

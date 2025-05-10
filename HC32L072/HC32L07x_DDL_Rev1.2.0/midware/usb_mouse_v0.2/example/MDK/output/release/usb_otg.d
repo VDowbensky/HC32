@@ -1,0 +1,13 @@
+.\output\release\usb_otg.o: ..\..\usb_lib\ctl_drv\usb_otg.c
+.\output\release\usb_otg.o: ..\..\usb_lib\ctl_drv\usb_defines.h
+.\output\release\usb_otg.o: ..\source\usb_conf.h
+.\output\release\usb_otg.o: ..\..\common\hc32l176.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\core_cm0plus.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_version.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_compiler.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include\cmsis_armcc.h
+.\output\release\usb_otg.o: ..\..\usb_lib\ctl_drv\usb_otg_regs.h
+.\output\release\usb_otg.o: ..\..\usb_lib\ctl_drv\usb_core.h
+.\output\release\usb_otg.o: ..\..\usb_lib\ctl_drv\usb_otg.h
+.\output\release\usb_otg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,0 +1,15 @@
+.\output\release\i2c.o: ..\..\driver\src\i2c.c
+.\output\release\i2c.o: ..\..\driver\inc\i2c.h
+.\output\release\i2c.o: ..\..\driver\inc\ddl.h
+.\output\release\i2c.o: ..\..\common\base_types.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stddef.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\assert.h
+.\output\release\i2c.o: ..\..\common\hc32l176.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cm0plus.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmInstr.h
+.\output\release\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include\core_cmFunc.h
+.\output\release\i2c.o: ..\..\common\system_hc32l176.h
+.\output\release\i2c.o: ..\..\driver\inc\sysctrl.h
