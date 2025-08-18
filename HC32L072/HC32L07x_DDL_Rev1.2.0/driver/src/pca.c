@@ -51,34 +51,34 @@
 
 /**
 ******************************************************************************
-    ** \brief  获取中断源的标志位
-    ** @param  IT_Src : 中断源标志位
-    ** \retval FALSE 或TRUE
-    **
-******************************************************************************/
+** \brief Get interrupt source flags
+** @param IT_Src : Interrupt source flags
+** \retval FALSE or TRUE
+**
+************************************************************************/
 boolean_t Pca_GetItStatus(en_pca_ccficlr_t It_Src)
 {
     return (((M0P_PCA->CCON)>>It_Src) & 1) > 0? TRUE : FALSE;
 }
 
 /**
-******************************************************************************
-    ** \brief  清除中断源的标志位
-    ** @param  IT_Src : 中断源标志位
-    ** \retval 无
-    **
-******************************************************************************/
+**********************************************************************************
+** \brief Clears the interrupt source flag
+** @param IT_Src: Interrupt source flag
+** \retval None
+**
+**********************************************************************************/
 void Pca_ClrItStatus(en_pca_ccficlr_t It_Src)
 {
     M0P_PCA->ICLR &= ~(uint32_t)(1<<It_Src);
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 计数器运行控制   PCA_CCON CR控制位
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+**************************************************************************
+** \brief PCA counter operation control PCA_CCON CR control bit
+** @param NewStatus : TRUE or FALSE
+** \retval None
+**
 ******************************************************************************/
 void Pca_StartPca(boolean_t NewStatus)
 {
@@ -86,11 +86,11 @@ void Pca_StartPca(boolean_t NewStatus)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 空闲模式IDLE下，PCA是否停止工作设置
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+**********************************************************************************
+** \brief PCA idle mode: Sets whether to stop the PCA operation.
+** @param NewStatus : TRUE or FALSE
+** \retval None
+**
 ******************************************************************************/
 void Pca_SetCidl(boolean_t NewStatus)
 {
@@ -98,11 +98,11 @@ void Pca_SetCidl(boolean_t NewStatus)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 模块4的看门狗使能控制
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+**********************************************************************************
+** \brief PCA module 4 watchdog enable control
+** @param NewStatus: TRUE or FALSE
+** \retval None
+**
 ******************************************************************************/
 void Pca_Set4Wdte(boolean_t NewStatus)
 {
@@ -110,11 +110,11 @@ void Pca_Set4Wdte(boolean_t NewStatus)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 计数器中断控制PCA_CMOD中CFIE，对应的控制中断位PCA_CCON中的CF与PCA_ICLR中的CF
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+**************************************************************************
+** \brief PCA counter interrupt control CFIE in PCA_CMOD, corresponding to the control interrupt bits CF in PCA_CCON and CF in PCA_ICLR
+** @param NewStatus: TRUE or FALSE
+** \retval None
+**
 ******************************************************************************/
 void Pca_ConfPcaIt(boolean_t NewStatus)
 {
@@ -122,12 +122,12 @@ void Pca_ConfPcaIt(boolean_t NewStatus)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 比较捕获中断使能控制  PCA_CCAPMx的CCIE
-    ** @param  Modulex : pca_module0~4
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+**********************************************************************************
+** \brief PCA compare capture interrupt enable control CCIE in PCA_CCAPMx
+** @param Modulex: pca_module0~4
+** @param NewStatus: TRUE or FALSE 
+** \retval None 
+**
 ******************************************************************************/
 void Pca_ConfModulexIt(en_pca_module_t Modulex, boolean_t NewStatus)
 {
@@ -155,10 +155,10 @@ void Pca_ConfModulexIt(en_pca_module_t Modulex, boolean_t NewStatus)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 模块0的初始化
-    ** @param  InitStruct : PCA初始化配置的结构体
-    ** \retval 无
-    **
+** \brief Initialization of PCA module 0
+** @param InitStruct : PCA initialization configuration structure
+** \retval None 
+**
 ******************************************************************************/
 void Pca_M0Init(stc_pcacfg_t* InitStruct)
 {
@@ -184,12 +184,12 @@ void Pca_M0Init(stc_pcacfg_t* InitStruct)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 模块1的初始化
-    ** @param  InitStruct : PCA初始化配置的结构体
-    ** \retval 无
-    **
-******************************************************************************/
+***************************************************************************
+** \brief PCA module 1 initialization
+** @param InitStruct: PCA initialization configuration structure
+** \retval None
+**
+**********************************************************************************/
 void Pca_M1Init(stc_pcacfg_t* InitStruct)
 {
     M0P_PCA->CMOD_f.CPS = InitStruct->pca_clksrc;
@@ -215,11 +215,11 @@ void Pca_M1Init(stc_pcacfg_t* InitStruct)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 模块2的初始化
-    ** @param  InitStruct : PCA初始化配置的结构体
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief PCA module 2 initialization
+** @param InitStruct: PCA initialization configuration structure
+** \retval None
+**
+**********************************************************************************/
 void Pca_M2Init(stc_pcacfg_t* InitStruct)
 {
     M0P_PCA->CMOD_f.CPS = InitStruct->pca_clksrc;
@@ -245,11 +245,11 @@ void Pca_M2Init(stc_pcacfg_t* InitStruct)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 模块3的初始化
-    ** @param  InitStruct : PCA初始化配置的结构体
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief Initialization of PCA module 3
+** @param InitStruct: PCA initialization configuration structure
+** \retval None
+**
+**********************************************************************************/
 void Pca_M3Init(stc_pcacfg_t* InitStruct)
 {
     M0P_PCA->CMOD_f.CPS = InitStruct->pca_clksrc;
@@ -274,12 +274,12 @@ void Pca_M3Init(stc_pcacfg_t* InitStruct)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 模块4的初始化
-    ** @param  InitStruct : PCA初始化配置的结构体
-    ** \retval 无
-    **
-******************************************************************************/
+****************************************************************************** 
+** \brief PCA Module 4 Initialization
+** @param InitStruct: PCA initialization configuration structure
+** \retval None
+**
+**************************************************************************/
 void Pca_M4Init(stc_pcacfg_t* InitStruct)
 {
     M0P_PCA->CMOD_f.CPS = InitStruct->pca_clksrc;
@@ -305,23 +305,23 @@ void Pca_M4Init(stc_pcacfg_t* InitStruct)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 读取CNT寄存器的数值
-    ** @param  无
-    ** \retval CNT的低半字值
-    **
-******************************************************************************/
+** \brief PCA Reads the value of the CNT register
+** @param None
+** \retval The lower halfword value of CNT
+**
+*****************************************************************************/
 uint16_t Pca_GetCnt(void)
 {
     return (uint16_t)(M0P_PCA->CNT);
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 向CNT寄存器写入数值
-    ** @param  cnt : 所要写入的数值
-    ** \retval 无
-    **
-******************************************************************************/
+**********************************************************************************
+** \brief PCA writes a value to the CNT register
+** @param cnt: The value to be written
+** \retval None
+**
+**********************************************************************************/
 void Pca_SetCnt(uint16_t cnt)
 {
     if(GetBit((uint32_t)(&(M0P_PCA->CCON)), 6)==TRUE)
@@ -338,11 +338,11 @@ void Pca_SetCnt(uint16_t cnt)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 返回指定通道比较高速输出标志寄存器的值
-    ** @param  Modulex : 通道号x=0、1、2、3、4
-    ** \retval TRUE 或 FALSE
-    **
+**************************************************************************
+** \brief PCA Returns the value of the specified channel's compare high-speed output flag register.
+** @param Modulex: Channel number x = 0, 1, 2, 3, 4
+** \retval TRUE or FALSE
+**
 ******************************************************************************/
 boolean_t Pca_GetOut(en_pca_module_t Modulex)
 {
@@ -350,13 +350,13 @@ boolean_t Pca_GetOut(en_pca_module_t Modulex)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 设置比较捕获16位寄存器CCAPx数值
-    ** @param  Modulex : 通道号x=0、1、2、3、4
-    ** @param  Value:  所要设置的值
-    ** \retval 无
-    **
-******************************************************************************/
+**********************************************************************************
+** \brief PCA Set the value of the compare capture 16-bit register CCAPx.
+** @param Modulex: Channel number x = 0, 1, 2, 3, 4
+** @param Value: Value to set
+** \retval None
+**
+**************************************************************************/
 void Pca_SetCcap(en_pca_module_t Modulex, uint16_t Value)
 {
     switch(Modulex)
@@ -382,11 +382,11 @@ void Pca_SetCcap(en_pca_module_t Modulex, uint16_t Value)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 读取比较捕获16位寄存器CCAPx数值
-    ** @param  Modulex : 通道号x=0、1、2、3、4
-    ** \retval CCAPx的值，x=0、1、2、3、4
-    **
+**************************************************************************
+** \brief PCA reads the value of the compare capture 16-bit register CCAPx
+** @param Modulex: channel number x = 0, 1, 2, 3, 4
+** \retval CCAPx value, x = 0, 1, 2, 3, 4
+**
 ******************************************************************************/
 uint16_t Pca_GetCcap(en_pca_module_t Modulex)
 {
@@ -416,10 +416,10 @@ uint16_t Pca_GetCcap(en_pca_module_t Modulex)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 设置自动重装载寄存器数值
-    ** @param  无
-    ** \retval 无
-    **
+** \brief PCA sets auto-reload register value
+** @param None
+** \retval None
+**
 ******************************************************************************/
 void Pca_SetCarr(uint16_t Value)
 {
@@ -428,10 +428,10 @@ void Pca_SetCarr(uint16_t Value)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 获取自动重装载寄存器数值
-    ** @param  无
-    ** \retval 无
-    **
+** \brief PCA Gets the value of the auto-reload register
+** @param None
+** \retval None
+**
 ******************************************************************************/
 uint16_t Pca_GetCarr(void)
 {
@@ -439,13 +439,13 @@ uint16_t Pca_GetCarr(void)
 }
 
 /**
-******************************************************************************
-    ** \brief  PCA 设置比较捕获寄存器的高8位和低8位
-    ** @param  Modulex : 通道号x=0、1、2、3、4
-    ** @param  ValueH : 要写入高8位的数值
-    ** @param  ValueL : 要写入低8位的数值
-    ** \retval 无
-    **
+**********************************************************************************
+** \brief PCA Sets the upper and lower 8 bits of the compare capture register
+** @param Modulex: Channel number x = 0, 1, 2, 3, 4
+** @param ValueH: Value to be written to the upper 8 bits
+** @param ValueL: Value to be written to the lower 8 bits
+** \retval None 
+**
 ******************************************************************************/
 void Pca_SetCcapHL(en_pca_module_t Modulex, uint8_t ValueH, uint8_t ValueL)
 {
@@ -478,12 +478,12 @@ void Pca_SetCcapHL(en_pca_module_t Modulex, uint8_t ValueH, uint8_t ValueL)
 
 /**
 ******************************************************************************
-    ** \brief  PCA 读取比较捕获寄存器的高8位和低8位
-    ** @param  Modulex : 通道号x=0、1、2、3、4
-    ** @param  ValueH : CCAPx高8位的数值
-    ** @param  ValueL : CCAPx低8位的数值
-    ** \retval 无
-    **
+** \brief PCA Reads the upper and lower 8 bits of the compare capture register
+** @param Modulex: Channel number x = 0, 1, 2, 3, 4
+** @param ValueH: Value of the upper 8 bits of CCAPx
+** @param ValueL: Value of the lower 8 bits of CCAPx
+** \retval None 
+**
 ******************************************************************************/
 void Pca_GetCcapHL(en_pca_module_t Modulex, uint8_t *ValueH, uint8_t *ValueL)
 {

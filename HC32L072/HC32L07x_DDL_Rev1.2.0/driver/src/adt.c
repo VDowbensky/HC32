@@ -71,17 +71,17 @@
 
 
 
-/*****************************************************************
- * \brief   
- *          配置中断
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtIrq         中断类型
- * \param   [in]  bEn              中断使能/禁止
- *
- * \retval  en_result_t  Ok:  配置成功
- *
- ****************************************************************/
+/*********************************************************************
+* \brief
+* Configure interrupts
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtIrq interrupt type
+* \param [in] bEn interrupt enable/disable
+*
+* \retval en_result_t Ok: Configuration successful
+*
+********************************************************************/
 en_result_t Adt_CfgIrq(M0P_ADTIM_TypeDef *ADTx,
                           en_adt_irq_type_t enAdtIrq,
                           boolean_t bEn)
@@ -102,16 +102,16 @@ en_result_t Adt_CfgIrq(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /*******************************************************************
- * \brief   
- *          获取中断标志
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtIrq         中断类型
- * 
- *
- * \retval  TRUE/FALSE
- * 
- *****************************************************************/
+* \brief
+* Get interrupt flag
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtIrq interrupt type
+*
+*
+* \retval TRUE/FALSE
+*
+*************************************************************/
 boolean_t Adt_GetIrqFlag(M0P_ADTIM_TypeDef *ADTx,
                            en_adt_irq_type_t enAdtIrq)
 {
@@ -127,15 +127,15 @@ boolean_t Adt_GetIrqFlag(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /****************************************************************
- * \brief   
- *          清除中断标志
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtIrq         中断类型
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ****************************************************************/
+* \brief
+* Clear interrupt flag
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtIrq interrupt type
+*
+* \retval en_result_t Ok: Configuration successful
+*
+**************************************************************/
 en_result_t Adt_ClearIrqFlag(M0P_ADTIM_TypeDef *ADTx,
                              en_adt_irq_type_t enAdtIrq)
 {
@@ -143,15 +143,15 @@ en_result_t Adt_ClearIrqFlag(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/****************************************************************
- * \brief   
- *          清除所有中断标志
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ****************************************************************/
+/********************************************************************
+* \brief
+* Clear all interrupt flags
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Configuration successful
+*
+**************************************************************/
 en_result_t Adt_ClearAllIrqFlag(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->ICLR = 0;
@@ -159,15 +159,15 @@ en_result_t Adt_ClearAllIrqFlag(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /**************************************************************
- * \brief   
- *          配置硬件递加事件
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwCntUp     硬件递加事件
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ****************************************************************/
+* \brief
+* Configure hardware increment event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwCntUp hardware increment event
+*
+* \retval en_result_t Ok: Configuration successful
+*
+****************************************************************/
 en_result_t Adt_CfgHwCntUp(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_cnt_t enAdtHwCntUp)
 {
     uint32_t u32Val;
@@ -183,15 +183,15 @@ en_result_t Adt_CfgHwCntUp(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_cnt_t enAdtHwCntUp
     return Ok;
 }
 
-/**************************************************************
- * \brief   
- *          清除硬件递加事件
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ************************************************************/
+/******************************************************************
+* \brief
+* Clear hardware increment event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+**********************************************************/
 en_result_t Adt_ClearHwCntUp(M0P_ADTIM_TypeDef *ADTx)
 {
 
@@ -201,15 +201,15 @@ en_result_t Adt_ClearHwCntUp(M0P_ADTIM_TypeDef *ADTx)
 
 
 /**********************************************************
- * \brief   
- *          配置硬件递减事件
- *
- * \param   [in]  ADTx               ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwCntDwn      硬件递减事件
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- ***********************************************************/
+* \brief
+* Configure hardware decrement event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwCntDwn Hardware decrement event
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+***********************************************************/
 en_result_t Adt_CfgHwCntDwn(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_cnt_t enAdtHwCntDwn)
 {
     uint32_t u32Val;
@@ -226,30 +226,30 @@ en_result_t Adt_CfgHwCntDwn(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_cnt_t enAdtHwCntD
 }
 
 /******************************************************************
- * \brief   
- *          清除硬件递减事件
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- *****************************************************************/
+* \brief
+* Clear hardware decrement event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+***********************************************************/
 en_result_t Adt_ClearHwCntDwn(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HCDOR = 0;
     return Ok;
 }
 
-/******************************************************************
- * \brief   
- *          配置硬件启动事件
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwStart     硬件启动事件
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- *******************************************************************/
+/***************************************************************
+* \brief
+* Configure the hardware start event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwStart Hardware start event
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+***************************************************************/
 en_result_t Adt_CfgHwStart(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwStart)
 {
     uint32_t u32Val;
@@ -265,14 +265,14 @@ en_result_t Adt_CfgHwStart(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwStar
 }
 
 /************************************************************************
- * \brief   
- *          清除硬件启动事件
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ***********************************************************************/
+* \brief
+* Clear hardware start event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+********************************************************************/
 en_result_t Adt_ClearHwStart(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HSTAR = 0;
@@ -280,14 +280,14 @@ en_result_t Adt_ClearHwStart(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*********************************************************************
- * \brief   
- *          使能硬件启动
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- *********************************************************************/
+* \brief
+* Enable hardware startup
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+***************************************************************/
 en_result_t Adt_EnableHwStart(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -297,15 +297,15 @@ en_result_t Adt_EnableHwStart(M0P_ADTIM_TypeDef *ADTx)
     return Ok;
 }
 
-/*************************************************************************
- * \brief   
- *          除能硬件启动
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ************************************************************************/
+/************************************************************************
+* \brief
+* Disable hardware start
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+************************************************************************/
 en_result_t Adt_DisableHwStart(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -316,15 +316,15 @@ en_result_t Adt_DisableHwStart(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /****************************************************************
- * \brief   
- *          配置硬件停止事件
- *
- * \param   [in]  ADTx            ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwStop     硬件停止事件
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- ***************************************************************/
+* \brief
+* Configure hardware stop event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwStop  Hardware Stop Event
+*
+* \retval en_result_t Ok: Set Successfully
+* \retval en_result_t ErrorInvalidParameter: Invalid Parameter
+**************************************************************/
 en_result_t Adt_CfgHwStop(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwStop)
 {
     uint32_t u32Val;
@@ -340,14 +340,14 @@ en_result_t Adt_CfgHwStop(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwStop)
 }
 
 /***************************************************************
- * \brief
- *          清除硬件停止事件
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ***************************************************************/
+* \brief
+* Clear Hardware Stop Event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+***************************************************************/
 en_result_t Adt_ClearHwStop(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HSTPR = 0;
@@ -355,14 +355,14 @@ en_result_t Adt_ClearHwStop(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*************************************************************
- * \brief   
- *          使能硬件停止
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- **********************************************************/
+* \brief
+* Enable hardware stop
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+**********************************************************/
 en_result_t Adt_EnableHwStop(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -373,14 +373,14 @@ en_result_t Adt_EnableHwStop(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*****************************************************************************
- * \brief   
- *          除能硬件停止
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ***************************************************************************/
+* \brief
+* Disable hardware stop
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+***************************************************************************/
 en_result_t Adt_DisableHwStop(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -390,16 +390,16 @@ en_result_t Adt_DisableHwStop(M0P_ADTIM_TypeDef *ADTx)
     return Ok;
 }
 
-/**************************************************************************
- * \brief   
- *          配置硬件清零事件
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwClear      硬件清零事件
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- *************************************************************************/
+/******************************************************************************
+* \brief
+* Configure hardware clear event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwClear Hardware clear event
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*********************************************************************/
 en_result_t Adt_CfgHwClear(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwClear)
 {
     uint32_t u32Val;
@@ -416,14 +416,14 @@ en_result_t Adt_CfgHwClear(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwClea
 }
 
 /**************************************************************************
- * \brief   
- *          清除硬件清零事件
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- **************************************************************************/
+* \brief
+* Clear hardware clear event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+**************************************************************************/
 en_result_t Adt_ClearHwClear(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HCELR = 0;
@@ -431,14 +431,14 @@ en_result_t Adt_ClearHwClear(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /***************************************************************************
- * \brief   
- *          使能硬件清零
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- *************************************************************************/
+* \brief
+* Enable hardware clear
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+*************************************************************************/
 en_result_t Adt_EnableHwClear(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -449,14 +449,14 @@ en_result_t Adt_EnableHwClear(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /************************************************************************
- * \brief   
- *          除能硬件清零
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- **********************************************************************/
+* \brief
+* Disable hardware clear
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+**********************************************************************/
 en_result_t Adt_DisableHwClear(M0P_ADTIM_TypeDef *ADTx)
 {
     uint32_t u32Val;
@@ -467,15 +467,15 @@ en_result_t Adt_DisableHwClear(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*******************************************************************
- * \brief   
- *          配置硬件捕获A事件
- *
- * \param   [in]  ADTx               ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwCaptureA    硬件捕获A事件选择
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- *******************************************************************/
+* \brief
+* Configure hardware capture A event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwCaptureA Hardware capture A event selection
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+******************************************************************/
 en_result_t Adt_CfgHwCaptureA(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwCaptureA)
 {
     uint32_t u32Val;
@@ -493,14 +493,14 @@ en_result_t Adt_CfgHwCaptureA(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwC
 }
 
 /************************************************************************
- * \brief   
- *          清除硬件捕获A事件
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- ***********************************************************************/
+* \brief
+* Clears the hardware capture A event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setting successful
+*
+****************************************************************/
 en_result_t Adt_ClearHwCaptureA(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HCPAR = 0;
@@ -508,15 +508,15 @@ en_result_t Adt_ClearHwCaptureA(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*********************************************************************
- * \brief   
- *          配置硬件捕获B事件
- *
- * \param   [in]  ADTx                ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtHwCaptureB     硬件捕获B事件选择
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- ********************************************************************/
+* \brief
+* Configure hardware capture B event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtHwCaptureB Hardware capture B event selection
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+********************************************************************/
 en_result_t Adt_CfgHwCaptureB(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwCaptureB)
 {
     uint32_t u32Val;
@@ -534,14 +534,14 @@ en_result_t Adt_CfgHwCaptureB(M0P_ADTIM_TypeDef *ADTx, en_adt_hw_trig_t enAdtHwC
 }
 
 /********************************************************************
- * \brief   
- *          清除硬件捕获B事件
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t    Ok:  设置成功
- * 
- *******************************************************************/
+* \brief
+* Clear hardware capture B event
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Setup successful
+*
+****************************************************************/
 en_result_t Adt_ClearHwCaptureB(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->HCPBR = 0;
@@ -549,14 +549,14 @@ en_result_t Adt_ClearHwCaptureB(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*****************************************************************
- * \brief   
- *          软件同步开始
- *
- * \param   [in]  pstcAdtSwSyncStart    软件同步开始指针
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- ***************************************************************/
+* \brief
+* Software synchronization start
+*
+* \param [in] pstcAdtSwSyncStart Software synchronization start pointer
+*
+* \retval en_result_t Ok: Setup successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+************************************************************/
 en_result_t Adt_SwSyncStart(stc_adt_sw_sync_t* pstcAdtSwSyncStart)
 {
     uint32_t u32Val = 0;
@@ -584,14 +584,14 @@ en_result_t Adt_SwSyncStart(stc_adt_sw_sync_t* pstcAdtSwSyncStart)
 }
 
 /***************************************************************
- * \brief   
- *          软件同步停止
- *
- * \param   [in]  pstcAdtSwSyncStop     软件同步停止指针
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- ***************************************************************/
+* \brief
+* Software synchronization stop
+*
+* \param [in] pstcAdtSwSyncStop Software synchronization stop pointer
+*
+* \retval en_result_t Ok: Setting successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter 
+***************************************************************/
 en_result_t Adt_SwSyncStop(stc_adt_sw_sync_t* pstcAdtSwSyncStop)
 {
     uint32_t u32Val = 0;
@@ -619,14 +619,14 @@ en_result_t Adt_SwSyncStop(stc_adt_sw_sync_t* pstcAdtSwSyncStop)
 }
 
 /*****************************************************************
- * \brief   
- *          软件同步清零
- *
- * \param   [in]  pstcAdtSwSyncClear    软件同步清零指针
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- *******************************************************************/
+* \brief
+* Software synchronization clear
+*
+* \param [in] pstcAdtSwSyncClear Software synchronization clear pointer
+*
+* \retval en_result_t Ok: Set successfully
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*******************************************************************/
 en_result_t Adt_SwSyncClear(stc_adt_sw_sync_t* pstcAdtSwSyncClear)
 {
     uint32_t u32Val = 0;
@@ -654,14 +654,14 @@ en_result_t Adt_SwSyncClear(stc_adt_sw_sync_t* pstcAdtSwSyncClear)
 }
 
 /*******************************************************************
- * \brief   
- *          获取软件同步运行状态
- *
- * \param   [in]  pstcAdtSwSyncState    ADV Timer软件同步运行状态指针
- *
- * \retval  en_result_t    Ok:  设置成功
- * \retval  en_result_t    ErrorInvalidParameter:  无效参数
- *******************************************************************/
+* \brief
+* Get software synchronization status
+*
+* \param [in] pstcAdtSwSyncState ADV Timer software synchronization status pointer
+*
+* \retval en_result_t Ok: Setting successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter 
+*******************************************************************/
 en_result_t Adt_GetSwSyncState(stc_adt_sw_sync_t* pstcAdtSwSyncState)
 {
     if (NULL == pstcAdtSwSyncState)
@@ -697,14 +697,14 @@ en_result_t Adt_GetSwSyncState(stc_adt_sw_sync_t* pstcAdtSwSyncState)
 }
 
 /************************************************************************
- * \brief   
- *          AOS触发配置
- *
- * \param   [in]  pstcAdtAosTrigCfg 触发配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ************************************************************************/
+* \brief
+* AOS trigger configuration
+*
+* \param [in] pstcAdtAosTrigCfg Trigger configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+************************************************************************/
 en_result_t Adt_AosTrigCfg(stc_adt_aos_trig_cfg_t* pstcAdtAosTrigCfg)
 {
     if (NULL == pstcAdtAosTrigCfg)
@@ -719,16 +719,16 @@ en_result_t Adt_AosTrigCfg(stc_adt_aos_trig_cfg_t* pstcAdtAosTrigCfg)
     return Ok;
 }
 
-/**********************************************************************
- * \brief   
- *          中断触发配置
- *
- * \param   [in]  ADTx                  ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  pstcAdtIrqTrigCfg     触发配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ***********************************************************************/
+/********************************************************************** 
+* \brief 
+* Interrupt trigger configuration 
+* 
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] pstcAdtIrqTrigCfg trigger configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*******************************************************************/
 en_result_t Adt_IrqTrigCfg(M0P_ADTIM_TypeDef *ADTx,
                               stc_adt_irq_trig_cfg_t* pstcAdtIrqTrigCfg)
 {
@@ -755,16 +755,16 @@ en_result_t Adt_IrqTrigCfg(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/*************************************************************************
- * \brief   
- *          端口触发配置
- *
- * \param   [in]  enAdtTrigPort         触发端口
- * \param   [in]  pstcAdtPortTrigCfg    触发配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- *************************************************************************/
+/*****************************************************************************
+* \brief
+* Port trigger configuration
+*
+* \param [in] enAdtTrigPort Trigger port
+* \param [in] pstcAdtPortTrigCfg Trigger configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*********************************************************************/
 en_result_t Adt_PortTrigCfg(en_adt_trig_port_t enAdtTrigPort,
                                stc_adt_port_trig_cfg_t* pstcAdtPortTrigCfg)
 {
@@ -807,16 +807,16 @@ en_result_t Adt_PortTrigCfg(en_adt_trig_port_t enAdtTrigPort,
 }
 
 /***********************************************************************
- * \brief   
- *          CHxX端口配置
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCHxXPort    CHxX端口
- * \param   [in]  pstcAdtCHxXCfg   CHxX端口配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- *********************************************************************/
+* \brief
+* CHxX port configuration
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCHxXPort CHxX port
+* \param [in] pstcAdtCHxXCfg CHxX port configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*********************************************************************/
 en_result_t Adt_CHxXPortCfg(M0P_ADTIM_TypeDef *ADTx,
                                 en_adt_CHxX_port_t enAdtCHxXPort,
                                 stc_adt_CHxX_port_cfg_t* pstcAdtCHxXCfg)
@@ -863,16 +863,16 @@ en_result_t Adt_CHxXPortCfg(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/************************************************************************
- * \brief   
- *          使能端口刹车
- *
- * \param   [in]  port              端口
- * \param   [in]  pstcAdtBrkPtCfg   端口刹车配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ************************************************************************/
+/****************************************************************************
+* \brief
+* Enable port brake
+*
+* \param [in] port
+* \param [in] pstcAdtBrkPtCfg port brake configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+************************************************************************/
 en_result_t Adt_EnableBrakePort(uint8_t port, stc_adt_break_port_cfg_t* pstcAdtBrkPtCfg)
 {
     uint32_t u32Val;
@@ -893,27 +893,27 @@ en_result_t Adt_EnableBrakePort(uint8_t port, stc_adt_break_port_cfg_t* pstcAdtB
 }
 
 /**********************************************************************
- * \brief   
- *          清除端口刹车
- *
- * \param   none
- *
- * \retval  none
- **********************************************************************/
+* \brief
+* Clear port brake
+*
+* \param none
+*
+* \retval none
+******************************************************************/
 void Adt_ClearBrakePort(void)
 {
     M0P_ADTIM4->PTBKS = 0;
 }
 
-/*********************************************************************
- * \brief   
- *          无效条件3配置
- *
- * \param   [in]  pstcAdtDisable3   无效条件3配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ********************************************************************/
+/*************************************************************************
+* \brief
+* Disable condition 3 configuration
+*
+* \param [in] pstcAdtDisable3 Disable condition 3 configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful 
+* \retval en_result_t ErrorInvalidParameter: invalid parameter 
+************************************************************************/
 en_result_t Adt_Disable3Cfg(stc_adt_disable_3_cfg_t* pstcAdtDisable3)
 {
     uint8_t i;
@@ -938,13 +938,13 @@ en_result_t Adt_Disable3Cfg(stc_adt_disable_3_cfg_t* pstcAdtDisable3)
     return Ok;
 }
 
-/*********************************************************************
- * \brief   软件刹车 Enable/Disable(仅适用于无效条件3使能的情况下)
- *
- * \param   [in]  bSwBrk           软件刹车使能/禁止
- *
- * \retval  en_result_t  Ok:  配置成功
- ********************************************************************/
+/************************************************************************
+* \brief Software brake Enable/Disable (only applicable when invalid condition 3 is enabled)
+*
+* \param [in] bSwBrk Software brake enable/disable
+*
+* \retval en_result_t Ok: Configuration successful
+******************************************************************/
 en_result_t Adt_SwBrake(boolean_t bSwBrk)
 {
     M0P_ADTIM4->AOSSR_f.SOFTBK = bSwBrk;
@@ -953,40 +953,40 @@ en_result_t Adt_SwBrake(boolean_t bSwBrk)
 }
 
 /*******************************************************************
- * \brief   
- *          获取端口刹车标志
- *
- * \param   none
- *
- * \retval  TRUE or FALSE
- ******************************************************************/
+* \brief
+* Get the port brake flag
+*
+* \param none
+*
+* \retval TRUE or FALSE
+**************************************************************/
 boolean_t Adt_GetPortBrakeFlag(void)
 {
     return M0P_ADTIM4->AOSSR_f.FBRAKE;
 }
 
-/******************************************************************
- * \brief   
- *          清除端口刹车标志
- *
- * \param   none
- *
- * \retval  none
- ******************************************************************/
+/**********************************************************************
+* \brief
+* Clear the port brake flag
+*
+* \param none
+*
+* \retval none
+**************************************************************/
 void Adt_ClearPortBrakeFlag(void)
 {
     M0P_ADTIM4->AOSCL_f.FBRAKE = 0;
 }
 
 /********************************************************************
- * \brief   
- *          无效条件1配置
- *
- * \param   [in]  pstcAdtDisable1   无效条件1配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ********************************************************************/
+* \brief
+* Invalid Condition 1 configuration
+*
+* \param [in] pstcAdtDisable1 Invalid Condition 1 configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+********************************************************************/
 en_result_t Adt_Disable1Cfg(stc_adt_disable_1_cfg_t* pstcAdtDisable1)
 {
 
@@ -1005,41 +1005,41 @@ en_result_t Adt_Disable1Cfg(stc_adt_disable_1_cfg_t* pstcAdtDisable1)
     return Ok;
 }
 
-/********************************************************************
- * \brief   
- *          获取同高同低刹车标志
- *
- * \param   none
- *
- * \retval  TRUE or FALSE
- ********************************************************************/
+/************************************************************************
+* \brief
+* Get the same high and low brake flags
+*
+* \param none
+*
+* \retval TRUE or FALSE 
+************************************************************************/
 boolean_t Adt_GetSameBrakeFlag(void)
 {
     return M0P_ADTIM4->AOSSR_f.FSAME;
 }
 
 /*********************************************************************
- * \brief   
- *          清除同高同低刹车标志
- *
- * \param   none
- *
- * \retval  none
- *********************************************************************/
+* \brief
+* Clears the same high and same low brake flags
+*
+* \param none
+*
+* \retval none
+*****************************************************************/
 void Adt_ClearSameBrakeFlag(void)
 {
     M0P_ADTIM4->AOSCL_f.FSAME = 0;
 }
 
-/********************************************************************
- * \brief   
- *          PWM展频配置
- * \param   [in]  ADTx                  ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  pstcAdtPwmDitherCfg   PWM展频配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- *********************************************************************/
+/************************************************************************
+* \brief
+* PWM spread spectrum configuration
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] pstcAdtPwmDitherCfg PWM spread spectrum configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter 
+*********************************************************************/
 en_result_t Adt_PwmDitherCfg(M0P_ADTIM_TypeDef *ADTx, stc_adt_pwm_dither_cfg_t* pstcAdtPwmDitherCfg)
 {
      
@@ -1057,15 +1057,15 @@ en_result_t Adt_PwmDitherCfg(M0P_ADTIM_TypeDef *ADTx, stc_adt_pwm_dither_cfg_t* 
 }
 
 /**********************************************************************
- * \brief   
- *          ADT初始化
- *
- * \param   [in]  ADTx                  ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  pstcAdtBaseCntCfg     计数配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- **********************************************************************/
+* \brief
+* ADT initialization
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] pstcAdtBaseCntCfg counter configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+**********************************************************************/
 en_result_t Adt_Init(M0P_ADTIM_TypeDef *ADTx, stc_adt_basecnt_cfg_t* pstcAdtBaseCntCfg)
 {
      
@@ -1087,15 +1087,15 @@ en_result_t Adt_Init(M0P_ADTIM_TypeDef *ADTx, stc_adt_basecnt_cfg_t* pstcAdtBase
     return Ok;
 }
 
-/************************************************************************
- * \brief   
- *          ADT Deinit
- *
- * \param   [in]  ADTx                  ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ***********************************************************************/
+/************************************************************************ 
+* \brief 
+* ADT Deinit 
+* 
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6) 
+* 
+* \retval en_result_t Ok: Configuration successful 
+* 
+*************************************************************************/
 en_result_t Adt_DeInit(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->GCONR_f.START = 0;
@@ -1137,15 +1137,15 @@ en_result_t Adt_DeInit(M0P_ADTIM_TypeDef *ADTx)
     return Ok;
 }
 
-/***********************************************************************
- * \brief   
- *          开始计数
- *
- * \param   [in]  ADTx                  ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ***********************************************************************/
+/*******************************************************************
+* \brief
+* Start counting
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Configuration successful
+*
+*******************************************************************/
 en_result_t Adt_StartCount(M0P_ADTIM_TypeDef *ADTx)
 {
 
@@ -1154,15 +1154,15 @@ en_result_t Adt_StartCount(M0P_ADTIM_TypeDef *ADTx)
     return Ok;
 }
 
-/***********************************************************************
- * \brief   
- *          停止计数
- *
- * \param   [in]  ADTx        ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- **********************************************************************/
+/***************************************************************************
+* \brief
+* Stop counting
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Configuration successful
+*
+****************************************************************/
 en_result_t Adt_StopCount(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->GCONR_f.START = 0;
@@ -1170,32 +1170,31 @@ en_result_t Adt_StopCount(M0P_ADTIM_TypeDef *ADTx)
     return Ok;
 }
 
-/********************************************************************
- * \brief   
- *          设置计数值
- *
- * \param   [in]  ADTx           ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  u16Value       计数值
- *
- * \retval  en_result_t  Ok:  配置成功
- *
- *******************************************************************/
+/************************************************************************
+* \brief
+* Set the count value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] u16Value Count value
+*
+* \retval en_result_t Ok: Configuration successful
+*
+****************************************************************/
 en_result_t Adt_SetCount(M0P_ADTIM_TypeDef *ADTx, uint16_t u16Value)
 {
     ADTx->CNTER_f.CNT = u16Value;
     return Ok;
 }
 
-/********************************************************************
- * \brief   
- *          获取计数值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * 
- *
- * \retval  uint16_t  u16Value:  当前计数值
- *  
- *******************************************************************/
+/************************************************************************
+* \brief
+* Get count value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval uint16_t u16Value: Current count value
+*
+****************************************************************/
 uint16_t Adt_GetCount(M0P_ADTIM_TypeDef *ADTx)
 {
     uint16_t u16Value;
@@ -1208,15 +1207,14 @@ uint16_t Adt_GetCount(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /**************************************************************************
- * \brief   
- *          清除计数值
- *
- * \param   [in]  ADTx        ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * 
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- **************************************************************************/
+* \brief
+* Clear count value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Configuration successful
+*
+**********************************************************************/
 en_result_t Adt_ClearCount(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->CNTER_f.CNT = 0;
@@ -1224,14 +1222,14 @@ en_result_t Adt_ClearCount(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*************************************************************************
- * \brief   
- *          获取有效周期计数值
- *
- * \param   [in]  ADTx             ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  uint8_t u8TempCnt:    有效周期值
- * 
- *************************************************************************/
+* \brief
+* Get the valid period count value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval uint8_t u8TempCnt: Valid period value
+*
+*************************************************************************/
 uint8_t Adt_GetVperNum(M0P_ADTIM_TypeDef *ADTx)
 {
     uint8_t u8TempCnt;
@@ -1245,15 +1243,15 @@ uint8_t Adt_GetVperNum(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /*************************************************************************
- * \brief   
- *          获取状态标志
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
-* \param    [in]  enstate           状态标志类型 
- *
- * \retval  TURE/FALSE
- * 
- *************************************************************************/
+* \brief
+* Get status flags
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enstate Status flag type
+*
+* \retval TRUE/FALSE
+*
+*************************************************************************/
 boolean_t Adt_GetState(M0P_ADTIM_TypeDef *ADTx, en_adt_state_type_t enstate)
 {
      
@@ -1265,15 +1263,15 @@ boolean_t Adt_GetState(M0P_ADTIM_TypeDef *ADTx, en_adt_state_type_t enstate)
 }
 
 /***********************************************************************
- * \brief   
- *          配置计数周期
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  u16Period         计数周期值
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ***********************************************************************/
+* \brief
+* Configure the count period
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] u16Period count period value
+*
+* \retval en_result_t OK: Configuration successful
+*
+********************************************************************/
 en_result_t Adt_SetPeriod(M0P_ADTIM_TypeDef *ADTx, uint16_t u16Period)
 {
     ADTx->PERAR = u16Period;
@@ -1282,15 +1280,15 @@ en_result_t Adt_SetPeriod(M0P_ADTIM_TypeDef *ADTx, uint16_t u16Period)
 }
 
 /***********************************************************************
- * \brief   
- *          配置计数周期缓冲
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  u16PeriodBuf      计数周期缓冲值
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ***********************************************************************/
+* \brief
+* Configure the count period buffer
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] u16PeriodBuf count period buffer value
+*
+* \retval en_result_t OK: Configuration successful
+*
+***************************************************************************/
 en_result_t Adt_SetPeriodBuf(M0P_ADTIM_TypeDef *ADTx, uint16_t u16PeriodBuf)
 {
     ADTx->PERBR = u16PeriodBuf;
@@ -1299,15 +1297,15 @@ en_result_t Adt_SetPeriodBuf(M0P_ADTIM_TypeDef *ADTx, uint16_t u16PeriodBuf)
     return Ok;
 }
 
-/**********************************************************************
- * \brief   
- *          清除计数周期缓冲
- *
- * \param   [in]  ADTx        ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- **********************************************************************/
+/**************************************************************************
+* \brief
+* Clear the period buffer
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+*
+* \retval en_result_t Ok: Configuration successful
+*
+**********************************************************************/
 en_result_t Adt_ClearPeriodBuf(M0P_ADTIM_TypeDef *ADTx)
 {
     ADTx->BCONR_f.BENP = 0;
@@ -1317,15 +1315,15 @@ en_result_t Adt_ClearPeriodBuf(M0P_ADTIM_TypeDef *ADTx)
 }
 
 /***********************************************************************
- * \brief   
- *          配置有效计数周期
- *
- * \param   [in]  ADTx                     ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  pstcAdtValidPerCfg       有效计数周期配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ***********************************************************************/
+* \brief
+* Configure the valid count period
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] pstcAdtValidPerCfg valid count period configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*******************************************************************/
 en_result_t Adt_SetValidPeriod(M0P_ADTIM_TypeDef *ADTx,
                                stc_adt_validper_cfg_t* pstcAdtValidPerCfg)
 {
@@ -1347,16 +1345,16 @@ en_result_t Adt_SetValidPeriod(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /************************************************************************
- * \brief   
- *          配置比较输出计数基准值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCompare      通用比较基准寄存器
- * \param   [in]  u16Compare        比较基准值
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- *************************************************************************/
+* \brief
+* Configure the compare output count reference value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCompare general compare reference register
+* \param [in] u16Compare compare reference value
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*********************************************************************/
 en_result_t Adt_SetCompareValue(M0P_ADTIM_TypeDef *ADTx,
                                 en_adt_compare_t enAdtCompare,
                                 uint16_t u16Compare)
@@ -1385,17 +1383,17 @@ en_result_t Adt_SetCompareValue(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/************************************************************************
- * \brief   
- *          配置专用比较计数基准值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtSpclCmp      专用比较基准值寄存器
- * \param   [in]  u16SpclCmp        比较基准值
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- *************************************************************************/
+/****************************************************************************
+* \brief
+* Configure the dedicated compare counter reference value
+*
+* \param [in] ADTx ADV Timer Channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtSpclCmp Special comparison reference value register
+* \param [in] u16SpclCmp Comparison reference value
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*********************************************************************/
 en_result_t Adt_SetSpecilCompareValue(M0P_ADTIM_TypeDef *ADTx,
                                       en_adt_special_compare_t enAdtSpclCmp,
                                       uint16_t u16SpclCmp)
@@ -1417,16 +1415,16 @@ en_result_t Adt_SetSpecilCompareValue(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /**********************************************************************
- * \brief   
- *          配置通用比较值/捕获值缓存传送
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCHxXPort     TIMxX通道
- * \param   [in]  bCompareBufEn     通用比较值缓存传送使能
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- **********************************************************************/
+* \brief
+* Configure general compare value/capture value buffer transfer
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCHxXPort TIMxX channel
+* \param [in] bCompareBufEn General compare value buffer transfer enable
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+**********************************************************************/
 en_result_t Adt_EnableValueBuf(M0P_ADTIM_TypeDef *ADTx,
                                  en_adt_CHxX_port_t enAdtCHxXPort,
                                  boolean_t bCompareBufEn)
@@ -1447,16 +1445,16 @@ en_result_t Adt_EnableValueBuf(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/***********************************************************************
- * \brief   
- *          清除比较输出计数值/捕获值缓存
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCHxXPort     TIMxX通道
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- **********************************************************************/
+/*******************************************************************
+* \brief
+* Clear compare output count value/capture value buffer
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCHxXPort TIMxX channel
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+**********************************************************************/
 en_result_t Adt_ClearValueBuf(M0P_ADTIM_TypeDef *ADTx,
                                      en_adt_CHxX_port_t enAdtCHxXPort)
 {
@@ -1476,17 +1474,17 @@ en_result_t Adt_ClearValueBuf(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/***********************************************************************
- * \brief   
- *          获取捕获值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCHxXPort     TIMxX通道
- * \param   [in]  pu16Capture       捕获值指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ***********************************************************************/
+/********************************************************************
+* \brief
+* Get capture value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCHxXPort TIMxX channel
+* \param [in] pu16Capture capture value pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
+*******************************************************************/
 en_result_t Adt_GetCaptureValue(M0P_ADTIM_TypeDef *ADTx,
                                 en_adt_CHxX_port_t enAdtCHxXPort,
                                 uint16_t* pu16Capture)
@@ -1507,16 +1505,16 @@ en_result_t Adt_GetCaptureValue(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /**********************************************************************
- * \brief   
- *          获取捕获缓存值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  enAdtCHxXPort     TIMxX通道
- * \param   [in]  pu16CaptureBuf    捕获缓存值指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * \retval  en_result_t  ErrorInvalidParameter: 无效参数
- ***********************************************************************/
+* \brief
+* Get capture buffer value
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] enAdtCHxXPort TIMxX channel
+* \param [in] pu16CaptureBuf capture buffer value pointer
+*
+* \retval en_result_t Ok: Configuration successful 
+* \retval en_result_t ErrorInvalidParameter: invalid parameter 
+*************************************************************************/
 en_result_t Adt_GetCaptureBuf(M0P_ADTIM_TypeDef *ADTx,
                                 en_adt_CHxX_port_t enAdtCHxXPort,
                                 uint16_t* pu16CaptureBuf)
@@ -1537,15 +1535,15 @@ en_result_t Adt_GetCaptureBuf(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /***********************************************************************
- * \brief   
- *          设置死区时间上基准值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  u16Value          死区时间上基准值
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ************************************************************************/
+* \brief
+* Set the upper reference value for the dead time
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] u16Value Dead time upper reference value
+*
+* \retval en_result_t Ok: Configuration successful
+*
+************************************************************************/
 en_result_t Adt_SetDTUA(M0P_ADTIM_TypeDef *ADTx,
                         uint16_t u16Value)
 {
@@ -1554,16 +1552,16 @@ en_result_t Adt_SetDTUA(M0P_ADTIM_TypeDef *ADTx,
     return Ok;
 }
 
-/***********************************************************************
- * \brief   
- *          设置死区时间下基准值
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  u16Value          死区时间下基准值
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- ***********************************************************************/
+/***************************************************************************
+* \brief
+* Set the dead time lower reference value
+
+* * \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] u16Value Dead time lower reference value
+*
+* \retval en_result_t Ok: Configuration successful
+*
+*********************************************************************/
 en_result_t Adt_SetDTDA(M0P_ADTIM_TypeDef *ADTx,
                         uint16_t u16Value)
 {
@@ -1573,16 +1571,16 @@ en_result_t Adt_SetDTDA(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /******************************************************************
- * \brief   
- *          配置死区时间功能
- *
- * \param   [in]  ADTx          ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  bDTEn         死区功能使能
- * \param   [in]  bEqual        DTDAR的值和DTUAR的值自动相等
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- *****************************************************************/
+* \brief
+* Configure the dead-time function
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] bDTEn Dead-time function enable
+* \param [in] bEqual DTDAR value and DTUAR value are automatically equal
+*
+* \retval en_result_t Ok: Configuration successful
+*
+*****************************************************************/
 en_result_t Adt_CfgDT(M0P_ADTIM_TypeDef *ADTx,
                          boolean_t bDTEn,
                          boolean_t bEqual)
@@ -1594,15 +1592,15 @@ en_result_t Adt_CfgDT(M0P_ADTIM_TypeDef *ADTx,
 }
 
 /*************************************************************************
- * \brief   
- *          Z相输入屏蔽设置
- *
- * \param   [in]  ADTx              ADV Timer通道选择(M0P_ADTIM4、M0P_ADTIM5、M0P_ADTIM6)
- * \param   [in]  pstcAdtZMaskCfg   Z相输入屏蔽功能配置指针
- *
- * \retval  en_result_t  Ok:  配置成功
- * 
- *************************************************************************/
+* \brief
+* Z-phase input mask setting
+*
+* \param [in] ADTx ADV Timer channel selection (M0P_ADTIM4, M0P_ADTIM5, M0P_ADTIM6)
+* \param [in] pstcAdtZMaskCfg Z-phase input mask function configuration pointer
+*
+* \retval en_result_t Ok: Configuration successful
+* 
+*************************************************************************/
 en_result_t Adt_CfgZMask(M0P_ADTIM_TypeDef *ADTx, stc_adt_zmask_cfg_t* pstcAdtZMaskCfg)
 {
     if(NULL == pstcAdtZMaskCfg)

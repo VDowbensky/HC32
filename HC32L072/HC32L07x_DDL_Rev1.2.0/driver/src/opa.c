@@ -55,14 +55,14 @@
  *****************************************************************************/
  
 /**
-******************************************************************************
-	** \brief   OPA 输出通道设置
-	**
-	** \param   Opax:       指定使用哪个OPA，共3个OPA，取值:Opa0,Opa1,Opa2
-	**          OutChs:     OPA输出通道配置，可配置多个通道使能
-	** \retval  无
-	**
-******************************************************************************/
+**************************************************************************
+** \brief OPA output channel configuration
+**
+** \param Opax: Specifies which OPA to use. There are three OPAs, with values: Opa0, Opa1, and Opa2
+** OutChs: OPA output channel configuration. Multiple channels can be enabled.
+** \retval None
+**
+**************************************************************************/
 void Opa_OutChannelConfig(en_opa_t Opax, stc_opa_oenx_config_t OutChs)
 {
 	if ((Opax==Opa0)||(Opax==Opa1)||(Opax==Opa2))
@@ -76,20 +76,20 @@ void Opa_OutChannelConfig(en_opa_t Opax, stc_opa_oenx_config_t OutChs)
 
 /**
 ******************************************************************************
-	** \brief  OPAx 使能或禁止
-	**
-	** \param  Opax:       共5个OPA，取值:Opa0,Opa1,Opa2,Opa3,Opa4
-	**  	   NewStatus : 配置Opx使能或禁止 TRUE or FALSE	
-	** \retval 无
-	**
-******************************************************************************/
+** \brief OPAx enable or disable
+**
+** \param Opax: 5 OPAs in total, values: Opa0, Opa1, Opa2, Opa3, Opa4
+** NewStatus: Configure Opax to be enabled or disabled, TRUE or FALSE
+** \retval None
+**
+**********************************************************************************/
 void Opa_Cmd(en_opa_t Opax, boolean_t NewStatus)
 {
 	SetBit((uint32_t)(&(M0P_OPA->CR1)), Opax, NewStatus);
-	if(Opax == Opa3)       /*当OPA3使能时，DAC0不能使用OPA3作为输出缓存*/
+	if(Opax == Opa3)       /*When OPA3 is enabled, DAC0 cannot use OPA3 as an output buffer*/
 	{
 		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa_Dac0Buff);
-	}else if(Opax == Opa4) /*当OPA4使能时，DAC1不能使用OPA4作为输出缓存*/
+	}else if(Opax == Opa4) /*When OPA4 is enabled, DAC1 cannot use OPA4 as an output buffer*/
 	{
 		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa_Dac1Buff);
 	}else
@@ -100,48 +100,46 @@ void Opa_Cmd(en_opa_t Opax, boolean_t NewStatus)
 
 /**
 ******************************************************************************
-	** \brief  DAC缓存 使能或禁止
-	**
-	** \param  Buffx:      Opa_Adc0Buff or Opa_Adc1Buff
-	**  	   NewStatus : 配置Buffx使能或禁止 TRUE or FALSE	
-	** \retval 无
-	**
-******************************************************************************/
+** \brief DAC buffer enable or disable
+**
+** \param Buffx: Opa_Adc0Buff or Opa_Adc1Buff
+** NewStatus: Configure Buffx to enable or disable, TRUE or FALSE
+** \retval None
+**
+**********************************************************************************/
 void Opa_DacBufCmd(en_opa_dac_buff_t Buffx, boolean_t NewStatus)
 {
 	SetBit((uint32_t)(&(M0P_OPA->CR1)), Buffx, NewStatus);
 	if (Buffx == Opa_Dac0Buff)
     {
-		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa3);  /*DAC0使用OP3单位增加缓存使能，则OPA3使能不可用*/
+		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa3);  /*DAC0 uses OP3 units to increase cache enable, so OPA3 is disabled*/
 	}else
 	{
-		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa4);  /*DAC1使用OP4单位增加缓存使能，则OPA4使能不可用*/
+		M0P_OPA->CR1 &= (uint32_t)~(1<<Opa4);  /*DAC1 uses OP4 units to increase cache enable, so OPA4 is disabled*/
 	}
 }
 
 /**
-******************************************************************************
-	** \brief  配置OPA教零使能
-	**
-	** \param  Opax:       指定使用哪个OPA，共5个OPA，取值:Opa0,Opa1,Opa2,Opa3,Opa4
-	**  	   NewStatus : 配置Opx教零使能或禁止 TRUE or FALSE	
-	** \retval 无
-	**
-******************************************************************************/
+**************************************************************************
+** \brief Configure OPA teach-to-zero enable
+**
+** \param Opax: Specifies which OPA to use. There are five OPAs, with possible values: Opa0, Opa1, Opa2, Opa3, and Opa4.
+** NewStatus: Enables or disables the Opax zero setting. TRUE or FALSE.
+** \retval: None
+**
+**************************************************************************/
 void Opa_CalCmd(en_opa_t Opax, boolean_t NewStatus)
 {
 	SetBit((uint32_t)(&(M0P_OPA->CR1)), OPA_AZEN_Pos(Opax), NewStatus);
 }
 
-
-
 /**
-******************************************************************************
-	** \brief  自动教零参数配置
-	**
-	** \param  InitZero :  
-	** \retval 无
-	**
+****************************************************************************** 
+** \brief automatically teaches zero parameter configuration 
+** 
+** \param InitZero: 
+** \retval None 
+**
 ******************************************************************************/
 void Opa_CalConfig(stc_opa_zconfig_t* InitZero)
 {
@@ -153,12 +151,12 @@ void Opa_CalConfig(stc_opa_zconfig_t* InitZero)
 
 /**
 ******************************************************************************
-	** \brief  软件触发自动教零
-	**
-	** \param  InitZero :  
-	** \retval 无
-	**
-******************************************************************************/
+** \brief Software triggers automatic zero teach
+**
+** \param InitZero:
+** \retval None
+**
+**************************************************************************/
 void Opa_CalSwTrig(void)
 {
 	M0P_OPA->CR_f.TRIGGER = TRUE;

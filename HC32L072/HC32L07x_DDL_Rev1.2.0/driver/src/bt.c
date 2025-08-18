@@ -57,15 +57,14 @@
  ******************************************************************************/
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断标志获取(模式0/1/23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval TRUE or FALSE                                      
- *****************************************************************************/
+*****************************************************************************
+** \brief Get Base Timer Interrupt Flag (Mode 0/1/23)
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] enBtIrq Interrupt type
+**
+** \retval TRUE or FALSE
+*************************************************************************/
 boolean_t Bt_GetIntFlag(en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     boolean_t bRetVal = FALSE;
@@ -81,15 +80,15 @@ boolean_t Bt_GetIntFlag(en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断标志清除(模式0/1/23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Interrupt Flag Clear (Mode 0/1/23)
+** 
+** 
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2) 
+** \param [in] enBtIrq interrupt type 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_ClearIntFlag(en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     en_result_t enResult = Ok;
@@ -103,15 +102,14 @@ en_result_t Bt_ClearIntFlag(en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断所有标志清除(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Interrupt Clear All Flags (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_ClearAllIntFlag(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -125,14 +123,14 @@ en_result_t Bt_ClearAllIntFlag(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断使能(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*******************************************************************
+** \brief Base Timer Interrupt Enable (Mode 0)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+***************************************************************************/
 en_result_t Bt_Mode0_EnableIrq(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -145,14 +143,14 @@ en_result_t Bt_Mode0_EnableIrq(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断禁止(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Interrupt Disable (Mode 0)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_Mode0_DisableIrq(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -164,16 +162,16 @@ en_result_t Bt_Mode0_DisableIrq(en_bt_unit_t enUnit)
     return enResult;
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 中断使能(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** 
+******************************************************************************* 
+** \brief Base Timer interrupt enable (mode 1) 
+** 
+** 
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2) 
+** \param [in] enBtIrq interrupt type 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_Mode1_EnableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     en_result_t enResult = Ok;
@@ -197,15 +195,15 @@ en_result_t Bt_Mode1_EnableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 中断禁止(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Interrupt Disable (Mode 1)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] enBtIrq interrupt type
+**
+** \retval Ok or Error
+*******************************************************************/
 en_result_t Bt_Mode1_DisableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     en_result_t enResult = Ok;
@@ -229,16 +227,16 @@ en_result_t Bt_Mode1_DisableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
     return enResult;
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 中断使能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** 
+******************************************************************************* 
+** \brief Base Timer Interrupt enable (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] enBtIrq interrupt type
+**
+** \retval Ok or Error
+********************************************************************/
 en_result_t Bt_Mode23_EnableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     en_result_t enResult = Ok;
@@ -271,16 +269,15 @@ en_result_t Bt_Mode23_EnableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
     return enResult;
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 中断禁止(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enBtIrq          中断类型
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Base Timer Interrupt Disable (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel select (TIM0, TIM1, TIM2)
+** \param [in] enBtIrq interrupt type
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_Mode23_DisableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 {
     en_result_t enResult = Ok;
@@ -314,15 +311,15 @@ en_result_t Bt_Mode23_DisableIrq (en_bt_unit_t enUnit, en_bt_irq_type_t enBtIrq)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 初始化配置(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg          初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer initialization configuration (Mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_Mode0_Init(en_bt_unit_t enUnit, stc_bt_mode0_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -343,14 +340,14 @@ en_result_t Bt_Mode0_Init(en_bt_unit_t enUnit, stc_bt_mode0_cfg_t* pstcCfg)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 启动运行(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Starts Running (Mode 0)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M0_Run(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -363,14 +360,14 @@ en_result_t Bt_M0_Run(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 停止运行(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Stop (Mode 0)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*******************************************************************/
 en_result_t Bt_M0_Stop(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -383,15 +380,15 @@ en_result_t Bt_M0_Stop(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 翻转输出使能/禁止（低电平）设定(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  bEnTOG           翻转输出设定 TRUE:使能, FALSE:禁止
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer toggle output enable/disable (low level) setting (mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] bEnTOG toggle output setting TRUE: Enable, FALSE: Disable
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M0_EnTOG_Output(en_bt_unit_t enUnit, boolean_t bEnTOG)
 {
     en_result_t enResult = Ok;
@@ -403,16 +400,16 @@ en_result_t Bt_M0_EnTOG_Output(en_bt_unit_t enUnit, boolean_t bEnTOG)
     return enResult;    
 }
     
-/**
- *****************************************************************************
- ** \brief Base Timer 端口输出使能/禁止设定(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  bEnOutput        端口输出设定 TRUE:使能, FALSE:禁止
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** 
+******************************************************************************* 
+** \brief Base Timer Port output enable/disable setting (mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] bEnOutput Port output setting TRUE: Enable, FALSE: Disable
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M0_Enable_Output(en_bt_unit_t enUnit, boolean_t bEnOutput)
 {
     en_result_t enResult = Ok;
@@ -425,15 +422,14 @@ en_result_t Bt_M0_Enable_Output(en_bt_unit_t enUnit, boolean_t bEnOutput)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 16位计数器初值设置(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u16Data          16位初值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+************************************************************************
+** \brief Base Timer 16-bit counter initial value set (mode 0)
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] u16Data 16-bit initial value
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M0_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
 {
     en_result_t enResult = Ok;
@@ -448,14 +444,14 @@ en_result_t Bt_M0_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 16位计数值获取(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval 16bits计数值                                      
- *****************************************************************************/
+*******************************************************************
+** \brief Get Base Timer 16-bit count value (Mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval 16-bit count value
+******************************************************************************/
 uint16_t Bt_M0_Cnt16Get(en_bt_unit_t enUnit)
 {
     uint16_t    u16CntData = 0;
@@ -470,15 +466,15 @@ uint16_t Bt_M0_Cnt16Get(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 重载值设置(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u16Data          16bits重载值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Reload Value Setting (Mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2) 
+** \param [in] u16Data 16bits overload value 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M0_ARRSet(en_bt_unit_t enUnit, uint16_t u16Data)
 {
     en_result_t enResult = Ok;
@@ -493,15 +489,14 @@ en_result_t Bt_M0_ARRSet(en_bt_unit_t enUnit, uint16_t u16Data)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 32位计数器初值设置(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u32Data          32位初值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer 32-bit counter initial value set (mode 0)
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] u32Data 32-bit initial value
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M0_Cnt32Set(en_bt_unit_t enUnit, uint32_t u32Data)
 {
     en_result_t enResult = Ok;
@@ -516,14 +511,14 @@ en_result_t Bt_M0_Cnt32Set(en_bt_unit_t enUnit, uint32_t u32Data)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 32位计数值获取(模式0)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval 32bits计数值                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Get Base Timer 32-bit count value (Mode 0)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval 32-bit count value
+*******************************************************************/
 uint32_t Bt_M0_Cnt32Get(en_bt_unit_t enUnit)
 {
     uint32_t    u32CntData = 0;
@@ -538,15 +533,15 @@ uint32_t Bt_M0_Cnt32Get(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 初始化配置(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer initialization configuration (mode 1)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_Mode1_Init(en_bt_unit_t enUnit, stc_bt_mode1_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -565,15 +560,15 @@ en_result_t Bt_Mode1_Init(en_bt_unit_t enUnit, stc_bt_mode1_cfg_t* pstcCfg)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer PWC 输入配置(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+****************************************************************************
+** \brief Base Timer PWC Input Configuration (Mode 1)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M1_Input_Cfg(en_bt_unit_t enUnit, stc_bt_pwc_input_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -592,15 +587,14 @@ en_result_t Bt_M1_Input_Cfg(en_bt_unit_t enUnit, stc_bt_pwc_input_cfg_t* pstcCfg
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer PWC测量边沿起始结束选择(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enEdgeSel        pwc测量起始终止电平
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+****************************************************************************
+** \brief Base Timer PWC Measurement Edge Start and End Selection (Mode 1)
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] enEdgeSel PWC Measurement Start and End Levels
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M1_PWC_Edge_Sel(en_bt_unit_t enUnit,en_bt_m1cr_Edge_t enEdgeSel)
 {
     en_result_t enResult = Ok;
@@ -609,21 +603,21 @@ en_result_t Bt_M1_PWC_Edge_Sel(en_bt_unit_t enUnit,en_bt_m1cr_Edge_t enEdgeSel)
     
     switch (enEdgeSel)
     {
-        case 0:                            ///< 上升沿到上升沿(周期)
-            pstcM0PBt->M1CR_f.EDG1ST = 0;  //上升沿
-            pstcM0PBt->M1CR_f.EDG2ND = 0;  //上升沿
+        case 0:                            ///< Rising edge to rising edge (period)
+            pstcM0PBt->M1CR_f.EDG1ST = 0;  //Rising edge
+            pstcM0PBt->M1CR_f.EDG2ND = 0;  //Rising edge
             break;
-        case 1:                            ///< 下降沿到上升沿(低电平)
-            pstcM0PBt->M1CR_f.EDG1ST = 1;  //下降沿
-            pstcM0PBt->M1CR_f.EDG2ND = 0;  //上升沿
+        case 1:                            ///< Falling edge to rising edge (low level)
+            pstcM0PBt->M1CR_f.EDG1ST = 1;  //Falling edge
+            pstcM0PBt->M1CR_f.EDG2ND = 0;  //Rising edge
             break;
-        case 2:                            ///< 上升沿到下降沿(高电平)
-            pstcM0PBt->M1CR_f.EDG1ST = 0;  //上升沿
-            pstcM0PBt->M1CR_f.EDG2ND = 1;  //下降沿
+        case 2:                            ///< Rising edge to falling edge (high level)
+            pstcM0PBt->M1CR_f.EDG1ST = 0;  //Rising edge
+            pstcM0PBt->M1CR_f.EDG2ND = 1;  //Falling edge
             break;
-        case 3:                            ///< 下降沿到下降沿(周期)
-            pstcM0PBt->M1CR_f.EDG1ST = 1;  //下降沿
-            pstcM0PBt->M1CR_f.EDG2ND = 1;  //下降沿
+        case 3:                            ///< Falling edge to falling edge (period)
+            pstcM0PBt->M1CR_f.EDG1ST = 1;  // Falling edge
+            pstcM0PBt->M1CR_f.EDG2ND = 1;  // Falling edge
             break;
         default:
             ;
@@ -634,14 +628,14 @@ en_result_t Bt_M1_PWC_Edge_Sel(en_bt_unit_t enUnit,en_bt_m1cr_Edge_t enEdgeSel)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 启动运行(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Starts Running (Mode 1)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M1_Run(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -654,14 +648,14 @@ en_result_t Bt_M1_Run(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 停止运行(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Stop (Mode 1)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M1_Stop(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -674,15 +668,15 @@ en_result_t Bt_M1_Stop(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 16位计数器初值设置(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u16Data          16位初值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer 16-bit Counter Initial Value Setting (Mode 1)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] u16Data 16-bit Initial Value
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M1_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
 {
     en_result_t enResult = Ok;
@@ -697,14 +691,14 @@ en_result_t Bt_M1_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 16位计数值获取(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval 16bits计数值                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer 16-bit counter value acquisition (mode 1)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval 16-bit count value
+**********************************************************************/
 uint16_t Bt_M1_Cnt16Get(en_bt_unit_t enUnit)
 {
     uint16_t    u16CntData = 0;
@@ -719,14 +713,14 @@ uint16_t Bt_M1_Cnt16Get(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 脉冲宽度测量结果数值获取(模式1)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval 16bits脉冲宽度测量结果                                      
- *****************************************************************************/
+*****************************************************************************
+** \brief Base Timer Pulse Width Measurement Result Get (Mode 1)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval 16-bit pulse width measurement result
+*****************************************************************************/
 uint16_t Bt_M1_PWC_CapValueGet(en_bt_unit_t enUnit)
 {
     uint16_t    u16CapData = 0;
@@ -741,15 +735,15 @@ uint16_t Bt_M1_PWC_CapValueGet(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 初始化配置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer initialization configuration (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg initialization configuration structure pointer
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_Mode23_Init(en_bt_unit_t enUnit, stc_bt_mode23_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -773,16 +767,16 @@ en_result_t Bt_Mode23_Init(en_bt_unit_t enUnit, stc_bt_mode23_cfg_t* pstcCfg)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer PWM输出使能/禁止(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  bEnOutput        PWM输出使能/禁止设定
- ** \param [in]  bEnAutoOutput    PWM自动输出使能/禁止设定
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer PWM output enable/disable (mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] bEnOutput PWM output enable/disable setting
+** \param [in] bEnAutoOutput PWM automatic output enable/disable setting
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_EnPWM_Output(en_bt_unit_t enUnit, boolean_t bEnOutput, boolean_t bEnAutoOutput)
 {
     en_result_t enResult = Ok;
@@ -796,15 +790,14 @@ en_result_t Bt_M23_EnPWM_Output(en_bt_unit_t enUnit, boolean_t bEnOutput, boolea
 }
 
 
-/**
- *****************************************************************************
- ** \brief Base Timer 启动运行(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** 
+******************************************************************************* 
+** \brief Base Timer starts running (mode 23) ** 
+** 
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2) 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_Run(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -816,15 +809,14 @@ en_result_t Bt_M23_Run(en_bt_unit_t enUnit)
     return enResult;
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 停止运行(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Base Timer Stop (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M23_Stop(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -837,16 +829,16 @@ en_result_t Bt_M23_Stop(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 重载值设置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u16Data          16bits重载值
- ** \param [in]  bArrBufEn        ARR重载缓存使能TRUE/禁止FALSE
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+****************************************************************************
+** \brief Base Timer Reload Value Setting (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] u16Data 16-bit Reload Value
+** \param [in] bArrBufEn ARR Reload Buffer Enable TRUE/Disable FALSE
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_ARRSet(en_bt_unit_t enUnit, uint16_t u16Data, boolean_t bArrBufEn)
 {
     en_result_t enResult = Ok;
@@ -860,15 +852,14 @@ en_result_t Bt_M23_ARRSet(en_bt_unit_t enUnit, uint16_t u16Data, boolean_t bArrB
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 16位计数器初值设置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u16Data          16位初值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer 16-bit Counter Initial Value Setup (Mode 23)
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] u16Data 16-bit initial value 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
 {
     en_result_t enResult = Ok;
@@ -880,15 +871,14 @@ en_result_t Bt_M23_Cnt16Set(en_bt_unit_t enUnit, uint16_t u16Data)
     return enResult; 
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 16位计数值获取(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval 16bits计数值                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Get Base Timer 16-bit count value (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+**
+** \retval 16-bit count value
+*************************************************************************/
 uint16_t Bt_M23_Cnt16Get(en_bt_unit_t enUnit)
 {
     uint16_t    u16CntData = 0;
@@ -901,16 +891,16 @@ uint16_t Bt_M23_Cnt16Get(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 比较捕获寄存器CCR0A/CCR0B设置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enCCRSel         CCR0A/CCR0B设定
- ** \param [in]  u16Data          CCR0A/CCR0B 16位初始值
- ** 
- ** \retval Ok or Error                                     
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Compare Capture Register CCR0A/CCR0B Settings (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] enCCRSel CCR0A/CCR0B Settings
+** \param [in] u16Data CCR0A/CCR0B 16-bit Initial Value
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M23_CCR_Set(en_bt_unit_t enUnit, en_bt_m23_ccrx_t enCCRSel, uint16_t u16Data)
 {
     en_result_t enResult = Ok;
@@ -934,15 +924,15 @@ en_result_t Bt_M23_CCR_Set(en_bt_unit_t enUnit, en_bt_m23_ccrx_t enCCRSel, uint1
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 比较捕获寄存器CCR0A/CCR0B读取(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  enCCRSel         CCR0A/CCR0B设定
- ** 
- ** \retval 16bitsCCR0A捕获值                                     
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Compare Capture Registers CCR0A/CCR0B Read (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] enCCRSel CCR0A/CCR0B setting
+**
+** \retval 16-bit CCR0A capture value
+*************************************************************************/
 uint16_t Bt_M23_CCR_Get(en_bt_unit_t enUnit, en_bt_m23_ccrx_t enCCRSel)
 {
     uint16_t    u16Data = 0;
@@ -966,15 +956,15 @@ uint16_t Bt_M23_CCR_Get(en_bt_unit_t enUnit, en_bt_m23_ccrx_t enCCRSel)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer PWM互补输出模式下，GATE功能选择(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer PWM complementary output mode, GATE function selection (mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg initialization configuration structure pointer
+**
+** \retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_GateFuncSel(en_bt_unit_t enUnit,stc_bt_m23_gate_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -989,15 +979,14 @@ en_result_t Bt_M23_GateFuncSel(en_bt_unit_t enUnit,stc_bt_m23_gate_cfg_t* pstcCf
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 主从模式配置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+****************************************************************************
+** \brief Base Timer Master-Slave Mode Configuration (Mode 23)
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_MasterSlave_Set(en_bt_unit_t enUnit, stc_bt_m23_master_slave_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1012,16 +1001,15 @@ en_result_t Bt_M23_MasterSlave_Set(en_bt_unit_t enUnit, stc_bt_m23_master_slave_
     return enResult;    
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer CH0A/CH0B比较通道输出控制(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Base Timer CH0A/CH0B Compare Channel Output Control (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M23_PortOutput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_compare_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1044,15 +1032,14 @@ en_result_t Bt_M23_PortOutput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_compare_cfg_t*
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer CH0A/CH0B输入控制(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer CH0A/CH0B Input Control (Mode 23)
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_PortInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_input_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1073,15 +1060,15 @@ en_result_t Bt_M23_PortInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_input_cfg_t* ps
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer ERT输入控制(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+********************************************************************
+** \brief Base Timer ERT Input Control (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_ETRInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_etr_input_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1095,15 +1082,15 @@ en_result_t Bt_M23_ETRInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_etr_input_cfg_t*
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 刹车BK输入控制(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Brake BK Input Control (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+**
+** \retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_BrakeInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_bk_input_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1124,16 +1111,15 @@ en_result_t Bt_M23_BrakeInput_Cfg(en_bt_unit_t enUnit, stc_bt_m23_bk_input_cfg_t
     return enResult;
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 触发ADC控制(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Base Timer Trigger ADC Control (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M23_TrigADC_Cfg(en_bt_unit_t enUnit, stc_bt_m23_adc_trig_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1148,16 +1134,16 @@ en_result_t Bt_M23_TrigADC_Cfg(en_bt_unit_t enUnit, stc_bt_m23_adc_trig_cfg_t* p
     return enResult;    
 }
 
-/**
- *****************************************************************************
-** \brief Base Timer 死区功能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** 
+*******************************************************************************
+** \brief Base Timer dead zone function (mode 23) 
+** 
+** 
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M23_DT_Cfg(en_bt_unit_t enUnit, stc_bt_m23_dt_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1171,15 +1157,15 @@ en_result_t Bt_M23_DT_Cfg(en_bt_unit_t enUnit, stc_bt_m23_dt_cfg_t* pstcCfg)
 }
 
 /**
- *****************************************************************************
-** \brief Base Timer 重复周期设置(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  u8ValidPeriod    重复周期值
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+********************************************************************************
+** \brief Base Timer repeat period setting (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] u8ValidPeriod repeat period value
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_SetValidPeriod(en_bt_unit_t enUnit, uint8_t u8ValidPeriod)
 {
     en_result_t enResult = Ok;
@@ -1192,15 +1178,15 @@ en_result_t Bt_M23_SetValidPeriod(en_bt_unit_t enUnit, uint8_t u8ValidPeriod)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer OCREF清除功能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer OCREF Clear Function (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization configuration structure pointer
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M23_OCRefClr(en_bt_unit_t enUnit, stc_bt_m23_OCREF_Clr_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1214,15 +1200,15 @@ en_result_t Bt_M23_OCRefClr(en_bt_unit_t enUnit, stc_bt_m23_OCREF_Clr_cfg_t* pst
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 使能DMA传输(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** \param [in]  pstcCfg       初始化配置结构体指针
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+*************************************************************************
+** \brief Base Timer Enable DMA Transfer (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+** \param [in] pstcCfg Initialization Configuration Structure Pointer
+**
+** \retval Ok or Error
+*************************************************************************/
 en_result_t Bt_M23_EnDMA(en_bt_unit_t enUnit, stc_bt_m23_trig_dma_cfg_t* pstcCfg)
 {
     en_result_t enResult = Ok;
@@ -1239,14 +1225,14 @@ en_result_t Bt_M23_EnDMA(en_bt_unit_t enUnit, stc_bt_m23_trig_dma_cfg_t* pstcCfg
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 捕获比较A软件触发(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Capture Compare A Software Trigger (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_EnSwTrigCapCmpA(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -1261,14 +1247,14 @@ en_result_t Bt_M23_EnSwTrigCapCmpA(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 捕获比较B软件触发(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Capture Compare B Software Trigger (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Selection (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+***********************************************************************/
 en_result_t Bt_M23_EnSwTrigCapCmpB(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -1283,14 +1269,14 @@ en_result_t Bt_M23_EnSwTrigCapCmpB(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 软件更新使能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Software Update Enable (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M23_EnSwUev(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -1303,14 +1289,14 @@ en_result_t Bt_M23_EnSwUev(en_bt_unit_t enUnit)
 }
 
 /**
- *****************************************************************************
- ** \brief Base Timer 软件触发使能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+***********************************************************************
+** \brief Base Timer Software Trigger Enable (Mode 23)
+**
+**
+** \param [in] enUnit Timer channel selection (TIM0, TIM1, TIM2) 
+** 
+**\retval Ok or Error 
+*******************************************************************************/
 en_result_t Bt_M23_EnSwTrig(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;
@@ -1322,15 +1308,14 @@ en_result_t Bt_M23_EnSwTrig(en_bt_unit_t enUnit)
     return enResult;    
 }
 
-/**
- *****************************************************************************
- ** \brief Base Timer 软件刹车使能(模式23)
- **
- **
- ** \param [in]  enUnit           Timer通道选择（TIM0、TIM1、TIM2）
- ** 
- ** \retval Ok or Error                                      
- *****************************************************************************/
+/** *****************************************************************************
+** \brief Base Timer Software Brake Enable (Mode 23)
+**
+**
+** \param [in] enUnit Timer Channel Select (TIM0, TIM1, TIM2)
+**
+** \retval Ok or Error
+*****************************************************************************/
 en_result_t Bt_M23_EnSwBk(en_bt_unit_t enUnit)
 {
     en_result_t enResult = Ok;

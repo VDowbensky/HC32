@@ -52,14 +52,14 @@
  ******************************************************************************/
 
 /**
- *****************************************************************************
- ** \brief 进入深度睡眠模式
- **
- ** \input bOnExit - TRUE:当退出异常处理后，自动再次进入休眠；
- **                  FALSE：唤醒后不再自动进入休眠
- ** 
- ** \retval NULL                                     
- *****************************************************************************/
+*************************************************************************
+** \brief Entering deep sleep mode
+**
+** \input bOnExit - TRUE: Automatically enters sleep again after exiting exception handling;
+** FALSE: No longer automatically enters sleep after waking up
+**
+** \retval NULL
+*************************************************************************/
 void Lpm_GotoDeepSleep(boolean_t bOnExit)
 {
     SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
@@ -68,14 +68,14 @@ void Lpm_GotoDeepSleep(boolean_t bOnExit)
 }
 
 /**
- *****************************************************************************
- ** \brief 进入普通睡眠模式
- **
- ** \input bOnExit - TRUE:当退出异常处理后，自动再次进入休眠；
- **                  FALSE：唤醒后不再自动进入休眠
- ** 
- ** \retval NULL                                     
- *****************************************************************************/
+*****************************************************************************
+** \brief Entering normal sleep mode
+**
+** \input bOnExit - TRUE: Automatically enters sleep again after exiting exception handling.
+** FALSE: Does not automatically enter sleep after waking up.
+**
+** \retval NULL
+*************************************************************************/
 void Lpm_GotoSleep(boolean_t bOnExit)
 {
     SCB->SCR &= ~SCB_SCR_SLEEPDEEP_Msk;

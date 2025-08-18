@@ -52,12 +52,12 @@
 
 /**
 ******************************************************************************
-    ** \brief  定时器LPTIMx中断使能控制
-    ** @param  Lptimx    : LPTIM0 或LPTIM1
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief Timer LPTIMx interrupt enable control
+** @param Lptimx : LPTIM0 or LPTIM1
+** @param NewStatus: TRUE or FALSE
+** \retval None
+**
+**************************************************************************/
 void Lptim_ConfIt(M0P_LPTIMER_TypeDef* Lptimx, boolean_t NewStatus)
 {
     SetBit((uint32_t)(&(Lptimx->CR)), 10, NewStatus);
@@ -65,11 +65,11 @@ void Lptim_ConfIt(M0P_LPTIMER_TypeDef* Lptimx, boolean_t NewStatus)
 
 /**
 ******************************************************************************
-    ** \brief  定时器LPTIMx的启动/停止控制
-    ** @param  Lptimx    : LPTIM0 或LPTIM1
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
+** \brief Start/Stop Control for Timer LPTIMx
+** @param Lptimx: LPTIM0 or LPTIM1
+** @param NewStatus: TRUE or FALSE
+** \retval None
+**
 ******************************************************************************/
 void Lptim_Cmd(M0P_LPTIMER_TypeDef* Lptimx, boolean_t NewStatus)
 {
@@ -78,10 +78,10 @@ void Lptim_Cmd(M0P_LPTIMER_TypeDef* Lptimx, boolean_t NewStatus)
 
 /**
 ******************************************************************************
-    ** \brief  定时器LPTIMx的中断标志位获取
-    ** @param  Lptimx    : LPTIM0 或LPTIM1
-    ** \retval TRUE 或 FALSE
-    **
+** \brief Get the interrupt flag of the timer LPTIMx
+** @param Lptimx: LPTIM0 or LPTIM1
+** \retval TRUE or FALSE
+**
 ******************************************************************************/
 boolean_t Lptim_GetItStatus(M0P_LPTIMER_TypeDef* Lptimx)
 {
@@ -90,10 +90,10 @@ boolean_t Lptim_GetItStatus(M0P_LPTIMER_TypeDef* Lptimx)
 
 /**
 ******************************************************************************
-    ** \brief  定时器LPTIMx的中断标志位清除
-    ** @param  Lptimx    : LPTIM0 或LPTIM1
-    ** \retval 无
-    **
+** \brief Clear the interrupt flag of the timer LPTIMx
+** @param Lptimx: LPTIM0 or LPTIM1
+** \retval None
+**
 ******************************************************************************/
 void Lptim_ClrItStatus(M0P_LPTIMER_TypeDef* Lptimx)
 {
@@ -101,12 +101,12 @@ void Lptim_ClrItStatus(M0P_LPTIMER_TypeDef* Lptimx)
 }
 
 /**
-******************************************************************************
-    ** \brief  定时器LPTIMx的初始化配置
-    ** @param  Lptimx    : LPTIM0 或LPTIM1
-    ** @param  InitStruct : 初始化LPTIMx的结构体
-    ** \retval en_result_t类型数据
-    **
+**********************************************************************************
+** \brief Initialization and configuration of the timer LPTIMx
+** @param Lptimx: LPTIM0 or LPTIM1
+** @param InitStruct: Initialization structure for LPTIMx
+** \retval en_result_t type data 
+**
 ******************************************************************************/
 en_result_t Lptim_Init(M0P_LPTIMER_TypeDef* Lptimx, stc_lptim_cfg_t* InitStruct)
 {

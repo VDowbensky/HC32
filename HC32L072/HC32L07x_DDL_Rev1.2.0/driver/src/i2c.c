@@ -33,14 +33,14 @@
 /******************************************************************************/
 
 /**
- ******************************************************************************
- ** \brief  I2C设置波特率配置寄存器
- **
- ** \param [in] u8Tm 波特率配置值
- **
- ** \retval enRet 成功或失败
- **
- ******************************************************************************/
+********************************************************************************
+** \brief I2C baud rate configuration registers
+**
+** \param [in] u8Tm baud rate configuration value
+**
+** \retval enRet success or failure
+**
+************************************************************************/
  en_result_t I2C_SetBaud(M0P_I2C_TypeDef* I2Cx, uint8_t u8Tm)
  {
      en_result_t enRet = Error;
@@ -50,15 +50,16 @@
      enRet = Ok;
      return enRet;
  }
+ 
  /**
- ******************************************************************************
- ** \brief  I2C功能设置相关函数
- **
- ** \param [in] enFunc功能参数
- **
- ** \retval enRet 成功或失败
- **
- ******************************************************************************/
+************************************************************************************
+** \brief I2C function setting related functions
+**
+** \param [in] enFunc function parameters
+**
+** \retval enRet success or failure
+**
+****************************************************************************/
 en_result_t I2C_SetFunc(M0P_I2C_TypeDef* I2Cx, en_i2c_func_t enFunc)
 {
     en_result_t enRet = Error;
@@ -68,15 +69,16 @@ en_result_t I2C_SetFunc(M0P_I2C_TypeDef* I2Cx, en_i2c_func_t enFunc)
     enRet = Ok;
     return enRet;
 }
- /**
- ******************************************************************************
- ** \brief  I2C功能清除相关函数
- **
- ** \param [in] enFunc功能参数
- **
- ** \retval enRet 成功或失败
- **
- ******************************************************************************/
+
+/**
+********************************************************************************
+** \brief I2C function clear related functions
+**
+** \param [in] enFunc function parameters
+**
+** \retval enRet success or failure
+**
+****************************************************************************/
  en_result_t I2C_ClearFunc(M0P_I2C_TypeDef* I2Cx, en_i2c_func_t enFunc)
  {
     en_result_t enRet = Error;
@@ -86,15 +88,16 @@ en_result_t I2C_SetFunc(M0P_I2C_TypeDef* I2Cx, en_i2c_func_t enFunc)
     enRet = Ok;
     return enRet; 
  }
- /**
- ******************************************************************************
- ** \brief  I2C获取中断标记函数
- **
- ** \param 无
- **
- ** \retval bIrq中断标记
- **
- ******************************************************************************/
+ 
+/**
+****************************************************************************
+** \brief I2C get interrupt flag function
+**
+** \param None
+**
+** \retval bIrq interrupt flag
+**
+************************************************************************/
 boolean_t I2C_GetIrq(M0P_I2C_TypeDef* I2Cx)
 {    
     if(I2Cx->CR&0x8)
@@ -106,15 +109,16 @@ boolean_t I2C_GetIrq(M0P_I2C_TypeDef* I2Cx)
         return FALSE;
     } 
 }
+
 /**
- ******************************************************************************
- ** \brief  I2C清除中断标记函数
- **
- ** \param 无
- **
- ** \retval bIrq中断标记
- **
- ******************************************************************************/
+****************************************************************************************
+** \brief I2C clear interrupt flag function
+**
+** \param None
+**
+** \retval bIrq interrupt flag
+**
+********************************************************************/
 en_result_t I2C_ClearIrq(M0P_I2C_TypeDef* I2Cx)
 {
     en_result_t enRet = Error;
@@ -124,15 +128,16 @@ en_result_t I2C_ClearIrq(M0P_I2C_TypeDef* I2Cx)
     enRet = Ok;
     return enRet; 
 }
- /**
- ******************************************************************************
- ** \brief  I2C获取相关状态
- **
- ** \param 无
- **
- ** \retval I2C状态
- **
- ******************************************************************************/
+
+/**
+********************************************************************************
+** \brief I2C gets related status
+**
+** \param None
+**
+** \retval I2C status
+**
+****************************************************************************/
 uint8_t I2C_GetState(M0P_I2C_TypeDef* I2Cx)
 {
     uint8_t u8State = 0;
@@ -143,14 +148,14 @@ uint8_t I2C_GetState(M0P_I2C_TypeDef* I2Cx)
 }
 
 /**
- ******************************************************************************
- ** \brief  字节数据写函数
- **
- ** \param  u8Data写数据
- **
- ** \retval 写数据是否成功
- **
- ******************************************************************************/
+************************************************************************
+** \brief Byte data write function
+**
+** \param u8Data write data
+**
+** \retval whether the data write was successful
+**
+****************************************************************************/
 en_result_t I2C_WriteByte(M0P_I2C_TypeDef* I2Cx, uint8_t u8Data)
 {
     en_result_t enRet = Error;
@@ -160,15 +165,16 @@ en_result_t I2C_WriteByte(M0P_I2C_TypeDef* I2Cx, uint8_t u8Data)
     enRet = Ok;
     return enRet;
 }
+
 /**
- ******************************************************************************
- ** \brief  字节数据读函数
- **
- ** \param  无
- **
- ** \retval 读取数据
- **
- ******************************************************************************/
+************************************************************************************
+** \brief Byte data read function
+**
+** \param None
+**
+** \retval read data
+**
+******************************************************************************/
 uint8_t I2C_ReadByte(M0P_I2C_TypeDef* I2Cx)
 {
     uint8_t u8Data = 0;
@@ -179,14 +185,14 @@ uint8_t I2C_ReadByte(M0P_I2C_TypeDef* I2Cx)
 }
 
 /**
- ******************************************************************************
- ** \brief  I2C模块初始化
- **
- ** \param pstcI2CCfg初始化配置结构体
- **
- ** \retval 初始化是否成功
- **
- ******************************************************************************/
+******************************************************************************
+** \brief I2C module initialization
+**
+** \param pstcI2CCfg initialization configuration structure
+**
+** \retval initialization success
+**
+**************************************************************************/
 en_result_t I2C_Init(M0P_I2C_TypeDef* I2Cx, stc_i2c_cfg_t *pstcI2CCfg)
 {
    en_result_t enRet = Error;

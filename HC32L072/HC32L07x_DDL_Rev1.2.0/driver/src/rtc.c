@@ -50,13 +50,13 @@ const uint8_t Cnst_Month_Tbl[12]={0x31,0x28,0x31,0x30,0x31,0x30,0x31,0x31,0x30,0
  *****************************************************************************/
  
 /**
-******************************************************************************
-    ** \brief  RTC计数器的使能或停止
-    ** 
-    ** @param  NewState : TRUE 或 FALSE
-    ** \retval 无
-    **
-******************************************************************************/ 
+**************************************************************************
+** \brief Enable or stop the RTC counter
+**
+** @param NewState : TRUE or FALSE
+** \retval None
+**
+******************************************************************************/
 void Rtc_Cmd(boolean_t NewState)
 {
     SetBit((uint32_t)(&(M0P_RTC->CR0)), 7, NewState);
@@ -64,13 +64,13 @@ void Rtc_Cmd(boolean_t NewState)
 
 /**
 ******************************************************************************
-    ** \brief  RTC计数器启动等待函数，如启动RTC计数器后立即进入低功耗模式，
-    **         进入低功耗模式之前需执行此函数，以确保RTC已启动完成
-    ** 
-    ** @param  NewState : TRUE 或 FALSE
-    ** \retval 无
-    **
-******************************************************************************/ 
+** \brief RTC counter start wait function. If you enter low-power mode immediately after starting the RTC counter,
+** This function must be executed before entering low-power mode to ensure that the RTC has started.
+**
+** @param NewState : TRUE or FALSE
+** \retval None
+**
+**************************************************************************/
 void Rtc_StartWait(void)
 {
     M0P_RTC->CR1_f.WAIT = 1;
@@ -87,12 +87,12 @@ void Rtc_StartWait(void)
  
 /**
 ******************************************************************************
-    ** \brief  RTC的1Hz输出的使能或停止
-    ** @param  pricision : RtcHz1selGeneralPricision 或 RtcHz1selHighPricision
-    ** @param  NewState : Hz1o_Disable 或 HZ1o_Enable
-    ** \retval 无
-    **
-******************************************************************************/ 
+** \brief Enable or disable the RTC's 1Hz output
+** @param price: RtcHz1selGeneralPricision or RtcHz1selHighPricision
+** @param NewState: Hz1o_Disable or HZ1o_Enable
+** \retval None
+**
+**********************************************************************************/
 void Rtc_Hz1Cmd(en_rtc_hz1sel_t pricision, boolean_t NewState)
 {
     SetBit((uint32_t)(&(M0P_RTC->CR0)), 6, pricision);  //设置普通精度或者高精度1Hz输出
@@ -101,12 +101,12 @@ void Rtc_Hz1Cmd(en_rtc_hz1sel_t pricision, boolean_t NewState)
 
 /**
 ******************************************************************************
-    ** \brief  设置周期中断的类型(PRDSEL)及其所选类型的时间(PRDS或PRDX)
-    ** 
-  ** @param   pstCyc: 根据结构体的定义设置PRDSEL、PRDS与PRDX
-    ** \retval  Ok、Error 或 ErrorInvalidParameter
-    **
-******************************************************************************/ 
+** \brief Sets the periodic interrupt type (PRDSEL) and the selected interrupt time (PRDS or PRDX)
+**
+** @param pstCyc: Sets PRDSEL, PRDS, and PRDX according to the structure definition
+** \retval Ok, Error, or ErrorInvalidParameter
+**
+******************************************************************************/
 en_result_t Rtc_SetCyc(stc_rtc_cyccfg_t* pstCyc)
 {
     en_result_t enRet = Error;
@@ -133,28 +133,28 @@ en_result_t Rtc_SetCyc(stc_rtc_cyccfg_t* pstCyc)
 }    
 
 /**
-******************************************************************************
-    ** \brief  RTC闹钟中断的使能或停止
-    ** 
-    ** @param  NewState : TRUE 或 FALSE
-    ** \retval 无
-    **
-******************************************************************************/
+********************************************************************************
+** \brief Enable or disable the RTC alarm interrupt
+**
+** @param NewState : TRUE or FALSE
+** \retval None
+**
+**********************************************************************/
 void Rtc_AlmIeCmd(boolean_t NewState)
 {
-    SetBit((uint32_t)(&(M0P_RTC->CR1)), 3, 0);        //清除周期中断标志位
-    SetBit((uint32_t)(&(M0P_RTC->CR1)), 4, 0);        //清除周期中断标志位
+    SetBit((uint32_t)(&(M0P_RTC->CR1)), 3, 0);        // Clear the periodic interrupt flag
+    SetBit((uint32_t)(&(M0P_RTC->CR1)), 4, 0);        // Clear the periodic interrupt flag
     SetBit((uint32_t)(&(M0P_RTC->CR1)), 6, NewState);
 }
  
 /**
 ******************************************************************************
-    ** \brief  RTC闹钟的使能或停止
-    ** 
-    ** @param  NewState : Almen_Disable 或 Almen_Enable
-    ** \retval 无
-    **
-******************************************************************************/ 
+** \brief Enable or disable the RTC alarm.
+**
+** @param NewState: Almen_Disable or Almen_Enable
+** \retval None
+**
+**************************************************************************/
 void Rtc_AlmEnCmd(boolean_t NewState)
 {
     SetBit((uint32_t)(&(M0P_RTC->CR1)), 7, NewState);
@@ -162,25 +162,25 @@ void Rtc_AlmEnCmd(boolean_t NewState)
 
 /**
 ******************************************************************************
-    ** \brief  获取RTC闹钟中断状态位
-    ** 
-    ** @param  无
-    ** \retval TRUE 或 FALSE
-    **
-******************************************************************************/
+** \brief Get the RTC alarm interrupt status bit.
+**
+** @param None
+** \retval TRUE or FALSE
+**
+**********************************************************************************/
 boolean_t Rtc_GetAlmfItStatus(void)
 {
     return GetBit((uint32_t)(&(M0P_RTC->CR1)), 4);
 }
 
 /**
-******************************************************************************
-    ** \brief  清除RTC闹钟中断状态位
-    ** 
-    ** @param  无
-    ** \retval 无
-    **
-******************************************************************************/
+**************************************************************************
+** \brief Clears the RTC alarm interrupt status bit
+**
+** @param None
+** \retval None
+**
+**************************************************************************/
 void Rtc_ClearAlmfItStatus(void)
 {
     SetBit((uint32_t)(&(M0P_RTC->CR1)), 4, 0);
@@ -188,11 +188,11 @@ void Rtc_ClearAlmfItStatus(void)
 
 /**
 ******************************************************************************
-    ** \brief  清除RTC周期中断状态位
-    ** 
-    ** @param  无
-    ** \retval 无
-    **
+** \brief Clears the RTC periodic interrupt status bit
+**
+** @param None
+** \retval None
+**
 ******************************************************************************/
 void Rtc_ClearPrdfItStatus(void)
 {
@@ -201,25 +201,25 @@ void Rtc_ClearPrdfItStatus(void)
 
 /**
 ******************************************************************************
-    ** \brief  获取RTC周期中断状态位
-    ** 
-    ** @param  无
-    ** \retval TRUE 或 FALSE
-    **
-******************************************************************************/
+** \brief Get the RTC periodic interrupt status bit
+**
+** @param None
+** \retval TRUE or FALSE
+**
+**********************************************************************************/
 boolean_t Rtc_GetPridItStatus(void)
 {
     return GetBit((uint32_t)(&(M0P_RTC->CR1)), 3);
 }
 
 /**
-******************************************************************************
-    ** \brief  配置RTC的误差补偿寄存器
-    ** 
-    ** @param  CompValue:数值的范围为：32-256
-    ** @param  NewStatus: RtcCompenDisable 或 RtcAmCompenEnable
-    ** \retval Ok  ErrorInvalidParameter
-    **
+**********************************************************************************
+** \brief Configure the RTC error compensation register
+**
+** @param CompValue: The range of values is: 32-256 
+** @param NewStatus: RtcCompenDisable or RtcAmCompenEnable 
+** \retval Ok ErrorInvalidParameter 
+**
 ******************************************************************************/
 en_result_t Rtc_CompCfg(uint16_t CompVlue, en_rtc_compen_t NewStatus)
 {
@@ -236,17 +236,17 @@ en_result_t Rtc_CompCfg(uint16_t CompVlue, en_rtc_compen_t NewStatus)
     return enRet;
 }
 
-/**
- ******************************************************************************
- ** \brief  RTC根据日期计算周数
- **
- ** \param pu8buf时间数据
- ** \param u8limit_min最小值
- ** \param u8limit_max最大值
- **
- ** \retval Error 错误，Ok校验正确
- ** 
- ******************************************************************************/
+/** 
+****************************************************************************** 
+** \brief RTC calculates the week number based on the date.
+**
+** \param pu8buf time data
+** \param u8limit_min minimum value
+** \param u8limit_max maximum value
+**
+** \retval Error (Error), Ok (Check successful)
+**
+****************************************************************************/
 en_result_t Check_BCD_Format(uint8_t u8data,uint8_t u8limit_min, uint8_t u8limit_max)
 {
 
@@ -259,14 +259,14 @@ en_result_t Check_BCD_Format(uint8_t u8data,uint8_t u8limit_min, uint8_t u8limit
 }
 
 /**
- ******************************************************************************
- ** \brief  RTC 平、闰年检测
- **
-** \param  u8year:年十进制低两位:0-99
- **
- ** \retval  1:闰年  0：平年
- **
- ******************************************************************************/
+****************************************************************************************
+** \brief RTC Leap and Ordinary Year Detection
+**
+** \param u8year: Year (decimal, low digits: 0-99)
+**
+** \retval 1: Leap year 0: Ordinary year
+**
+************************************************************************/
 uint8_t Rtc_CheckLeapYear(uint8_t u8year)
 {
         uint16_t tmp;
@@ -282,14 +282,14 @@ uint8_t Rtc_CheckLeapYear(uint8_t u8year)
 }
 
 /**
- ******************************************************************************
- ** \brief  RTC根据年获取二月的天数
- **
- ** \param [in] u8month月份，u8year年份
- **
-** \retval u8day天数:28或29
- ** 
- ******************************************************************************/
+************************************************************************************
+** \brief RTC Get the number of days in February based on the year
+**
+** \param [in] u8month month, u8year year
+**
+** \retval u8day day: 28 or 29
+**
+**************************************************************************/
 uint8_t Get_Month2_Day( uint8_t u8year)
 {
     uint8_t u8day = 0;
@@ -303,14 +303,14 @@ uint8_t Get_Month2_Day( uint8_t u8year)
 }
 
 /**
- ******************************************************************************
- ** \brief  RTC获取时间函数
- **
- ** \param time: 用于存放读取自时间寄存器的时间数据，格式为BCD码格式
- **
- ** \retval Ok  获取正常
- ** \retval ErrorTimeout 时间溢出错误
- ******************************************************************************/
+******************************************************************************
+** \brief RTC time acquisition function
+**
+** \param time: Used to store the time data read from the time register, in BCD format
+**
+** \retval Ok Acquisition completed successfully
+** \retval ErrorTimeout Time overflow error 
+******************************************************************************/
 en_result_t Rtc_ReadDateTime(stc_rtc_time_t* time)
 {
     uint32_t u32TimeOut;
@@ -357,14 +357,14 @@ en_result_t Rtc_ReadDateTime(stc_rtc_time_t* time)
 }
 
 /**
- ******************************************************************************
- ** \brief  向RTC时间寄存器写入时间
- **
- ** \param time： 存放时间的结构体，各个时间均为BCD码格式
- **
- ** \retval ErrorTimeout 或 Ok
- ** 
- ******************************************************************************/
+**************************************************************************
+** \brief Write time to the RTC time register
+**
+** \param time: A structure storing time. Each time is in BCD format.
+**
+** \retval ErrorTimeout or Ok
+**
+**************************************************************************/
 en_result_t Rtc_SetTime(stc_rtc_time_t* time)
 {
     en_result_t enRet = Ok;
@@ -404,14 +404,14 @@ en_result_t Rtc_SetTime(stc_rtc_time_t* time)
 }
 
 /**
- ******************************************************************************
- ** \brief  RTC闹钟中断时间获取
- **
- ** \param pstcAlarmTime：存放闹钟时间寄存器数据：秒 分 时 周 
- **
- ** \retval 无
- ** 
- ******************************************************************************/
+**************************************************************************
+** \brief Get RTC alarm interrupt time
+**
+** \param pstcAlarmTime: Stores alarm time register data: seconds, minutes, hours, weeks
+**
+** \retval None
+**
+**************************************************************************/
 void Rtc_GetAlarmTime(stc_rtc_alarmtime_t* pstcAlarmTime)
 {
     pstcAlarmTime->RtcAlarmSec    = M0P_RTC->ALMSEC;
@@ -421,19 +421,19 @@ void Rtc_GetAlarmTime(stc_rtc_alarmtime_t* pstcAlarmTime)
 }
 
 /**
- ******************************************************************************
- ** \brief  RTC闹钟设置
- **
- ** \param [in] pstcAlarmTime闹钟时间：秒 分 时 周
- **
- ** \retval Ok  设置正常
- ** 
- ******************************************************************************/
+********************************************************************************
+** \brief RTC alarm setting
+**
+** \param [in] pstcAlarmTime alarm time: seconds, minutes, hours, weeks
+**
+** \retval Ok Setting completed
+**
+********************************************************************************/
 en_result_t Rtc_SetAlarmTime(stc_rtc_alarmtime_t* pstcAlarmTime)
 {
     en_result_t enRet = Ok;
 //    ASSERT(NULL != pstcAlarmTime);
-    Rtc_AlmEnCmd(FALSE);      //闹钟禁止以后再设置闹钟时间
+    Rtc_AlmEnCmd(FALSE);      // Set the alarm time after disabling the alarm
     enRet = Check_BCD_Format(pstcAlarmTime->RtcAlarmSec,0x00,0x59);
     if(M0P_RTC->CR0_f.AMPM == RtcAm)
     {
@@ -461,28 +461,30 @@ en_result_t Rtc_SetAlarmTime(stc_rtc_alarmtime_t* pstcAlarmTime)
     M0P_RTC->ALMMIN  = pstcAlarmTime->RtcAlarmMinute & 0x7f;
     M0P_RTC->ALMHOUR = pstcAlarmTime->RtcAlarmHour & 0x3f;
     M0P_RTC->ALMWEEK = pstcAlarmTime->RtcAlarmWeek;
-    Rtc_AlmEnCmd(TRUE);      //闹钟许可
+    Rtc_AlmEnCmd(TRUE);      //Alarm enable
     enRet = Ok;
     return enRet;
 }
 
 /**
 ******************************************************************************
-    ** \brief  初始化RTC
-    ** 
-    ** @param  Rtc_InitStruct 存放stc_rtc_initstruct_t类型的结构体
-    ** \retval 无
-    **
+** \brief Initializes the RTC
+**
+** @param Rtc_InitStruct stores the structure of type stc_rtc_initstruct_t
+** \retval None
+**
 ******************************************************************************/
 void Rtc_Init(stc_rtc_initstruct_t* Rtc_InitStruct)
 {
     Rtc_Cmd(FALSE);
-    M0P_RTC->CR0_f.AMPM = Rtc_InitStruct->rtcAmpm;        //实时时钟小时的时制
-    Rtc_SetCyc(&Rtc_InitStruct->rtcPrdsel);                //设置周期中断的类型(PRDSEL)及其所选类型的时间(PRDS或PRDX)
-    M0P_RTC->CR1_f.CKSEL = Rtc_InitStruct->rtcClksrc;      //实时时钟RTC的时钟源
-    Rtc_CompCfg(Rtc_InitStruct->rtcCompValue, Rtc_InitStruct->rtcCompen); //配置时钟误差补偿寄存器
-    Rtc_SetTime(&Rtc_InitStruct->rtcTime);                 //设置初始时钟
+    M0P_RTC->CR0_f.AMPM = Rtc_InitStruct->rtcAmpm;         //Real-time clock hour
+    Rtc_SetCyc(&Rtc_InitStruct->rtcPrdsel);                //Set the periodic interrupt type (PRDSEL) and the selected interrupt time (PRDS or PRDX)
+    M0P_RTC->CR1_f.CKSEL = Rtc_InitStruct->rtcClksrc;      //Real-time clock RTC clock source
+    Rtc_CompCfg(Rtc_InitStruct->rtcCompValue, Rtc_InitStruct->rtcCompen); //Configure the clock error compensation register
+    Rtc_SetTime(&Rtc_InitStruct->rtcTime);                 //Set the initial clock
 }
+
+
 
 
 

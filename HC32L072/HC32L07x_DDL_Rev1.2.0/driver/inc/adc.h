@@ -60,17 +60,17 @@ extern "C"
 
  /**
  ******************************************************************************
- ** \brief ADC转换模式
+ ** \brief ADC conversion mode
  *****************************************************************************/
 typedef enum en_adc_mode
 {
-    AdcSglMode  = 0u,           /*!< 单输入通道单次转换模式 */
-    AdcScanMode = 1u,           /*!< 多输入通道顺序/插队扫描转换模式*/   
+    AdcSglMode  = 0u,           /*!< Single-input channel single conversion mode */
+    AdcScanMode = 1u,           /*!< Multiple input channels sequential/queue scan conversion mode */  
 }en_adc_mode_t;
 
 /**
  ******************************************************************************
- ** \brief ADC时钟分频选择
+ ** \brief ADC clock divider selection
  *****************************************************************************/
 typedef enum en_adc_clk_sel
 {
@@ -82,177 +82,178 @@ typedef enum en_adc_clk_sel
 
 /**
  ******************************************************************************
- ** \brief ADC参考电压
+ ** \brief ADC reference voltage
  *****************************************************************************/
 typedef enum en_adc_ref_vol_sel
 {
-    AdcMskRefVolSelInBgr1p5 = 0u<<9,        /*!<内部参考电压1.5V(SPS<=200kHz)*/
-    AdcMskRefVolSelInBgr2p5 = 1u<<9,        /*!<内部参考电压2.5V(avdd>3V,SPS<=200kHz)*/
-    AdcMskRefVolSelExtern1  = 2u<<9,        /*!<外部输入(max avdd)   PB01*/
+    AdcMskRefVolSelInBgr1p5 = 0u<<9,        /*!<Internal reference voltage 1.5V (SPS <= 200kHz)*/
+    AdcMskRefVolSelInBgr2p5 = 1u<<9,        /*!<Internal reference voltage 2.5V (avdd > 3V, SPS <= 200kHz)*/
+    AdcMskRefVolSelExtern1  = 2u<<9,        /*!<External input (max avdd) PB01*/
     AdcMskRefVolSelAVDD     = 3u<<9,        /*!<AVDD*/
 }en_adc_ref_vol_sel_t;
 
 /**
  ******************************************************************************
- ** \brief ADC转换通道选择
+ ** \brief ADC conversion channel selection
  *****************************************************************************/
 typedef enum en_adc_samp_ch_sel
-{                                  /*!<CHMAP = 0*/      /*!<CHMAP = 1*/
-    AdcExInputCH0    =  0u,        /*!<使用PA00*/       /*!<使用PD08*/
-    AdcExInputCH1    =  1u,        /*!<使用PA01*/       /*!<使用PD09*/
-    AdcExInputCH2    =  2u,        /*!<使用PA02*/       /*!<使用PD10*/
-    AdcExInputCH3    =  3u,        /*!<使用PA03*/       /*!<使用PD11*/
-    AdcExInputCH4    =  4u,        /*!<使用PA04*/       /*!<使用PA04*/
-    AdcExInputCH5    =  5u,        /*!<使用PA05*/       /*!<使用PA05*/
-    AdcExInputCH6    =  6u,        /*!<使用PA06*/       /*!<使用PE08*/
-    AdcExInputCH7    =  7u,        /*!<使用PA07*/       /*!<使用PE09*/
-    AdcExInputCH8    =  8u,        /*!<使用PB00*/       /*!<使用PE10*/
-    AdcExInputCH9    =  9u,        /*!<使用PB01*/       /*!<使用PB01*/
-    AdcExInputCH10   =  10u,       /*!<使用PC00*/       /*!<使用PE11*/
-    AdcExInputCH11   =  11u,       /*!<使用PC01*/       /*!<使用PE12*/
-    AdcExInputCH12   =  12u,       /*!<使用PC02*/       /*!<使用PE13*/
-    AdcExInputCH13   =  13u,       /*!<使用PC03*/       /*!<使用PE14*/
-    AdcExInputCH14   =  14u,       /*!<使用PC04*/       /*!<使用PC04*/
-    AdcExInputCH15   =  15u,       /*!<使用PC05*/       /*!<使用PC05*/
-    AdcExInputCH16   =  16u,       /*!<使用PB02*/       /*!<使用PB02*/
-    AdcExInputCH17   =  17u,       /*!<使用PB10*/       /*!<使用PB10*/
-    AdcExInputCH18   =  18u,       /*!<使用PB11*/       /*!<使用PB11*/
-    AdcExInputCH19   =  19u,       /*!<使用PB12*/       /*!<使用PB12*/
-    AdcExInputCH20   =  20u,       /*!<使用PB13*/       /*!<使用PB13*/
-    AdcExInputCH21   =  21u,       /*!<使用PB14*/       /*!<使用PB14*/
-    AdcExInputCH22   =  22u,       /*!<使用PB15*/       /*!<使用PB15*/
-    AdcExInputCH23   =  23u,       /*!<使用PE15*/       /*!<使用PE15*/
-    AdcExInputCH24   =  24u,       /*!<使用PC07*/       /*!<使用PC07*/
+{                                  /*!<CHMAP = 0*/ /*!<CHMAP = 1*/
+    AdcExInputCH0    =  0u,        /*!<Use PA00*/ /*!<Use PD08*/
+    AdcExInputCH1    =  1u,        /*!<Use PA01*/ /*!<Use PD09*/
+    AdcExInputCH2    =  2u,        /*!<Use PA02*/ /*!<Use PD10*/
+    AdcExInputCH3    =  3u,        /*!<Use PA03*/ /*!<Use PD11*/
+    AdcExInputCH4    =  4u,        /*!<Use PA04*/ /*!<Use PA04*/
+    AdcExInputCH5    =  5u,        /*!<Use PA05*/ /*!<Use PA05*/
+    AdcExInputCH6    =  6u,        /*!<Use PA06*/ /*!<Use PE08*/
+    AdcExInputCH7    =  7u,        /*!<Use PA07*/ /*!<Use PE09*/
+    AdcExInputCH8    =  8u,        /*!<Use PB00*/ /*!<Use PE10*/
+    AdcExInputCH9    =  9u,        /*!<Use PB01*/ /*!<Use PB01*/
+    AdcExInputCH10   =  10u,       /*!<Use PC00*/ /*!<Use PE11*/
+    AdcExInputCH11   =  11u,       /*!<Use PC01*/ /*!<Use PE12*/
+    AdcExInputCH12   =  12u,       /*!<Use PC02*/ /*!<Use PE13*/
+    AdcExInputCH13   =  13u,       /*!<Use PC03*/ /*!<Use PE14*/
+    AdcExInputCH14   =  14u,       /*!<Use PC04*/ /*!<Use PC04*/
+    AdcExInputCH15   =  15u,       /*!<Use PC05*/ /*!<Use PC05*/
+    AdcExInputCH16   =  16u,       /*!<Use PB02*/ /*!<Use PB02*/
+    AdcExInputCH17   =  17u,       /*!<Use PB10*/ /*!<Use PB10*/
+    AdcExInputCH18   =  18u,       /*!<Use PB11*/ /*!<Use PB11*/
+    AdcExInputCH19   =  19u,       /*!<Use PB12*/ /*!<Use PB12*/
+    AdcExInputCH20   =  20u,       /*!<Use PB13*/ /*!<Use PB13*/
+    AdcExInputCH21   =  21u,       /*!<Use PB14*/ /*!<Use PB14*/
+    AdcExInputCH22   =  22u,       /*!<Use PB15*/ /*!<Use PB15*/
+    AdcExInputCH23   =  23u,       /*!<Use PE15*/ /*!<Use PE15*/
+    AdcExInputCH24   =  24u,       /*!<Use PC07*/ /*!<Use PC07*/
 
-    AdcDac0Input     =  25u,       /*!<使用DAC1输出(必须使用输入增益)*/
-    AdcDac1Input     =  26u,       /*!<使用DAC1输出(必须使用输入增益)*/                    
-    AdcAVccdiv3Input =  27u,       /*!<使用1/3 AVCC(必须使用输入增益)*/
-    AdcAiTsInput     =  28u,       /*!<使用内置温度传感器BGR_TS(必须使用输入增益)*/
-    AdcVref1_2Input  =  29u,       /*!<使用内部基准1.2V(必须使用输入增益)*/
+    AdcDac0Input     =  25u,       /*!<Use DAC1 output (must use input gain)*/
+    AdcDac1Input     =  26u,       /*!<Use DAC1 output (must use input gain)*/                   
+    AdcAVccdiv3Input =  27u,       /*!<Use 1/3 AVCC (must use input gain)*/
+    AdcAiTsInput     =  28u,       /*!<Use the built-in temperature sensor BGR_TS (must use input gain)*/
+    AdcVref1_2Input  =  29u,       /*!<Use the internal 1.2V reference (must use input gain)*/
 
 }en_adc_samp_ch_sel_t;
 
  /**
  ******************************************************************************
- ** \brief ADC输入信号放大器控制
+ ** \brief ADC Input Signal Amplifier Control
  *****************************************************************************/
 typedef enum en_adc_op_buf
 {
-    AdcMskBufEnable  = 1u<<11,          /*!< 打开放大器BUF */
-    AdcMskBufDisable = 0u,              /*!< 关闭放大器BUF */  
+    AdcMskBufEnable  = 1u<<11,          /*!< Enable amplifier BUF */
+    AdcMskBufDisable = 0u,              /*!< Disable amplifier BUF */ 
 } en_adc_op_buf_t;
 
 /**
  ******************************************************************************
- ** \brief ADC采样周期选择
+ ** \brief ADC Sampling Cycle Selection
  *****************************************************************************/
 typedef enum en_adc_samp_cycle_sel
 {
-    AdcMskSampCycle4Clk  =  0u<<12,        /*!<4个采样时钟*/
-    AdcMskSampCycle6Clk  =  1u<<12,        /*!<6个采样时钟*/
-    AdcMskSampCycle8Clk  =  2u<<12,        /*!<8个采样时钟*/
-    AdcMskSampCycle12Clk =  3u<<12,        /*!<12个采样时钟*/
+    AdcMskSampCycle4Clk  =  0u<<12,        /*!< 4 sampling clocks */
+    AdcMskSampCycle6Clk  =  1u<<12,        /*!<6 sampling clocks*/
+    AdcMskSampCycle8Clk  =  2u<<12,        /*!<8 sampling clocks*/
+    AdcMskSampCycle12Clk =  3u<<12,        /*!<12 sampling clocks*/
 
 }en_adc_samp_cycle_sel_t;
 
  /**
  ******************************************************************************
- ** \brief ADC内部参考电压使能控制
+ ** \brief ADC internal reference voltage enable control
  *****************************************************************************/
 typedef enum en_adc_in_ref
 {
-    AdcMskInRefEnable  = 1u<<14,          /*!< 内部参考电压使能 */
-    AdcMskInRefDisable = 0u,              /*!< 内部参考电压关闭 */  
+    AdcMskInRefEnable  = 1u<<14,          /*!< Internal reference voltage enabled */
+    AdcMskInRefDisable = 0u,              /*!< Internal reference voltage disabled */
+}en_adc_in_ref_t; 
 }en_adc_in_ref_t;
 
 /**
  ******************************************************************************
- ** \brief ADC周边模块反射源选择
+ ** \brief ADC peripheral module reflection source selection
  *****************************************************************************/
 typedef enum en_adc_trig_sel
 {
-    AdcMskTrigTimer0     =  1u<<0,         /*!<选择timer0中断源，自动触发ADC采样*/
-    AdcMskTrigTimer1     =  1u<<1,         /*!<选择timer1中断源，自动触发ADC采样*/
-    AdcMskTrigTimer2     =  1u<<2,         /*!<选择timer2中断源，自动触发ADC采样*/
-    AdcMskTrigTimer3     =  1u<<3,         /*!<选择timer3中断源，自动触发ADC采样*/
-    AdcMskTrigTimer4     =  1u<<4,         /*!<选择timer4中断源，自动触发ADC采样*/
-    AdcMskTrigTimer5     =  1u<<5,         /*!<选择timer5中断源，自动触发ADC采样*/
-    AdcMskTrigTimer6     =  1u<<6,         /*!<选择timer6中断源，自动触发ADC采样*/
-    AdcMskTrigUart0      =  1u<<7,         /*!<选择uart0中断源，自动触发ADC采样*/
-    AdcMskTrigUart1      =  1u<<8,         /*!<选择uart1中断源，自动触发ADC采样*/
-    AdcMskTrigLpuart0    =  1u<<9,         /*!<选择lpuart0中断源，自动触发ADC采样*/
-    AdcMskTrigLpuart1    =  1u<<10,        /*!<选择lpuart1中断源，自动触发ADC采样*/
-    AdcMskTrigVC0        =  1u<<11,        /*!<选择VC0中断源，自动触发ADC采样*/
-    AdcMskTrigVC1        =  1u<<12,        /*!<选择VC1中断源，自动触发ADC采样*/
-    AdcMskTrigRTC        =  1u<<13,        /*!<选择RTC中断源，自动触发ADC采样*/
-    AdcMskTrigPCA        =  1u<<14,        /*!<选择PCA中断源，自动触发ADC采样*/
-    AdcMskTrigSPI0       =  1u<<15,        /*!<选择SPI0中断源，自动触发ADC采样*/
-    AdcMskTrigSPI1       =  1u<<16,        /*!<选择SPI1中断源，自动触发ADC采样*/
-    AdcMskTrigDMA        =  1u<<17,        /*!<选择DMA中断源，自动触发ADC采样*/
-    AdcMskTrigPA03       =  1u<<18,        /*!<选择PA03中断源，自动触发ADC采样*/
-    AdcMskTrigPB03       =  1u<<19,        /*!<选择PB03中断源，自动触发ADC采样*/
-    AdcMskTrigPC03       =  1u<<20,        /*!<选择PC03中断源，自动触发ADC采样*/
-    AdcMskTrigPD03       =  1u<<21,        /*!<选择PD03中断源，自动触发ADC采样*/
-    AdcMskTrigPA07       =  1u<<22,        /*!<选择PA07中断源，自动触发ADC采样*/
-    AdcMskTrigPB07       =  1u<<23,        /*!<选择PB07中断源，自动触发ADC采样*/
-    AdcMskTrigPC07       =  1u<<24,        /*!<选择PC07中断源，自动触发ADC采样*/
-    AdcMskTrigPD07       =  1u<<25,        /*!<选择PD07中断源，自动触发ADC采样*/
-    AdcMskTrigPA11       =  1u<<26,        /*!<选择PA11中断源，自动触发ADC采样*/
-    AdcMskTrigPB11       =  1u<<27,        /*!<选择PB11中断源，自动触发ADC采样*/
-    AdcMskTrigPC11       =  1u<<28,        /*!<选择PC11中断源，自动触发ADC采样*/
-    AdcMskTrigPA15       =  1u<<29,        /*!<选择PA15中断源，自动触发ADC采样*/
-    AdcMskTrigPB15       =  1u<<30,        /*!<选择PB15中断源，自动触发ADC采样*/
-    AdcMskTrigPC15       =  1u<<31,        /*!<选择PC15中断源，自动触发ADC采样*/
+    AdcMskTrigTimer0 = 1u<<0, /*!<Select timer0 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer1 = 1u<<1, /*!<Select timer1 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer2 = 1u<<2, /*!<Select timer2 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer3 = 1u<<3, /*!<Select timer3 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer4 = 1u<<4, /*!<Select Timer4 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer5 = 1u<<5, /*!<Select Timer5 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigTimer6 = 1u<<6, /*!<Select Timer6 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigUart0 = 1u<<7, /*!<Select Uart0 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigUart1 = 1u<<8, /*!<Select Uart1 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigLpuart0 = 1u<<9, /*!<Select Lpuart0 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigLpuart1 = 1u<<10, /*!<Select Lpuart1 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigVC0 = 1u<<11, /*!<Select VC0 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigVC1 = 1u<<12, /*!<Select VC1 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigRTC = 1u<<13, /*!<Select RTC interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPCA = 1u<<14, /*!<Select PCA interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigSPI0 = 1u<<15, /*!<Select SPI0 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigSPI1 = 1u<<16, /*!<Select SPI1 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigDMA = 1u<<17, /*!<Select DMA interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPA03 = 1u<<18, /*!<Select PA03 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPB03 = 1u<<19, /*!<Select PB03 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPC03 = 1u<<20, /*!<Select PC03 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPD03 = 1u<<21, /*!<Select PD03 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPA07 = 1u<<22, /*!<Select PA07 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPB07 = 1u<<23, /*!<Select PB07 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPC07 = 1u<<24, /*!<Select PC07 interrupt source, automatically trigger ADC sampling*/
+    AdcMskTrigPD07 = 1u<<25, /*!<Select the PD07 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPA11 = 1u<<26, /*!<Select the PA11 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPB11 = 1u<<27, /*!<Select the PB11 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPC11 = 1u<<28, /*!<Select the PC11 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPA15 = 1u<<29, /*!<Select the PA15 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPB15 = 1u<<30, /*!<Select the PB15 interrupt source and automatically trigger ADC sampling*/
+    AdcMskTrigPC15 = 1u<<31, /*!<Select PC15 interrupt source to automatically trigger ADC sampling*/
 }en_adc_trig_sel_t;
 
 /**
  ******************************************************************************
- ** \brief ADC外部触发源寄存器选择
+ ** \brief ADC external trigger source register selection
  *****************************************************************************/
 typedef enum en_adc_ext_trig_sel
 {
-    AdcExtTrig0     =  0u,         /*!<单次及顺序扫描转换 外部触发源选择寄存器*/
-    AdcExtTrig1     =  1u,         /*!<插队扫描转换 外部触发源选择寄存器*/
+    AdcExtTrig0     =  0u,         /*!<Single and sequential scan conversion external trigger source selection register*/
+    AdcExtTrig1     =  1u,         /*!<Queued scan conversion external trigger source selection register*/
 }en_adc_ext_trig_sel_t;
 
 /**
  ******************************************************************************
- ** \brief ADC顺序转换通道
+ ** \brief ADC Sequential Conversion Channel
  *****************************************************************************/
 typedef enum en_adc_sqr_chmux
 {
-    AdcSQRCH0MUX     =  0u,         /*!<顺序扫描模式转换通道0*/
-    AdcSQRCH1MUX     =  1u,         /*!<顺序扫描模式转换通道1*/
-    AdcSQRCH2MUX     =  2u,         /*!<顺序扫描模式转换通道2*/
-    AdcSQRCH3MUX     =  3u,         /*!<顺序扫描模式转换通道3*/
-    AdcSQRCH4MUX     =  4u,         /*!<顺序扫描模式转换通道4*/
-    AdcSQRCH5MUX     =  5u,         /*!<顺序扫描模式转换通道5*/
-    AdcSQRCH6MUX     =  6u,         /*!<顺序扫描模式转换通道6*/
-    AdcSQRCH7MUX     =  7u,         /*!<顺序扫描模式转换通道7*/
-    AdcSQRCH8MUX     =  8u,         /*!<顺序扫描模式转换通道8*/
-    AdcSQRCH9MUX     =  9u,         /*!<顺序扫描模式转换通道9*/
-    AdcSQRCH10MUX    =  10u,        /*!<顺序扫描模式转换通道10*/
-    AdcSQRCH11MUX    =  11u,        /*!<顺序扫描模式转换通道11*/
-    AdcSQRCH12MUX    =  12u,        /*!<顺序扫描模式转换通道12*/
-    AdcSQRCH13MUX    =  13u,        /*!<顺序扫描模式转换通道13*/
-    AdcSQRCH14MUX    =  14u,        /*!<顺序扫描模式转换通道14*/
-    AdcSQRCH15MUX    =  15u,        /*!<顺序扫描模式转换通道15*/
+    AdcSQRCH0MUX = 0u, /*!< Sequential scan mode conversion channel 0*/
+    AdcSQRCH1MUX = 1u, /*!< Sequential scan mode conversion channel 1*/
+    AdcSQRCH2MUX = 2u, /*!< Sequential scan mode conversion channel 2*/
+    AdcSQRCH3MUX = 3u, /*!< Sequential scan mode conversion channel 3*/
+    AdcSQRCH4MUX = 4u, /*!< Sequential scan mode conversion channel 4*/
+    AdcSQRCH5MUX = 5u, /*!< Sequential scan mode conversion channel 5*/
+    AdcSQRCH6MUX = 6u, /*!< Sequential scan mode conversion channel 6*/
+    AdcSQRCH7MUX = 7u, /*!< Sequential scan mode conversion channel 7*/
+    AdcSQRCH8MUX = 8u, /*!< Sequential scan mode conversion channel 8*/
+    AdcSQRCH9MUX = 9u, /*!< Sequential scan mode conversion channel 9*/
+    AdcSQRCH10MUX = 10u, /*!< Sequential scan mode conversion channel 10*/
+    AdcSQRCH11MUX = 11u, /*!< Sequential scan mode conversion channel 11*/
+    AdcSQRCH12MUX = 12u, /*!< Sequential scan mode conversion channel 12*/
+    AdcSQRCH13MUX = 13u, /*!< Sequential scan mode conversion channel 13*/
+    AdcSQRCH14MUX = 14u, /*!< Sequential scan mode conversion channel 14*/
+    AdcSQRCH15MUX = 15u, /*!<Convert channel 15 in sequential scan mode*/
 }en_adc_sqr_chmux_t;
 
 /**
  ******************************************************************************
- ** \brief ADC插队转换通道
+ ** \brief ADC queued conversion channel
  *****************************************************************************/
 typedef enum en_adc_jqr_chmux
 {
-    AdcJQRCH0MUX     =  0u,         /*!<转换通道0*/
-    AdcJQRCH1MUX     =  1u,         /*!<转换通道1*/
-    AdcJQRCH2MUX     =  2u,         /*!<转换通道2*/
-    AdcJQRCH3MUX     =  3u,         /*!<转换通道3*/
+    AdcJQRCH0MUX = 0u, /*!<Convert channel 0*/
+    AdcJQRCH1MUX = 1u, /*!<Convert channel 1*/
+    AdcJQRCH2MUX = 2u, /*!<Convert channel 2*/
+    AdcJQRCH3MUX = 3u, /*!<Convert channel 3*/
 }en_adc_jqr_chmux_t;
 /**
  ******************************************************************************
- ** \brief ADC结果对齐方式
+ ** \brief ADC result alignment
  *****************************************************************************/
 typedef enum en_adc_align
 {
@@ -262,7 +263,7 @@ typedef enum en_adc_align
 
 /**
  ******************************************************************************
- ** \brief ADC转换结果自动累加功能
+ ** \brief ADC conversion result automatic accumulation function
  *****************************************************************************/
 typedef enum en_adc_result_acc
 {
@@ -272,27 +273,27 @@ typedef enum en_adc_result_acc
 
 /**
  ******************************************************************************
- ** \brief ADC中断类型定义
+ ** \brief ADC Interrupt Type Definition
  *****************************************************************************/
 typedef enum en_adc_irq_type
 {
-    AdcMskIrqJqr =  1u<<5,        /*!<ADC插队扫描转换完成*/
-    AdcMskIrqSqr =  1u<<4,        /*!<ADC顺序扫描转换完成*/
-    AdcMskIrqReg =  1u<<3,        /*!<ADC转换结果比较区间内*/
-    AdcMskIrqHt  =  1u<<2,        /*!<ADC转换结果高于HT*/
-    AdcMskIrqLt  =  1u<<1,        /*!<ADC转换结果低于LT*/
-    AdcMskIrqSgl =  1u<<0,        /*!<ADC单次转换完成*/
+    AdcMskIrqJqr = 1u<<5, /*!<ADC queued scan conversion completed*/
+    AdcMskIrqSqr = 1u<<4, /*!<ADC sequential scan conversion completed*/
+    AdcMskIrqReg = 1u<<3, /*!<ADC conversion result within comparison range*/
+    AdcMskIrqHt = 1u<<2, /*!<ADC conversion result above HT*/
+    AdcMskIrqLt = 1u<<1, /*!<ADC conversion result below LT*/
+    AdcMskIrqSgl = 1u<<0, /*!<ADC single conversion completed*/
 
 }en_adc_irq_type_t;
 
 /**
  ******************************************************************************
- ** \brief OPA到ADC输入映射
+ ** \brief OPA to ADC input mapping
  *****************************************************************************/
 typedef enum en_adc_channel_remap_type
 {
-    AdcMskMuxMap =  0u,        /*!<ADC使用SGLMUX选择的端口通道*/
-    AdcMskOpaMap =  1u,        /*!<ADC部分通道映射到OPA输出*/
+    AdcMskMuxMap = 0u, /*!<ADC port channel selected using SGLMUX*/
+    AdcMskOpaMap = 1u, /*!<ADC partial channel mapped to OPA output*/
 }en_adc_channel_remap_type_t;
 
 /******************************************************************************
@@ -301,59 +302,54 @@ typedef enum en_adc_channel_remap_type
 
 /**
  ******************************************************************************
- ** \brief  ADC初始化配置结构体
+ ** \brief  ADC initialization configuration structure
  *****************************************************************************/
 typedef struct stc_adc_cfg
 {
-    en_adc_mode_t           enAdcMode;                  /*! ADC转换模式*/
-    
-    en_adc_clk_div_t        enAdcClkDiv;                /*! ADC时钟选择*/
-    en_adc_samp_cycle_sel_t enAdcSampCycleSel;          /*! ADC采样周期选择*/
-    en_adc_ref_vol_sel_t    enAdcRefVolSel;             /*! ADC参考电压选择*/
-    en_adc_op_buf_t         enAdcOpBuf;                 /*! ADC输入信号放大器控制使能*/
-    en_adc_in_ref_t         enInRef;                    /*! ADC内部参考电压使能*/
-    
-    en_adc_align_t          enAdcAlign;                 /*! ADC转换结果对齐控制*/
+    en_adc_mode_t enAdcMode; /*! ADC conversion mode*/
+    en_adc_clk_div_t enAdcClkDiv; /*! ADC clock selection*/
+    en_adc_samp_cycle_sel_t enAdcSampCycleSel; /*! ADC sampling cycle selection*/
+    en_adc_ref_vol_sel_t enAdcRefVolSel; /*! ADC reference voltage selection*/
+    en_adc_op_buf_t enAdcOpBuf; /*! ADC input signal amplifier control enable*/
+    en_adc_in_ref_t enInRef; /*! ADC internal reference voltage enable*/
+    en_adc_align_t enAdcAlign; /*! ADC conversion result alignment control*/
 }stc_adc_cfg_t;
 
 
 /**
  ******************************************************************************
- ** \brief  ADC顺序扫描模式配置结构体
+ ** \brief  ADC sequential scan mode configuration structure
  *****************************************************************************/
 typedef struct stc_adc_sqr_cfg
 {
-    uint8_t                 u8SqrCnt;                   /*! ADC顺序扫描转换次数*/
-    en_adc_result_acc_t     enResultAcc;                /*! ADC转换结果自动累加功能*/
-    boolean_t               bSqrDmaTrig;                /*! ADC顺序扫描转换完成DMA触发使能*/
+    uint8_t                 u8SqrCnt;                   /*! ADC sequential scan conversion count*/
+    en_adc_result_acc_t     enResultAcc;                /*! ADC conversion result automatic accumulation function*/
+    boolean_t               bSqrDmaTrig;                /*! ADC sequential scan conversion completion DMA trigger enable*/
 }stc_adc_sqr_cfg_t;
 
 /**
  ******************************************************************************
- ** \brief  ADC插队扫描模式配置结构体
+ ** \brief  ADC queue-jumping scan mode configuration structure
  *****************************************************************************/
 typedef struct stc_adc_jqr_cfg
 {
-    uint8_t                 u8JqrCnt;                   /*! ADC顺序扫描转换次数*/
-    boolean_t               bJqrDmaTrig;                /*! ADC插队扫描转换完成DMA触发使能*/    
+    uint8_t                 u8JqrCnt;                   /*! ADC sequential scan conversion count*/
+    boolean_t               bJqrDmaTrig;                /*! ADC queued scan conversion completion DMA trigger enable*/   
 }stc_adc_jqr_cfg_t;
 
 
 /**
  ******************************************************************************
- ** \brief  ADC比较功能配置结构体
+ ** \brief  ADC comparison function configuration structure
  *****************************************************************************/
 typedef struct stc_adc_threshold_cfg
 {
-    boolean_t bAdcRegCmp ;                  /*!ADC区间使能*/ 
-    boolean_t bAdcHtCmp ;                   /*!ADC上超出区间使能*/ 
-    boolean_t bAdcLtCmp ;                   /*!ADC下超出区间使能*/
-    
-    uint32_t u32AdcHighThd;                 /*!ADC比较上阈值*/
-    uint32_t u32AdcLowThd;                  /*!ADC比较下阈值*/ 
-    
-    en_adc_samp_ch_sel_t    enSampChSel;    /*!ADC采样通道选择*/
-    
+    boolean_t bAdcRegCmp; /*!ADC range enable*/
+    boolean_t bAdcHtCmp; /*!ADC upper range out of range enable*/
+    boolean_t bAdcLtCmp; /*!ADC lower range out of range enable*/
+    uint32_t u32AdcHighThd; /*!ADC comparison upper threshold*/
+    uint32_t u32AdcLowThd; /*!ADC comparison lower threshold*/
+    en_adc_samp_ch_sel_t enSampChSel; /*!ADC sampling channel selection*/
 }stc_adc_threshold_cfg_t;
 
 
@@ -364,79 +360,79 @@ typedef struct stc_adc_threshold_cfg
 /******************************************************************************
  * Global function prototypes (definition in C source)
  ******************************************************************************/
-//ADC 初始化
+//ADC initialization
 en_result_t Adc_Init(stc_adc_cfg_t* pstcAdcCfg);
 
-//ADC 中断使能
+//ADC interrupt enable
 void Adc_EnableIrq(void);
-//ADC 中断禁止
+//ADC interrupt disable
 void Adc_DisableIrq(void);
 
-//ADC 中断/采样完成状态获取
+//ADC interrupt/sampling completion status acquisition
 boolean_t Adc_GetIrqStatus(en_adc_irq_type_t enAdcIrq);
-//ADC 中断/采样完成状态清除
+//ADC interrupt/sampling completion status clear
 void Adc_ClrIrqStatus(en_adc_irq_type_t enAdcIrq);
 
-//ADC 使能
+//ADC enable
 void Adc_Enable(void);
-//ADC 禁止
+//ADC disable
 void Adc_Disable(void);
 
-//ADC 顺序扫描模式配置
+//ADC sequential scan mode configuration
 en_result_t Adc_SqrModeCfg(stc_adc_sqr_cfg_t* pstcAdcSqrCfg);
-//ADC 插队扫描模式配置
+//ADC queue-jump scan mode configuration
 en_result_t Adc_JqrModeCfg(stc_adc_jqr_cfg_t* pstcAdcJqrCfg);
 
-//ADC Sgl 单次转换模式通道选择配置 
+//ADC Sgl single-shot conversion mode channel selection configuration
 en_result_t Adc_CfgSglChannel( en_adc_samp_ch_sel_t enstcAdcSampCh);
-//ADC SQR 顺序扫描转换模式通道选择配置 
+//ADC SQR sequential scan conversion mode channel selection configuration
 en_result_t Adc_CfgSqrChannel(en_adc_sqr_chmux_t enstcAdcSqrChMux, en_adc_samp_ch_sel_t enstcAdcSampCh);
-//ADC JQR 插队扫描转换模式通道选择配置 
+//ADC JQR queue scan conversion mode channel selection configuration
 en_result_t Adc_CfgJqrChannel(en_adc_jqr_chmux_t enstcAdcJqrChMux, en_adc_samp_ch_sel_t enstcAdcSampCh);
 
-///<ADC 单次转换外部触发源配置
+///<ADC single conversion external trigger source configuration
 void Adc_SglExtTrigCfg(en_adc_trig_sel_t enAdcTrigSel, boolean_t bValue);
-///<ADC 顺序扫描转换外部触发源配置
+///<ADC sequential scan conversion external trigger source configuration
 void Adc_SqrExtTrigCfg(en_adc_trig_sel_t enAdcTrigSel, boolean_t bValue);
-///<ADC 插队扫描转换外部触发源配置
+///ADC queue-interrupted scan conversion external trigger source configuration
 void Adc_JqrExtTrigCfg(en_adc_trig_sel_t enAdcTrigSel, boolean_t bValue);
 
-//ADC 阈值比较功能配置
+//ADC threshold comparison function configuration
 void Adc_ThresholdCfg(stc_adc_threshold_cfg_t* pstcAdcThrCfg);
 
-//ADC 单次转换模式启动
+//ADC single conversion mode start
 void Adc_SGL_Start(void);
-//ADC 单次转换模式停止
+//ADC single conversion mode stop
 void Adc_SGL_Stop(void);
 
-//ADC 单次转换模式一直转换模式启动
+//ADC single conversion mode always conversion mode start
 void Adc_SGL_Always_Start(void);
-//ADC 单次转换模式一直转换模式停止
+//ADC Single-shot conversion mode, always-on conversion mode, stop
 void Adc_SGL_Always_Stop(void);
 
-//ADC 顺序扫描转换模式启动
+//ADC sequential scan conversion mode starts
 void Adc_SQR_Start(void);
-//ADC 顺序扫描转换模式停止
+//ADC sequential scan conversion mode stops
 void Adc_SQR_Stop(void);
 
-//ADC 插队扫描转换模式启动
+//ADC jump-in scan conversion mode starts
 void Adc_JQR_Start(void);
-//ADC 插队扫描转换模式停止
+//ADC jump-in scan conversion mode stops
 void Adc_JQR_Stop(void);
 
-//获取单次转换采样值
+//Get single-shot conversion sample value
 uint32_t Adc_GetSglResult(void);
-//获取顺序扫描采样值
+//Get sequential scan sample value
 uint32_t Adc_GetSqrResult(en_adc_sqr_chmux_t enstcAdcSqrChMux);
-//获取插队扫描采样值
+//Get jump-in scan sample value
 uint32_t Adc_GetJqrResult(en_adc_jqr_chmux_t enstcAdcJqrChMux);
 
-//获取累加采样值
+//Get the accumulated sample value
 uint32_t Adc_GetAccResult(void);
-//clear ADC 累加寄存器结果清除
+//Clear ADC accumulation register result
 void Adc_ClrAccResult(void);
 
-///< ADC 通道重映射
+///< ADC channel remapping
 void Adc_ChannelRemap(en_adc_channel_remap_type_t enChMap);
 
 //@}
@@ -445,6 +441,7 @@ void Adc_ChannelRemap(en_adc_channel_remap_type_t enChMap);
 #endif
 
 #endif /* __ADC_H__ */
+/******************************************************************************/
 /******************************************************************************/
 /* EOF (not truncated)                                                        */
 /******************************************************************************/

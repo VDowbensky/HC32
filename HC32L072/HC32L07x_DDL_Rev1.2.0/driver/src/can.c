@@ -115,17 +115,17 @@
 /*******************************************************************************
  * Function implementation - global ('extern') and local ('static')
  ******************************************************************************/
-/**
- *******************************************************************************
- ** \brief  CAN 初始化
- **
- ** \param  [in] pstcCanInitCfg      @ref stc_can_init_config_t.
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN initialization 
+** 
+** \param [in] pstcCanInitCfg @ref stc_can_init_config_t. 
+** 
+** \retval None 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_Init(stc_can_init_config_t *pstcCanInitCfg)
 {
     ASSERT(NULL != pstcCanInitCfg);
@@ -151,35 +151,35 @@ void CAN_Init(stc_can_init_config_t *pstcCanInitCfg)
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 去初始化 (RESET CAN register)
- **
- ** \param  None
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************
+** \brief CAN deinitialization (RESET CAN register)
+**
+** \param None
+**
+** \retval None
+**
+** \note None
+**
+****************************************************************************/
 void CAN_DeInit(void)
 {
     CAN_RESET_ENABLE();
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 模式配置
- **
- ** \param  [in] enMode                 模式. @ref en_can_mode_t     
- ** \param  [in] enCanSAck              自应答 @ref en_can_self_ack_en_t
- ** \param  [in] enNewState 
- ** \arg    Enable                      使能.
- ** \arg    Disable                     禁止.
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************************
+** \brief CAN mode configuration
+**
+** \param [in] enMode mode. @ref en_can_mode_t
+** \param [in] enCanSAck self-acknowledgement @ref en_can_self_ack_en_t
+** \param [in] enNewState
+** \arg Enable enable.
+** \arg Disable disable.
+** \retval None 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_ModeConfig(en_can_mode_t enMode, en_can_self_ack_en_t enCanSAck, boolean_t enNewState)
 {
     ASSERT(IS_CAN_MODE_VALID(enMode));
@@ -204,21 +204,21 @@ void CAN_ModeConfig(en_can_mode_t enMode, en_can_self_ack_en_t enCanSAck, boolea
 }
 
 
-/**
- *******************************************************************************
- ** \brief  CAN 筛选器配置
- **
- ** \param  [in] pstcFilter             @ref stc_can_filter_t.
- **
- ** \param  [in] enNewState             
- ** \arg    Enable                      使能.
- ** \arg    Disable                     禁止.
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN filter configuration 
+** 
+** \param [in] pstcFilter @ref stc_can_filter_t. 
+** 
+** \param [in] enNewState 
+** \arg Enable enable. 
+** \arg Disable disable. 
+** 
+** \retval None 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_FilterConfig(stc_can_filter_t *pstcFilter, boolean_t enNewState)
 {
     ASSERT(NULL != pstcFilter);
@@ -253,17 +253,16 @@ void CAN_FilterConfig(stc_can_filter_t *pstcFilter, boolean_t enNewState)
 }
 
 
-/**
- *******************************************************************************
- ** \brief  CAN 发送数据帧设置
- **
- ** \param  [in] pstcTxFrame            @ref stc_can_txframe_t.
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN send data frame settings 
+** 
+** \param [in] pstcTxFrame @ref stc_can_txframe_t. 
+** 
+** \retval None 
+** 
+** \note None 
+** ******************************************************************************/
 void CAN_SetFrame(stc_can_txframe_t *pstcTxFrame)
 {
     ASSERT(NULL != pstcTxFrame);
@@ -282,15 +281,14 @@ void CAN_SetFrame(stc_can_txframe_t *pstcTxFrame)
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 数据帧发送命令
- **
- ** \param  [in] enTxCmd            @ref en_can_tx_cmd_t.
- **
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************
+** \brief CAN data frame send command
+**
+** \param [in] enTxCmd @ref en_can_tx_cmd_t.
+**
+** \note None
+**
+************************************************************************/
 void CAN_TransmitCmd(en_can_tx_cmd_t enTxCmd)
 {
     ASSERT(IS_TX_CMD_VALID(enTxCmd));
@@ -300,29 +298,29 @@ void CAN_TransmitCmd(en_can_tx_cmd_t enTxCmd)
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 发送数据缓冲器状态获取
- **
- ** \retval Can Tx buffer status    @ref en_can_tx_buf_status_t
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************************
+** \brief CAN transmit data buffer status acquisition
+**
+** \retval Can Tx buffer status @ref en_can_tx_buf_status_t 
+** 
+** \note None 
+** 
+******************************************************************************/
 en_can_tx_buf_status_t CAN_TxBufStatusGet(void)
 {
     return (en_can_tx_buf_status_t)M0P_CAN->TCTRL_f.TSSTAT;
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 数据帧接收
- **
- ** \param  [in] pstcRxFrame        @ref stc_can_rxframe_t.
- **                                 
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN data frame reception 
+** 
+** \param [in] pstcRxFrame @ref stc_can_rxframe_t. 
+** 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_Receive(stc_can_rxframe_t *pstcRxFrame)
 {
     ASSERT(NULL != pstcRxFrame);
@@ -337,31 +335,31 @@ void CAN_Receive(stc_can_rxframe_t *pstcRxFrame)
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 接收数据缓冲器状态获取
- **
- **                                 
- ** \retval Can rx buffer status    @ref en_can_rx_buf_status_t
- **
- ** \note   None
- **
- ******************************************************************************/
+********************************************************************************
+** \brief CAN receive data buffer status
+**
+**
+** \retval Can rx buffer status @ref en_can_rx_buf_status_t
+**
+** \note None
+** 
+******************************************************************************/
 en_can_rx_buf_status_t CAN_RxBufStatusGet(stc_can_rxframe_t *pstcRxFrame)
 {
     return (en_can_rx_buf_status_t)M0P_CAN->RCTRL_f.RSSTAT;
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 错误状态获取
- **
- ** \param  None
- **
- ** \retval en_can_error_t          错误状态
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN error status acquisition 
+** 
+** \param None 
+** 
+** \retval en_can_error_t error status 
+** 
+** \note None 
+** 
+******************************************************************************/
 en_can_error_t CAN_ErrorStatusGet(void)
 {
     if(6 > M0P_CAN->EALCAP_f.KOER)
@@ -374,18 +372,18 @@ en_can_error_t CAN_ErrorStatusGet(void)
 
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 通信状态获取
- **
- ** \param  enCanStatus             CAN 通信状态
- ** \arg    true
- ** \arg    false
- ** \retval boolean_t
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN communication status acquisition 
+** 
+** \param enCanStatus CAN communication status 
+** \arg true 
+** \arg false 
+** \retval boolean_t 
+** 
+** \note None 
+** 
+******************************************************************************/
 boolean_t CAN_StatusGet(en_can_status_t enCanStatus)
 {
     ASSERT(IS_CAN_STATUS_VALID(enCanStatus));
@@ -399,20 +397,20 @@ boolean_t CAN_StatusGet(en_can_status_t enCanStatus)
     }
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 中断使能
- **
- ** \param  [in] enCanIrqType           @ref en_can_irq_type_t.
- ** \param  [in] enNewState             
- ** \arg    Enable                      使能.
- ** \arg    Disable                     禁止.
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN interrupt enable 
+** 
+** \param [in] enCanIrqType @ref en_can_irq_type_t. 
+** \param [in] enNewState 
+** \arg Enable enable. 
+** \arg Disable disable. 
+** 
+** \retval None 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_IrqCmd(en_can_irq_type_t enCanIrqType, boolean_t enNewState)
 {
     volatile uint32_t *u32pIE;
@@ -432,17 +430,17 @@ void CAN_IrqCmd(en_can_irq_type_t enCanIrqType, boolean_t enNewState)
 
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 中断标志获取
- **
- ** \param  [in] enCanIrqFlgType            @ref en_can_irq_flag_type_t.
- **
- ** \retval boolean_t TRUE or FALSE
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN interrupt flag acquisition 
+** 
+** \param [in] enCanIrqFlgType @ref en_can_irq_flag_type_t. 
+** 
+** \retval boolean_t TRUE or FALSE 
+** 
+** \note None 
+** 
+******************************************************************************/
 boolean_t CAN_IrqFlgGet(en_can_irq_flag_type_t enCanIrqFlgType)
 {
     volatile uint32_t *u32pIE = NULL;
@@ -461,17 +459,17 @@ boolean_t CAN_IrqFlgGet(en_can_irq_flag_type_t enCanIrqFlgType)
 
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 中断标志清除
- **
- ** \param  [in] enCanIrqFlgType           @ref en_can_irq_flag_type_t.
- **
- ** \retval None
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN interrupt flag clear 
+** 
+** \param [in] enCanIrqFlgType @ref en_can_irq_flag_type_t. 
+** 
+** \retval None 
+** 
+** \note None 
+** 
+******************************************************************************/
 void CAN_IrqFlgClr(en_can_irq_flag_type_t enCanIrqFlgType)
 {
     volatile uint32_t *u32pIE = NULL;
@@ -488,48 +486,48 @@ void CAN_IrqFlgClr(en_can_irq_flag_type_t enCanIrqFlgType)
 
 
 /**
- *******************************************************************************
- ** \brief  CAN 接收错误计数值获取
- **
- ** \param  None
- **
- ** \retval Error Counter(0~255)
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************
+** \brief CAN receive error counter value
+**
+** \param None
+**
+** \retval Error Counter (0-255)
+**
+** \note None
+**
+********************************************************************/
 uint8_t CAN_RxErrorCntGet(void)
 {
     return M0P_CAN->RECNT;
 }
 
 /**
- *******************************************************************************
- ** \brief  CAN 发送错误计数值获取
- **
- ** \param  None
- **
- ** \retval Error Counter(0~255)
- **
- ** \note   None
- **
- ******************************************************************************/
+************************************************************************************
+** \brief CAN transmit error counter value
+**
+** \param None
+**
+** \retval Error Counter (0-255)
+**
+** \note None
+**
+************************************************************************/
 uint8_t CAN_TxErrorCntGet(void)
 {
     return M0P_CAN->TECNT;
 }
 
-/**
- *******************************************************************************
- ** \brief  CAN 仲裁捕获
- **
- ** \param  None
- **
- ** \retval address(0~31)
- **
- ** \note   None
- **
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief CAN arbitration capture 
+** 
+** \param None 
+** 
+** \retval address(0~31) 
+** 
+** \note None 
+** 
+******************************************************************************/
 uint8_t CAN_ArbitrationLostCap(void)
 {
     return M0P_CAN->EALCAP_f.ALC;

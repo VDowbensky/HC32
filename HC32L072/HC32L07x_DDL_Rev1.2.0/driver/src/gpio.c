@@ -53,32 +53,32 @@
  ******************************************************************************/
 
 /**
- *******************************************************************************
- ** \brief GPIO 初始化
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- ** \param [in]  pstcGpioCfg     IO 配置结构体指针
- **
- ** \retval Ok         设置成功
- **         其他值     设置失败
- ******************************************************************************/
+**********************************************************************************
+** \brief GPIO initialization
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+** \param [in] pstcGpioCfg IO configuration structure pointer
+**
+** \retval Ok Setting successful
+** Other values Setting failed
+**************************************************************************/
 en_result_t Gpio_Init(en_gpio_port_t enPort, en_gpio_pin_t enPin, stc_gpio_cfg_t  *pstcGpioCfg)
 {
-    //配置为默认值,GPIO功能
+    //Configure to default values, GPIO function
     SetBit((uint32_t)&M0P_GPIO->PAADS + enPort, enPin, FALSE);
     *((uint32_t*)(((uint32_t)(&(M0P_GPIO->PA00_SEL)) + enPort) + (((uint32_t)enPin)<<2))) = GpioAf0;
 
-    //默认输出值配置
+    //Default output value configuration
     SetBit(((uint32_t)&M0P_GPIO->PAOUT + enPort), enPin, pstcGpioCfg->bOutputVal);
-    //方向配置
+    //Direction configuration
     SetBit(((uint32_t)&M0P_GPIO->PADIR + enPort), enPin, (boolean_t)(pstcGpioCfg->enDir));
-    //驱动能力配置
+    //Drive capability configuration
     SetBit(((uint32_t)&M0P_GPIO->PADR + enPort), enPin, (boolean_t)(pstcGpioCfg->enDrv));
-    //上拉/下拉配置
+    //Pull-up/pull-down configuration
     SetBit(((uint32_t)&M0P_GPIO->PAPU + enPort), enPin, (boolean_t)(pstcGpioCfg->enPu));
     SetBit(((uint32_t)&M0P_GPIO->PAPD + enPort), enPin, (boolean_t)(pstcGpioCfg->enPd));
-    //开漏输出功能
+    //Open-drain output function
     SetBit(((uint32_t)&M0P_GPIO->PAOD + enPort), enPin, (boolean_t)(pstcGpioCfg->enOD));
 
     M0P_GPIO->CTRL2_f.AHB_SEL = pstcGpioCfg->enCtrlMode;
@@ -86,46 +86,43 @@ en_result_t Gpio_Init(en_gpio_port_t enPort, en_gpio_pin_t enPin, stc_gpio_cfg_t
     return Ok;
 }
 
-
-
 /**
- *******************************************************************************
- ** \brief GPIO IO输入值获取
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- **
- ** \retval boolean_t            IO电平高低
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO IO input value acquisition
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+**
+** \retval boolean_t IO level high/low
+********************************************************************************/
 boolean_t Gpio_GetInputIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     return GetBit(((uint32_t)&M0P_GPIO->PAIN + enPort), enPin);
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO Port输入数据获取
- **
- ** \param [in]  enPort          IO Port
- **
- ** \retval boolean_t            IO Port数据
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO IO port input data acquisition
+**
+** \param [in] enPort IO port
+**
+** \retval boolean_t IO Port data
+**************************************************************************/
 uint16_t    Gpio_GetInputData(en_gpio_port_t enPort)
 {
     return (uint16_t)(*((uint32_t *)((uint32_t)&M0P_GPIO->PAIN + enPort)));
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO输出值写入
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- ** \param [out] bVal            输出值
- **
- ** \retval en_result_t          Ok      设置成功
- **                              其他值  设置失败
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO output value write
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+** \param [out] bVal Output value
+**
+** \retval en_result_t Ok Set successfully
+****************************************************************************/
 en_result_t Gpio_WriteOutputIO(en_gpio_port_t enPort, en_gpio_pin_t enPin, boolean_t bVal)
 {
     SetBit(((uint32_t)&M0P_GPIO->PAOUT + enPort), enPin, bVal);
@@ -134,28 +131,28 @@ en_result_t Gpio_WriteOutputIO(en_gpio_port_t enPort, en_gpio_pin_t enPin, boole
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO输出值获取
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- **
- ** \retval boolean_t            IO电平高低
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO IO output value acquisition
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+**
+** \retval boolean_t IO level
+**************************************************************************/
 boolean_t   Gpio_ReadOutputIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     return GetBit(((uint32_t)&M0P_GPIO->PAOUT + enPort), enPin);
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO Port设置，可同时设置一组Port中的多个PIN
- **
- ** \param [in]  enPort          IO Port
- ** \param [in]  u16ValMsk       该Port的16个PIN掩码值,将需要设置的PIN对应的bit写1有效
- **
- ** \retval boolean_t            IO Port数据
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO IO Port settings. Multiple PINs in a port group can be set simultaneously.
+**
+** \param [in] enPort IO Port
+** \param [in] u16ValMsk 16 PIN mask values for this port. Writing 1 to the corresponding bit of the PIN to be set is valid.
+**
+** \retval boolean_t IO Port data
+************************************************************************/
 en_result_t Gpio_SetPort(en_gpio_port_t enPort, uint16_t u16ValMsk)
 {
     *((uint16_t*)(((uint32_t)&(M0P_GPIO->PABSET)) + enPort)) = u16ValMsk;
@@ -163,15 +160,15 @@ en_result_t Gpio_SetPort(en_gpio_port_t enPort, uint16_t u16ValMsk)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO设置
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- **
- ** \retval en_result_t          Ok      设置成功
- **                              其他值  设置失败
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO IO settings
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+**
+** \retval en_result_t Ok Setting successful
+** Other values Setting failed
+**************************************************************************/
 en_result_t Gpio_SetIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     SetBit(((uint32_t)&M0P_GPIO->PABSET + enPort), enPin, TRUE);
@@ -180,14 +177,14 @@ en_result_t Gpio_SetIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO Port清零，可同时清零一组Port中的多个PIN
- **
- ** \param [in]  enPort          IO Port
- ** \param [in]  u16ValMsk       该Port的16个PIN掩码值,将需要清零的PIN对应的bit写1有效
- **
- ** \retval boolean_t            IO Port数据
- ******************************************************************************/
+****************************************************************************
+** \brief GPIO IO Port clear, can clear multiple PINs in a port group simultaneously
+**
+** \param [in] enPort IO Port
+** \param [in] u16ValMsk 16 PIN mask value for this port. Writing 1 to the corresponding bit of the PIN to be cleared is valid.
+**
+** \retval boolean_t IO Port data
+************************************************************************/
 en_result_t Gpio_ClrPort(en_gpio_port_t enPort, uint16_t u16ValMsk)
 {
     *((uint16_t*)(((uint32_t)&(M0P_GPIO->PABCLR)) + enPort)) = u16ValMsk;
@@ -196,15 +193,15 @@ en_result_t Gpio_ClrPort(en_gpio_port_t enPort, uint16_t u16ValMsk)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO清零
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- **
- ** \retval en_result_t          Ok      设置成功
- **                              其他值  设置失败
- ******************************************************************************/
+*************************************************************************
+** \brief GPIO IO clear
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+**
+** \retval en_result_t Ok Set successful
+** Other values Set failed
+********************************************************************/
 en_result_t Gpio_ClrIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     SetBit(((uint32_t)&M0P_GPIO->PABCLR + enPort), enPin, TRUE);
@@ -213,17 +210,17 @@ en_result_t Gpio_ClrIO(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO Port置位/清零，可同时置位/清零一组Port中的多个PIN
- **
- ** \param [in]  enPort       IO Port
- ** \param [in]  u32ValMsk    高16bits表示该Port的16个PIN置位掩码值,
- **                           低16bits表示该Port的16个PIN清零掩码值,
- **                           将需要设置的PIN对应的bit写1,同一个PIN的掩码同时为1,则该PIN清零。
- **
- ** \retval en_result_t       Ok      设置成功
- **                           其他值  设置失败
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO IO Port setting/clearing. Multiple PINs in a port group can be set/cleared simultaneously.
+**
+** \param [in] enPort IO Port
+** \param [in] u32ValMsk. The upper 16 bits represent the set mask value for the 16 PINs in this port.
+** The lower 16 bits represent the clear mask value for the 16 PINs in this port.
+** Write 1 to the bit corresponding to the PIN to be set. If the mask for the same PIN is 1 at the same time, the PIN is cleared.
+**
+** \retval en_result_t Ok Setting successful
+** Other values Setting failed
+********************************************************************/
 en_result_t Gpio_SetClrPort(en_gpio_port_t enPort, uint32_t u32ValMsk)
 {
     *((uint32_t*)(((uint32_t)&(M0P_GPIO->PABSETCLR)) + enPort)) = u32ValMsk;
@@ -232,15 +229,15 @@ en_result_t Gpio_SetClrPort(en_gpio_port_t enPort, uint32_t u32ValMsk)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO配置为模拟功能模式
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- **
- ** \retval Ok         设置成功
- **         其他值     设置失败
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO IO configuration to analog function mode
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+**
+** \retval Ok Setting successful
+** Other values Setting failed
+******************************************************************************/
 en_result_t Gpio_SetAnalogMode(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     SetBit((uint32_t)&M0P_GPIO->PAADS + enPort, enPin, TRUE);
@@ -249,15 +246,15 @@ en_result_t Gpio_SetAnalogMode(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 }
 
 /**
- *******************************************************************************
-** \brief GPIO IO复用功能设置
- **
- ** \param [in]  enPort    IO Port口
- ** \param [in]  enPin     IO Pin脚
- ** \param [in]  enAf      复用功能枚举类型选择
- ** \retval Ok             设置成功
- **         其他值         设置失败
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO IO multiplexing function settings
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+** \param [in] enAf Multiplexing function enumeration type selection
+** \retval Ok Setting successful
+** Other values Setting failed
+***************************************************************************/
 en_result_t Gpio_SetAfMode(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_af_t enAf)
 {
     *((uint32_t*)(((uint32_t)(&(M0P_GPIO->PA00_SEL)) + enPort) + (((uint32_t)enPin)<<2))) = enAf;
@@ -266,15 +263,15 @@ en_result_t Gpio_SetAfMode(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_a
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO中断使能
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- ** \param [in]  enType          中断使能类型
- **
- ** \retval      Ok            设置成功
- ******************************************************************************/
+****************************************************************************************
+** \brief GPIO interrupt enable
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+** \param [in] enType interrupt enable type
+**
+** \retval Ok Setting successful 
+******************************************************************************/
 en_result_t Gpio_EnableIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_irqtype_t enType)
 {
     uint32_t u32PieAddr;
@@ -287,15 +284,15 @@ en_result_t Gpio_EnableIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_i
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO IO中断关闭
- **
- ** \param [in]  enPort          IO Port口
- ** \param [in]  enPin           IO Pin脚
- ** \param [in]  enType          中断使能类型
- **
- ** \retval      Ok            设置成功
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO IO interrupt disable
+**
+** \param [in] enPort IO port
+** \param [in] enPin IO pin
+** \param [in] enType interrupt enable type
+**
+** \retval Ok Setting successful 
+******************************************************************************/
 en_result_t Gpio_DisableIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_irqtype_t enType)
 {
     uint32_t u32PieAddr;
@@ -308,29 +305,29 @@ en_result_t Gpio_DisableIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin, en_gpio_
 }
 
 
-/**
- *******************************************************************************
- ** \brief GPIO 获得IO中断状态
- **
- ** \param [in]  u8Port          IO Port口
- ** \param [in]  u8Pin           IO Pin脚
- **
- ** \retval      IO中断状态开关
- ******************************************************************************/
+/** 
+******************************************************************************* 
+** \brief GPIO Get IO interrupt status 
+** 
+** \param [in] u8Port IO Port 
+** \param [in] u8Pin IO Pin 
+** 
+** \retval IO interrupt status switch
+**************************************************************************/
 boolean_t Gpio_GetIrqStatus(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     return GetBit((uint32_t)&M0P_GPIO->PA_STAT + enPort, enPin);
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 清除IO中断状态
- **
- ** \param [in]  u8Port          IO Port口
- ** \param [in]  u8Pin           IO Pin脚
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO Clear IO interrupt status
+**
+** \param [in] u8Port IO port
+** \param [in] u8Pin IO pin
+**
+** \retval Ok Set successfully
+**************************************************************************/
 en_result_t Gpio_ClearIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 {
     SetBit((uint32_t)&M0P_GPIO->PA_ICLR + enPort, enPin, FALSE);
@@ -339,13 +336,13 @@ en_result_t Gpio_ClearIrq(en_gpio_port_t enPort, en_gpio_pin_t enPin)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——中断模式配置
- **
- ** \param [in]  enIrqMode          端口中断模式（深度休眠是否响应中断）
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+********************************************************************************
+** \brief GPIO port auxiliary function configuration - interrupt mode configuration
+**
+** \param [in] enIrqMode port interrupt mode (whether deep sleep responds to interrupts)
+**
+** \retval Ok Setting successful
+****************************************************************************/
 en_result_t Gpio_SfIrqModeCfg(en_gpio_sf_irqmode_t enIrqMode)
 {
     M0P_GPIO->CTRL0_f.IESEL = enIrqMode;
@@ -354,13 +351,13 @@ en_result_t Gpio_SfIrqModeCfg(en_gpio_sf_irqmode_t enIrqMode)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——IR输出极性配置
- **
- ** \param [in]  enIrPolMode          IR输出极性配置枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO port auxiliary function configuration - IR output polarity configuration
+**
+** \param [in] enIrPolMode IR output polarity configuration enumeration
+**
+** \retval Ok Setting successful
+************************************************************************/
 en_result_t Gpio_SfIrPolCfg(en_gpio_sf_irpol_t enIrPolMode)
 {
     M0P_GPIO->CTRL1_f.IR_POL = enIrPolMode;
@@ -369,14 +366,14 @@ en_result_t Gpio_SfIrPolCfg(en_gpio_sf_irpol_t enIrPolMode)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——HCLK输出配置
- **
- ** \param [in]  enGate         HCLK输出使能
- ** \param [in]  enDiv          输出分频枚举值
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO port auxiliary function configuration - HCLK output configuration
+**
+** \param [in] enGate HCLK output enable
+** \param [in] enDiv Output frequency divider enumeration value
+**
+** \retval Ok Setting successful
+********************************************************************/
 en_result_t Gpio_SfHClkOutputCfg(en_gpio_sf_hclkout_g_t enGate, en_gpio_sf_hclkout_div_t enDiv)
 {
     M0P_GPIO->CTRL1_f.HCLK_EN  = enGate;
@@ -386,14 +383,14 @@ en_result_t Gpio_SfHClkOutputCfg(en_gpio_sf_hclkout_g_t enGate, en_gpio_sf_hclko
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——PCLK输出配置
- **
- ** \param [in]  enGate         PCLK输出使能
- ** \param [in]  enDiv          输出分频枚举值
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+************************************************************************************
+** \brief GPIO port auxiliary function configuration - PCLK output configuration
+**
+** \param [in] enGate PCLK output enable
+** \param [in] enDiv Output frequency divider enumeration value
+**
+** \retval Ok Setting successful
+**************************************************************************/
 en_result_t Gpio_SfPClkOutputCfg(en_gpio_sf_pclkout_g_t enGate, en_gpio_sf_pclkout_div_t enDiv)
 {
     M0P_GPIO->CTRL1_f.PCLK_EN  = enGate;
@@ -403,13 +400,13 @@ en_result_t Gpio_SfPClkOutputCfg(en_gpio_sf_pclkout_g_t enGate, en_gpio_sf_pclko
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——外部时钟输入来源配置
- **
- ** \param [in]  enExtClk         外部时钟信号来源选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO port auxiliary function configuration - external clock input source configuration
+**
+** \param [in] enExtClk External clock signal source selection enumeration
+**
+** \retval Ok Setting successful
+******************************************************************************/
 en_result_t Gpio_SfExtClkCfg(en_gpio_sf_ssn_extclk_t enExtClk)
 {
     M0P_GPIO->CTRL1_f.EXT_CLK_SEL  = enExtClk;
@@ -418,14 +415,14 @@ en_result_t Gpio_SfExtClkCfg(en_gpio_sf_ssn_extclk_t enExtClk)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——SSN 通道信号来源配置
- **
- ** \param [in]  enSpi         SSN SPI通道选择枚举
- ** \param [in]  enSsn         SSN 信号来源选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO port auxiliary function configuration - SSN channel signal source configuration
+**
+** \param [in] enSpi SSN SPI channel selection enumeration
+** \param [in] enSsn SSN signal source selection enumeration
+**
+** \retval Ok Setting successful
+***************************************************************************/
 en_result_t Gpio_SfSsnCfg(en_gpio_sf_ssnspi_t enSpi, en_gpio_sf_ssn_extclk_t enSsn)
 {
     //SPI0
@@ -443,14 +440,14 @@ en_result_t Gpio_SfSsnCfg(en_gpio_sf_ssnspi_t enSpi, en_gpio_sf_ssn_extclk_t enS
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——Timer 门控输入配置
- **
- ** \param [in]  enTimG       Timer类型选择枚举
- ** \param [in]  enSf         Timer互联功能选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO port auxiliary function configuration - Timer gate input configuration
+**
+** \param [in] enTimG Timer type selection enumeration
+** \param [in] enSf Timer interconnect function selection enumeration
+**
+** \retval Ok Setting successful
+********************************************************************/
 en_result_t Gpio_SfTimGCfg(en_gpio_sf_tim_g_t enTimG, en_gpio_sf_t enSf)
 {
     if(enTimG&0x20u)
@@ -468,15 +465,14 @@ en_result_t Gpio_SfTimGCfg(en_gpio_sf_tim_g_t enTimG, en_gpio_sf_t enSf)
     return Ok;
 }
 
-/**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——Timer ETR选择配置
- **
- ** \param [in]  enTimE       Timer类型选择枚举
- ** \param [in]  enSf         Timer互联功能选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+/** *******************************************************************************
+** \brief GPIO port auxiliary function configuration - Timer ETR selection configuration
+**
+** \param [in] enTimE Timer type selection enumeration
+** \param [in] enSf Timer interconnection function selection enumeration
+**
+** \retval Ok Setting successful
+************************************************************************/
 en_result_t Gpio_SfTimECfg(en_gpio_sf_tim_e_t enTimE, en_gpio_sf_t enSf)
 {
     if(enTimE&0x20u)
@@ -495,14 +491,14 @@ en_result_t Gpio_SfTimECfg(en_gpio_sf_tim_e_t enTimE, en_gpio_sf_t enSf)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——Timer 捕获输入选择配置
- **
- ** \param [in]  enTimC       Timer类型选择枚举
- ** \param [in]  enSf         Timer互联功能选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+*******************************************************************************
+** \brief GPIO port auxiliary function configuration - Timer capture input selection configuration
+**
+** \param [in] enTimC Timer type selection enumeration
+** \param [in] enSf Timer interconnection function selection enumeration
+**
+** \retval Ok Setting successful
+***************************************************************************/
 en_result_t Gpio_SfTimCCfg(en_gpio_sf_tim_c_t enTimC, en_gpio_sf_t enSf)
 {
     M0P_GPIO->TIMCPS &= (uint32_t)(~(0x07u<<enTimC));
@@ -512,14 +508,14 @@ en_result_t Gpio_SfTimCCfg(en_gpio_sf_tim_c_t enTimC, en_gpio_sf_t enSf)
 }
 
 /**
- *******************************************************************************
- ** \brief GPIO 端口辅助功能配置——PCA 捕获输入选择配置
- **
- ** \param [in]  enPca        PCA类型选择枚举
- ** \param [in]  enSf         PCA互联功能选择枚举
- **
- ** \retval    Ok       设置成功
- ******************************************************************************/
+********************************************************************************
+** \brief GPIO port auxiliary function configuration - PCA capture input selection configuration
+**
+** \param [in] enPca PCA type selection enumeration
+** \param [in] enSf PCA interconnect function selection enumeration
+**
+** \retval Ok Setting successful
+****************************************************************************/
 en_result_t Gpio_SfPcaCfg(en_gpio_sf_pca_t enPca, en_gpio_sf_t enSf)
 {
     M0P_GPIO->PCAS &= (uint32_t)(~(0x07u<<enPca));

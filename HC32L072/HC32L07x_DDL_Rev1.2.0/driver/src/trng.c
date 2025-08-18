@@ -52,101 +52,100 @@
  ******************************************************************************/
 
 /**
- *****************************************************************************
- ** \brief 随机数初始化(上电第一次生成随机数）
- **
- ** 
- ** \retval TRUE or FALSE                                      
- *****************************************************************************/
+*****************************************************************************
+** \brief Random number initialization (generating random numbers for the first time after power-up)
+**
+** \retval TRUE or FALSE
+*****************************************************************************/
 en_result_t Trng_Init(void)
 {
-    //==>>生成64bits随机数（上电第一次）
+    //==>>Generate 64-bit random number (first time after power-up)
     M0P_TRNG->CR_f.RNGCIR_EN = 1;
-    //模式配置0
+    //Mode configuration 0
     M0P_TRNG->MODE_f.LOAD    = 1;
     M0P_TRNG->MODE_f.FDBK    = 1;
     M0P_TRNG->MODE_f.CNT     = 6;
-    //生成随机数0
+    //Generate random number 0
     M0P_TRNG->CR_f.RNG_RUN  = 1;
     while(M0P_TRNG->CR_f.RNG_RUN)
     {
         ;
     }
     
-    //模式配置1
+    //Mode configuration 1
     M0P_TRNG->MODE_f.LOAD    = 0;
     M0P_TRNG->MODE_f.FDBK    = 0;
     M0P_TRNG->MODE_f.CNT     = 4;
-    //生成随机数1
+    //Generate random number 1
     M0P_TRNG->CR_f.RNG_RUN  = 1;
     while(M0P_TRNG->CR_f.RNG_RUN)
     {
         ;
     }
 
-    //关闭随机源电路，节省功耗
+    ///Disable random source circuit to save power
     M0P_TRNG->CR_f.RNGCIR_EN = 0;
     
     return Ok;
 }
 
 /**
- *****************************************************************************
- ** \brief 生成随机数（非上电第一次生成随机数）
- **
- ** 
- ** \retval TRUE or FALSE                                      
- *****************************************************************************/
+*********************************************************************
+** \brief Generate random number (not the first time after power-on)
+**
+**
+** \retval TRUE or FALSE
+*****************************************************************************/
 en_result_t Trng_Generate(void)
 {
-    //==>>生成64bits随机数（非上电第一次生成）
+    //==>>Generate a 64-bit random number (not the first time generated after power-up)
     M0P_TRNG->CR_f.RNGCIR_EN = 1;
     
-    //模式配置0
+    //Mode configuration 0
     M0P_TRNG->MODE_f.LOAD    = 0;
     M0P_TRNG->MODE_f.FDBK    = 1;
     M0P_TRNG->MODE_f.CNT     = 6;
-    //生成随机数0
+    //Generate random number 0
     M0P_TRNG->CR_f.RNG_RUN  = 1;
     while(M0P_TRNG->CR_f.RNG_RUN)
     {
         ;
     }
     
-    //模式配置1
+    //Mode configuration 1
     M0P_TRNG->MODE_f.FDBK    = 0;
     M0P_TRNG->MODE_f.CNT     = 4;
     M0P_TRNG->MODE_f.CNT     = 4;
-    //生成随机数1
+    //Generate random number 1
     M0P_TRNG->CR_f.RNG_RUN  = 1;
     while(M0P_TRNG->CR_f.RNG_RUN)
     {
         ;
     }
 
-    //关闭随机源电路，节省功耗
+    //Disable random source circuit to save power
     M0P_TRNG->CR_f.RNGCIR_EN = 0;    
     
     return Ok;
 }
 
 /**
- *****************************************************************************
- ** \brief 随机数获取
- ** 
- ** \retval data0                                     
- *****************************************************************************/
+*************************************************************************
+** \brief Get random number
+**
+** \retval data0
+*************************************************************************/
 uint32_t Trng_GetData0(void)
 {
     return M0P_TRNG->DATA0;
 }
 
 /**
- *****************************************************************************
- ** \brief 随机数获取
- ** 
- ** \retval data1                                     
- *****************************************************************************/
+*************************************************************************
+** \brief Get random number
+** 
+** \retval data1 
+*******************************************************************************/
 uint32_t Trng_GetData1(void)
 {
     return M0P_TRNG->DATA1;

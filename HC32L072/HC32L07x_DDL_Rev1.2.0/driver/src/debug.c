@@ -52,12 +52,12 @@
  ******************************************************************************/
 
 /**
- *****************************************************************************
- ** \brief 调试模式下模块功能计数使能
- **
- ** 
- ** \retval TRUE or FALSE                                      
- *****************************************************************************/
+*****************************************************************************
+** \brief Enable module function count in debug mode
+**
+**
+** \retval TRUE or FALSE
+*************************************************************************/
 en_result_t Debug_ActiveEnable(en_debug_module_active_t enModule)
 {
     M0P_DEBUG_ACTIVE->DEBUG_ACTIVE &= ~(uint32_t)enModule;
@@ -66,12 +66,12 @@ en_result_t Debug_ActiveEnable(en_debug_module_active_t enModule)
 }
 
 /**
- *****************************************************************************
- ** \brief 调试模式下模块功能计数暂停
- **
- ** 
- ** \retval TRUE or FALSE                                      
- *****************************************************************************/
+*****************************************************************************
+** \brief Pause module function count in debug mode
+**
+**
+** \retval TRUE or FALSE
+*****************************************************************************/
 en_result_t Debug_ActiveDisable(en_debug_module_active_t enModule)
 {
     M0P_DEBUG_ACTIVE->DEBUG_ACTIVE |= (uint32_t)enModule;

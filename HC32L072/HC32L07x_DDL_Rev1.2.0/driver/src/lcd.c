@@ -55,12 +55,12 @@
  
 /**
 ******************************************************************************
-    ** \brief  获取LCD中断标志位INTF
-    ** 
-    ** @param  无
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief Gets the LCD interrupt flag bit INTF
+**
+** @param None
+** \retval None
+**
+**************************************************************************/
 boolean_t Lcd_GetItStatus(void)
 {
     return (((M0P_LCD->CR1)>>11)&0x01)? TRUE : FALSE;
@@ -68,11 +68,11 @@ boolean_t Lcd_GetItStatus(void)
 
 /**
 ******************************************************************************
-    ** \brief  清除中断标志位INTF
-    ** 
-    ** @param  无
-    ** \retval 无
-    **
+** \brief Clears the interrupt flag bit INTF
+**
+** @param None
+** \retval None
+**
 ******************************************************************************/
 void Lcd_ClearItPendingBit(void)
 {
@@ -81,12 +81,12 @@ void Lcd_ClearItPendingBit(void)
 
 /**
 ******************************************************************************
-    ** \brief  根据LCD显示模式获取端口配置
-    **
-    ** \param pstcSegComPara：显示方式， stcSegCom获取端口参数
-    **
-    ** \retval enRet 成功或失败
-    **
+** \brief Get port configuration based on LCD display mode
+**
+** \param pstcSegComPara: Display mode, stcSegCom gets port parameters
+**
+** \retval enRet: Success or failure
+**
 ******************************************************************************/
 en_result_t Lcd_GetSegCom(stc_lcd_segcompara_t *pstcSegComPara,stc_lcd_segcom_t *pstcSegCom)
 {
@@ -149,12 +149,12 @@ en_result_t Lcd_GetSegCom(stc_lcd_segcompara_t *pstcSegComPara,stc_lcd_segcom_t 
 
 /**
 ******************************************************************************
-    ** \brief  LCD COMSEG端口配置，使用该函数之前需要先使能相应的Seg
-    **
-    ** \param [in] pstcSegCom端口配置结构体
-    **
-    ** \retval enRet 成功或失败
-    **
+** \brief LCD COMSEG port configuration. Before using this function, you must enable the corresponding Seg.
+**
+** \param [in] pstcSegCom port configuration structure
+**
+** \retval enRet Success or failure
+**
 ******************************************************************************/
 void Lcd_SetSegCom(stc_lcd_segcom_t *pstcSegCom)
 {
@@ -165,13 +165,13 @@ void Lcd_SetSegCom(stc_lcd_segcom_t *pstcSegCom)
 
 /**
 ******************************************************************************
-    ** \brief  LCD模块初始化函数
-    **
-    ** \param stcLcdCfg配置初始化结构体
-    **
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief LCD module initialization function
+**
+** \param stcLcdCfg configuration initialization structure
+**
+** \retval None
+**
+**********************************************************************************/
 void Lcd_Init(stc_lcd_cfg_t *pstcLcdCfg)
 {
     M0P_LCD->CR0_f.BSEL   = pstcLcdCfg->LcdBiasSrc;
@@ -185,14 +185,14 @@ void Lcd_Init(stc_lcd_cfg_t *pstcLcdCfg)
 }
 
 /**
-******************************************************************************
-    ** \brief  液晶全显
-    **
-    ** \param  无
-    **
-    ** \retval 无
-    **
-******************************************************************************/
+**************************************************************************
+** \brief LCD full display
+**
+** \param None
+**
+** \retval None
+**
+**************************************************************************/
 void Lcd_FullDisp(void)
 {
     uint8_t tmp;
@@ -206,13 +206,13 @@ void Lcd_FullDisp(void)
 }
 
 /**
-******************************************************************************
-    ** \brief  清屏
-    **
-    ** \param 无
-    **
-    ** \retval 无
-    **
+**************************************************************************************
+** \brief Clear screen
+**
+** \param None
+**
+** \retval None
+**
 ******************************************************************************/
 void Lcd_ClearDisp(void)
 {
@@ -227,14 +227,14 @@ void Lcd_ClearDisp(void)
 }
 
 /**
- ******************************************************************************
- ** \brief  LCD RAM 0-f寄存器设置函数
- **
- ** \param u8Row RAM地址索引，范围：0-15，u8Data写入寄存器数值
- **
- ** \retval enRet 成功或失败
- **
- ******************************************************************************/
+********************************************************************************
+** \brief LCD RAM 0-f register set function
+**
+** \param u8Row RAM address index, range: 0-15, u8Data register value to write
+**
+** \retval enRet success or failure
+**
+****************************************************************************/
 en_result_t Lcd_WriteRam(uint8_t u8Row,uint32_t u32Data)
 {
     en_result_t  enRet = Error;

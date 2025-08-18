@@ -52,12 +52,12 @@
 
 /**
 ******************************************************************************
-    ** \brief  PCNT的启动和停止控制
-    ** @param  NewState : Run_Enable 或者 Run_Disable
-    ** @param  NewState : FALSE或者TRUE
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief PCNT start and stop control
+** @param NewState : Run_Enable or Run_Disable
+** @param NewState : FALSE or TRUE
+** \retval None
+**
+**************************************************************************/
 boolean_t Pcnt_Cmd(boolean_t NewState)
 {
     SetBit((uint32_t)(&(M0P_PCNT->RUN)), 0, NewState);
@@ -67,10 +67,10 @@ boolean_t Pcnt_Cmd(boolean_t NewState)
 
 /**
 ******************************************************************************
-    ** \brief  将BUF中的值同步到CNT
-    ** @param  value : 要同步到TOP的数值
-    ** \retval ok 或 ErrorTimeout
-    **
+** \brief Synchronizes the value in BUF to CNT
+** @param value : The value to be synchronized to TOP
+** \retval ok or ErrorTimeout
+**
 ******************************************************************************/
 en_result_t Pcnt_SetB2T(uint16_t value)
 {
@@ -96,11 +96,11 @@ en_result_t Pcnt_SetB2T(uint16_t value)
 
 /**
 ******************************************************************************
-    ** \brief  将BUF中的值同步到CNT
-    ** @param  value : 要同步到CNT的数值
-    ** \retval ok 或 ErrorTimeout
-    **
-******************************************************************************/
+** \brief Synchronizes the value in BUF to CNT
+** @param value: Value to be synchronized to CNT
+** \retval ok or ErrorTimeout
+**
+**********************************************************************************/
 en_result_t Pcnt_SetB2C(uint16_t value)
 {
     uint16_t u16TimeOut;
@@ -124,10 +124,10 @@ en_result_t Pcnt_SetB2C(uint16_t value)
 
 /**
 ******************************************************************************
-    ** \brief  将TOP中的值同步到CNT
-    ** @param  value : 要同步到CNT的数值
-    ** \retval ok 或 ErrorTimeout
-    **
+** \brief Synchronize the value in TOP to CNT
+** @param value: The value to be synchronized to CNT
+** \retval OK or ErrorTimeout
+**
 ******************************************************************************/
 en_result_t Pcnt_SetT2C(void)
 {
@@ -151,10 +151,10 @@ en_result_t Pcnt_SetT2C(void)
 
 /**
 ******************************************************************************
-    ** \brief  赋值BUF
-    ** @param  value : 要赋值给BUF的数值
-    ** \retval 无
-    **
+** \brief Assign value to BUF
+** @param value: Value to be assigned to BUF
+** \retval None
+**
 ******************************************************************************/
 void Pcnt_SetBuf(uint16_t value)
 {
@@ -162,13 +162,13 @@ void Pcnt_SetBuf(uint16_t value)
 }
 
 /**
-******************************************************************************
-    ** \brief  初始化
-    ** @param  start : 要同步到TOP的数值
-    ** @param  end   : 要同步到CNT的数值
-    ** \retval ok 或 ErrorTimeout
-    **
-******************************************************************************/
+**********************************************************************************
+** \brief Initialization
+** @param start: Value to synchronize to TOP
+** @param end: Value to synchronize to CNT
+** \retval ok or ErrorTimeout
+**
+*********************************************************************************/
 void Pcnt_Init(stc_pcnt_initstruct_t*  InitStruct)
 {
     M0P_PCNT->CTRL_f.S1P = InitStruct->Pcnt_S1Sel;
@@ -193,13 +193,13 @@ void Pcnt_Init(stc_pcnt_initstruct_t*  InitStruct)
 }
 
 /**
-******************************************************************************
-    ** \brief  配置中断源的使能
-    ** @param  IT_Src : 中断源再PCNT_IEN内部的位位置
-    ** @param  NewState   : FALSE 或TRUE
-    ** \retval 无
-    **
-******************************************************************************/
+****************************************************************************** 
+** \brief Configure the interrupt source enable
+** @param IT_Src: Bit position of the interrupt source within PCNT_IEN
+** @param NewState: FALSE or TRUE
+** \retval None
+**
+**************************************************************************/
 void Pcnt_ItCfg(en_pcnt_itfce_t IT_Src, boolean_t NewState)
 {
     if(NewState == TRUE)
@@ -218,11 +218,11 @@ void Pcnt_ItCfg(en_pcnt_itfce_t IT_Src, boolean_t NewState)
 
 /**
 ******************************************************************************
-    ** \brief  获取中断源的标志位
-    ** @param  IT_Src : 中断源标志位
-    ** \retval FALSE 或TRUE
-    **
-******************************************************************************/
+** \brief Get the interrupt source flag.
+** @param IT_Src: Interrupt source flag.
+** \retval FALSE or TRUE
+**
+**************************************************************************/
 boolean_t Pcnt_GetItStatus(en_pcnt_itfce_t IT_Src)
 {
     return ((M0P_PCNT->IFR >> IT_Src) & 1u) > 0 ? TRUE : FALSE;
@@ -230,10 +230,10 @@ boolean_t Pcnt_GetItStatus(en_pcnt_itfce_t IT_Src)
 
 /**
 ******************************************************************************
-    ** \brief  清除中断源的标志位
-    ** @param  IT_Src : 中断源标志位
-    ** \retval 无
-    **
+** \brief Clear the interrupt source flag.
+** @param IT_Src: Interrupt source flag.
+** \retval None
+**
 ******************************************************************************/
 void Pcnt_ClrItStatus(en_pcnt_itfce_t IT_Src)
 {
@@ -242,24 +242,24 @@ void Pcnt_ClrItStatus(en_pcnt_itfce_t IT_Src)
 
 
 /**
-******************************************************************************
-    ** \brief  获取PCNT_CNT寄存器的数值
-    ** @param  无
-    ** \retval PCNT_CNT数值
-    **
-******************************************************************************/
+**************************************************************************
+** \brief Get the value of the PCNT_CNT register
+** @param None
+** \retval PCNT_CNT value
+**
+**************************************************************************/
 uint16_t Pcnt_GetCnt(void)
 {
     return  (uint16_t)(M0P_PCNT->CNT);
 }
 
 /**
-******************************************************************************
-    ** \brief  获取PCNT_TOP寄存器的数值
-    ** @param  无
-    ** \retval PCNT_TOP数值
-    **
-******************************************************************************/
+**********************************************************************************
+** \brief Get the value of the PCNT_TOP register
+** @param None
+** \retval PCNT_TOP value
+**
+*****************************************************************************/
 uint16_t Pcnt_GetTop(void)
 {
    return  (uint16_t)(M0P_PCNT->TOP);
@@ -267,10 +267,10 @@ uint16_t Pcnt_GetTop(void)
 
 /**
 ******************************************************************************
-    ** \brief  获取PCNT_BUF寄存器的数值
-    ** @param  无
-    ** \retval PCNT_BUF数值
-    **
+** \brief Get the value of the PCNT_BUF register
+** @param None
+** \retval PCNT_BUF value
+**
 ******************************************************************************/
 uint16_t Pcnt_GetBuf(void)
 {

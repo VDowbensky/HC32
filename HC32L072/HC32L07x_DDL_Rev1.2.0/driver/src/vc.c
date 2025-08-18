@@ -55,12 +55,12 @@
 
 /**
 ******************************************************************************
-    ** \brief  配置VC中断触发方式
-    **
-    ** @param  Channelx : VcChannelx  x=0、1、2
-    ** @param  enSel : VcIrqRise、VcIrqFall、VcIrqHigh
-    ** \retval 无
-    **
+** \brief Configure VC interrupt trigger mode
+**
+** @param Channelx: VcChannelx x=0, 1, 2
+** @param enSel: VcIrqRise, VcIrqFall, VcIrqHigh
+** \retval None
+**
 ******************************************************************************/
 void Vc_CfgItType(en_vc_channel_t Channelx, en_vc_irq_sel_t ItType)
 {
@@ -102,13 +102,13 @@ void Vc_CfgItType(en_vc_channel_t Channelx, en_vc_irq_sel_t ItType)
 
 /**
 ******************************************************************************
-    ** \brief  VC 中断使能与禁止
-    **
-    ** @param  Channelx : VcChannelx  x=0、1、2
-    ** @param  NewStatus : TRUE 或 FALSE
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief VC interrupt enable/disable
+**
+** @param Channelx: VcChannelx x=0, 1, 2
+** @param NewStatus: TRUE or FALSE
+** \retval None
+**
+**********************************************************************************/
 void  Vc_ItCfg(en_vc_channel_t Channelx, boolean_t NewStatus)
 {
     switch(Channelx)
@@ -129,12 +129,12 @@ void  Vc_ItCfg(en_vc_channel_t Channelx, boolean_t NewStatus)
 
 /**
 ******************************************************************************
-    ** \brief  VC 比较结果获取，包含中断标志位和滤波结果
-    **
-    ** @param  Result : 所要读取的结果
-    ** \retval TRUE 或  FALSE
-    **
-******************************************************************************/
+** \brief VC comparison result acquisition, including interrupt flag and filtering result
+**
+** @param Result: Result to be read
+** \retval TRUE or FALSE
+**
+**********************************************************************************/
 boolean_t Vc_GetItStatus(en_vc_ifr_t Result)
 {
     boolean_t bFlag;
@@ -144,12 +144,12 @@ boolean_t Vc_GetItStatus(en_vc_ifr_t Result)
 
 /**
 ******************************************************************************
-    ** \brief  VC 清除中断标志位
-    **
-    ** @param  NewStatus : Vc0_Intf、Vc1_Intf、Vc2_Intf
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief VC Clears Interrupt Flags
+**
+** @param NewStatus: Vc0_Intf, Vc1_Intf, Vc2_Intf
+** \retval None
+**
+**************************************************************************/
 void Vc_ClearItStatus(en_vc_ifr_t NewStatus)
 {
     SetBit((uint32_t)(&(M0P_VC->IFR)), NewStatus, 0);
@@ -157,11 +157,11 @@ void Vc_ClearItStatus(en_vc_ifr_t NewStatus)
 
 /**
 ******************************************************************************
-    ** \brief  VC 配置DAC相关的内容  VC_CR中 VC_REF2P5_SEL VC_DIV_EN VC_DIV
-    **
-    ** @param  pstcDacCfg : 
-    ** \retval Ok 或 ErrorInvalidParameter
-    **
+** \brief VC Configures DAC-related content in VC_CR: VC_REF2P5_SEL, VC_DIV_EN, VC_DIV
+**
+** @param pstcDacCfg:
+** \retval Ok or ErrorInvalidParameter 
+**
 ******************************************************************************/
 en_result_t Vc_DacInit(stc_vc_dac_cfg_t *pstcDacCfg)
 {
@@ -187,12 +187,12 @@ en_result_t Vc_DacInit(stc_vc_dac_cfg_t *pstcDacCfg)
 
 /**
 ******************************************************************************
-    ** \brief  VC通道初始化
-    **
-    ** @param  pstcDacCfg : 
-    ** \retval 无
-    **
-******************************************************************************/
+** \brief VC channel initialization
+**
+** @param pstcDacCfg:
+** \retval None
+**
+**********************************************************************************/
 void Vc_Init(stc_vc_channel_cfg_t *pstcChannelCfg)
 {
     if (VcChannel0 == pstcChannelCfg->enVcChannel)
@@ -233,12 +233,12 @@ void Vc_Init(stc_vc_channel_cfg_t *pstcChannelCfg)
 
 /**
 ******************************************************************************
-    ** \brief  VC 通道使能
-    **
-    ** \param  enChannel :  通道号VcChannel0 VcChannel1 VcChannel2
-    ** \param  NewStatus : TRUE FALSE    
-    ** \retval NewStatus : TRUE FALSE
-    **
+** \brief VC channel enable
+**
+** \param enChannel: Channel number VcChannel0, VcChannel1, VcChannel2
+** \param NewStatus: TRUE FALSE
+** \retval NewStatus: TRUE FALSE
+**
 ******************************************************************************/
 void Vc_Cmd(en_vc_channel_t enChannel, boolean_t NewStatus)
 {

@@ -53,15 +53,15 @@
 * Function implementation - global ('extern') and local ('static')
 ******************************************************************************/
 /**
-* \brief   
-*          HDIV 有符号除法
+* \brief
+* HDIV signed division
 *
-* \param   [in]   Dividend      被除数
-* \param   [in]   Dividsor      除数
-* \param   [out]  stcDivResult  商和余数
+* \param [in] Dividend Dividend
+* \param [in] Dividsor Divisor
+* \param [out] stcDivResult Quotient and remainder
 *
-* \retval  en_result_t  Ok:  配置成功
-* \retval  en_result_t  ErrorInvalidParameter: 无效参数
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: Invalid parameter
 */
 en_result_t Hdiv_Unsigned(uint32_t Dividend,uint16_t Divisor,stc_div_unsigned_result_t* stcDivResult)
 {
@@ -90,15 +90,15 @@ en_result_t Hdiv_Unsigned(uint32_t Dividend,uint16_t Divisor,stc_div_unsigned_re
 
 
 /**
-* \brief   
-*          HDIV 无符号除法
+* \brief
+* HDIV unsigned division
 *
-* \param   [in]   Dividend      被除数
-* \param   [in]   Dividsor      除数
-* \param   [out]  stcDivResult  商和余数
+* \param [in] Dividend dividend
+* \param [in] Dividsor divisor
+* \param [out] stcDivResult quotient and remainder
 *
-* \retval  en_result_t  Ok:  配置成功
-* \retval  en_result_t  ErrorInvalidParameter: 无效参数
+* \retval en_result_t Ok: Configuration successful
+* \retval en_result_t ErrorInvalidParameter: invalid parameter
 */
 en_result_t Hdiv_Signed(int32_t Dividend,int16_t Divisor,stc_div_signed_result_t* stcDivResult)
 {

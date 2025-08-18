@@ -63,41 +63,40 @@
 /*****************************************************************************
  * Function implementation - global ('extern') and local ('static')
  *****************************************************************************/
-/**
- * \brief   
- *          使能LVD中断
- *
- * \param   [in]  enType  LVD中断类型
- *
- * \retval  en_result_t  Ok:  设置成功
- * \retval  en_result_t  ErrorInvalidParameter:  无效类型
- */
+/** 
+* \brief 
+* Enable LVD interrupt 
+* 
+* \param [in] enType LVD interrupt type *
+* \retval en_result_t Ok: Setup successful
+* \retval en_result_t ErrorInvalidParameter: Invalid type
+*/
 void Lvd_EnableIrq(void)
 {
     M0P_LVD->CR_f.IE = TRUE;
 }
 
 /**
- * \brief   
- *          除能LVD中断
- *
- * \param   无
- *
- * \retval  无
- */
+* \brief
+* Disable LVD interrupt
+*
+* \param None
+*
+* \retval None
+*/
 void Lvd_DisableIrq(void)
 {
     M0P_LVD->CR_f.IE = FALSE;
 }
 
 /**
- * \brief   
- *          LVD初始化
- *
- * \param   [in]  pstcCfg  LVD配置指针
- *
- * \retval  无
- */
+* \brief
+* LVD initialization
+*
+* \param [in] pstcCfg LVD configuration pointer
+*
+* \retval None
+*/
 void Lvd_Init(stc_lvd_cfg_t *pstcCfg)
 {
     M0P_LVD->CR = 0;
@@ -110,41 +109,41 @@ void Lvd_Init(stc_lvd_cfg_t *pstcCfg)
                   (uint32_t)pstcCfg->enThreshold;
 }
 
-/**
- * \brief   
- *          使能LVD
- *
- * \param   无
- *
- * \retval  无
- *
- */
+/** 
+* \brief 
+* Enable LVD 
+* 
+* \param None 
+* 
+* \retval None 
+* 
+*/
 void Lvd_Enable(void)
 {
     M0P_LVD->CR_f.LVDEN = 1u;
 }
 
-/**
- * \brief   
- *          除能LVD
- *
- * \param   无
- *
- * \retval  无
- */
+/** 
+* \brief 
+* Deactivate LVD 
+* 
+* \param None 
+* 
+* \retval None
+*/
 void Lvd_Disable(void)
 {
     M0P_LVD->CR_f.LVDEN = 0u;
 }
 
 /**
- * \brief   
- *          获取LVD中断标志
- *
- * \param   无
- *
- * \retval  boolean_t  中断标志
- */
+* \brief
+* Get LVD interrupt flag
+*
+* \param None
+*
+* \retval boolean_t interrupt flag
+*/
 boolean_t Lvd_GetIrqStat(void)
 {
     return M0P_LVD->IFR_f.INTF;
@@ -152,26 +151,26 @@ boolean_t Lvd_GetIrqStat(void)
 }
 
 /**
- * \brief   
- *          清除LVD中断标志
- *
- * \param   无
- *
- * \retval  无
- */
+* \brief
+* Clear LVD interrupt flag
+*
+* \param None
+*
+* \retval None
+*/
 void Lvd_ClearIrq(void)
 {
     M0P_LVD->IFR_f.INTF = 0u;
 }
 
 /**
- * \brief   
- *          获取Filter结果
- *
- * \param   无
- *
- * \retval  boolean_t Fliter结果
- */
+* \brief
+* Get filter result
+*
+* \param None
+*
+* \retval boolean_t Filter result 
+*/
 boolean_t Lvd_GetFilterResult(void)
 {
     return (boolean_t)M0P_LVD->IFR_f.FILTER;

@@ -39,14 +39,14 @@
 /******************************************************************************/
 
 /**
- ******************************************************************************
- ** \brief  LPUART通信中断使能函数设置
- **
- ** \param [in] LPUARTx通道号，enIrqSel发送or接收中断使能
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+**********************************************************************************
+** \brief LPUART communication interrupt enable function setup
+**
+** \param [in] LPUARTx channel number, enIrqSel transmit or receive interrupt enable
+**
+** \retval OK Configuration successful
+** \retval ErrorInvalidParameter Configuration failed
+**************************************************************************/
 en_result_t LPUart_EnableIrq(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_irq_sel_t enIrqSel)
 {
 
@@ -54,15 +54,16 @@ en_result_t LPUart_EnableIrq(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_irq_sel_t en
 
     return Ok;
 }
+
 /**
- ******************************************************************************
- ** \brief  LPUART通信中断禁止函数设置
- **
- ** \param [in] LPUARTx通道号，enIrqSel发送or接收中断禁止
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+********************************************************************************
+** \brief LPUART communication interrupt disable function setting
+**
+** \param [in] LPUARTx channel number, enIrqSel transmit or receive interrupt disable
+**
+** \retval OK Configuration successful
+**\retval ErrorInvalidParameter Configuration failed
+************************************************************************/
 en_result_t LPUart_DisableIrq(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_irq_sel_t enIrqSel)
 {
 
@@ -70,15 +71,16 @@ en_result_t LPUart_DisableIrq(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_irq_sel_t e
 
     return Ok;
 }
+
 /**
- ******************************************************************************
- ** \brief lpuart通信时钟源选择
- **
- ** \param [in] LPUARTx通道号，enClk 时钟源选项
- **
- ** \retval Ok 设置成功
- **\retval ErrorInvalidParameter设置失败
- ******************************************************************************/
+************************************************************************
+** \brief lpuart communication clock source selection
+**
+** \param [in] LPUARTx channel number, enClk clock source option
+**
+** \retval Ok Setting successful
+**\retval ErrorInvalidParameter Setting failed
+************************************************************************/
 en_result_t LPUart_SelSclk(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_sclksel_t enSclk)
 {
     ASSERT(IS_VALID_CLK(enSclk));
@@ -89,14 +91,14 @@ en_result_t LPUart_SelSclk(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_sclksel_t enSc
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道多主机模式配置
- **
- ** \param [in] LPUARTx通道号，stcMultiCfg多主机模式结构
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+************************************************************************************
+** \brief LPUART channel multi-master mode configuration
+**
+** \param [in] LPUARTx channel number, stcMultiCfg multi-master mode structure
+**
+** \retval OK Configuration successful
+**\retval ErrorInvalidParameter Configuration failed
+************************************************************************/
 en_result_t LPUart_SetMultiMode(M0P_LPUART_TypeDef* LPUARTx, stc_lpuart_multimode_t* pstcMultiCfg)
 {
 
@@ -115,13 +117,13 @@ en_result_t LPUart_SetMultiMode(M0P_LPUART_TypeDef* LPUARTx, stc_lpuart_multimod
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART单线半双工模式使能
- **
- ** \param [in] LPUARTx 通道号
- **
- ** \retval Null
- ******************************************************************************/
+******************************************************************************
+** \brief LPUART single-line half-duplex mode enable
+**
+** \param [in] LPUARTx channel number
+**
+** \retval Null
+************************************************************************/
 void LPUart_HdModeEnable(M0P_LPUART_TypeDef* LPUARTx)
 {
     LPUARTx->SCON_f.HDSEL = TRUE;
@@ -129,27 +131,27 @@ void LPUart_HdModeEnable(M0P_LPUART_TypeDef* LPUARTx)
 
 
 /**
- ******************************************************************************
- ** \brief  LPUART单线半双工模式关闭
- **
- ** \param [in] LPUARTx 通道号
- **
- ** \retval Null
- ******************************************************************************/
+********************************************************************************
+** \brief LPUART single-line half-duplex mode disable
+**
+** \param [in] LPUARTx channel number
+**
+** \retval Null
+************************************************************************/
 void LPUart_HdModeDisable(M0P_LPUART_TypeDef* LPUARTx)
 {
     LPUARTx->SCON_f.HDSEL = FALSE;
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道多机模式发送数据/地址帧配置TB8
- **
- ** \param [in] LPUARTx 通道号
- ** \param [in] TRUE-TB8为地址帧标志；FALSE-TB8为数据帧标志；
- **
- ** \retval Null
- ******************************************************************************/
+****************************************************************************
+** \brief LPUART channel multi-device mode sends data/address frame configuration TB8
+**
+** \param [in] LPUARTx channel number
+** \param [in] TRUE - TB8 is the address frame flag; FALSE - TB8 is the data frame flag;
+**
+** \retval Null
+****************************************************************************/
 void LPUart_SetTb8(M0P_LPUART_TypeDef* LPUARTx, boolean_t bTB8Value)
 {
     LPUARTx->SCON_f.B8CONT = bTB8Value;
@@ -157,27 +159,28 @@ void LPUart_SetTb8(M0P_LPUART_TypeDef* LPUARTx, boolean_t bTB8Value)
 }
 
 /**
- ******************************************************************************
- ** \brief 获取RB8数值
- **
- ** \param [in] LPUARTx 通道号
- **
- ** \retval RB8
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+****************************************************************************
+** \brief Get RB8 value
+**
+** \param [in] LPUARTx channel number
+**
+** \retval RB8
+**\retval ErrorInvalidParameter Configuration failed
+********************************************************************/
 boolean_t LPUart_GetRb8(M0P_LPUART_TypeDef* LPUARTx)
 {
     return (LPUARTx->SBUF_f.DATA8);
 }
+
 /**
- ******************************************************************************
- ** \brief  LPUART通道多主机模式从机地址配置函数
- **
- ** \param [in] LPUARTx 通道号，addr地址
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+************************************************************************************
+** \brief LPUART channel multi-master mode slave address configuration function
+**
+** \param [in] LPUARTx channel number, addr address
+**
+** \retval OK Configuration successful
+**\retval ErrorInvalidParameter Configuration failed
+************************************************************************/
 en_result_t LPUart_SetSaddr(M0P_LPUART_TypeDef* LPUARTx,uint8_t u8Addr)
 {
     LPUARTx->SADDR = u8Addr;
@@ -186,14 +189,14 @@ en_result_t LPUart_SetSaddr(M0P_LPUART_TypeDef* LPUARTx,uint8_t u8Addr)
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道发送或接收等功能使能设置
- **
- ** \param [in] u8Idx通道号，enFunc功能
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+************************************************************************************
+** \brief LPUART channel transmit or receive function enable settings
+**
+** \param [in] u8Idx channel number, enFunc function
+**
+** \retval OK Configuration successful
+**\retval ErrorInvalidParameter Configuration failed
+******************************************************************************/
 en_result_t LPUart_EnableFunc(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_func_t enFunc)
 {
     SetBit((uint32_t)(&(LPUARTx->SCON)), enFunc, TRUE);
@@ -202,14 +205,14 @@ en_result_t LPUart_EnableFunc(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_func_t enFu
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道发送或接收等功能禁止设置
- **
- ** \param [in] u8Idx通道号，enFunc功能
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+******************************************************************************
+** \brief Setting the LPUART channel transmit or receive function disable
+**
+** \param [in] u8Idx channel number, enFunc function
+**
+** \retval OK Configuration successful
+** \retval ErrorInvalidParameter Configuration failed
+**************************************************************************/
 en_result_t LPUart_DisableFunc(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_func_t enFunc)
 {
     SetBit((uint32_t)(&(LPUARTx->SCON)), enFunc, FALSE);
@@ -218,27 +221,27 @@ en_result_t LPUart_DisableFunc(M0P_LPUART_TypeDef* LPUARTx, en_lpuart_func_t enF
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道通信状态获取
- **
- ** \param [in] u8Idx通道号
- **
- ** \retval 状态值
- ******************************************************************************/
+****************************************************************************
+** \brief Get LPUART channel communication status
+**
+** \param [in] u8Idx channel number
+**
+** \retval Status value
+************************************************************************/
 uint8_t LPUart_GetIsr(M0P_LPUART_TypeDef* LPUARTx)
 {
     return (LPUARTx->ISR);
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道通信状态获取
- **
- ** \param [in] u8Idx通道号，enStatus获取哪个状态
- **
- ** \retval 状态值
- **\retval ErrorInvalidParameter获取失败
- ******************************************************************************/
+********************************************************************************
+** \brief Get LPUART channel communication status
+**
+** \param [in] u8Idx channel number, enStatus gets the status
+**
+** \retval Status value
+**\retval ErrorInvalidParameter Get failed
+**************************************************************************/
 boolean_t LPUart_GetStatus(M0P_LPUART_TypeDef* LPUARTx,en_lpuart_status_t enStatus)
 {
     boolean_t bStatus = FALSE;
@@ -251,13 +254,13 @@ boolean_t LPUart_GetStatus(M0P_LPUART_TypeDef* LPUARTx,en_lpuart_status_t enStat
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道通信状态全部清除
- **
- ** \param [in] u8Idx通道号
- **
- ** \retval OK
- ******************************************************************************/
+******************************************************************************
+** \brief Clears all LPUART channel communication statuses
+**
+** \param [in] u8Idx channel number
+**
+** \retval OK
+******************************************************************************/
 en_result_t LPUart_ClrIsr(M0P_LPUART_TypeDef* LPUARTx)
 {
     LPUARTx->ICR = 0u;
@@ -265,14 +268,14 @@ en_result_t LPUart_ClrIsr(M0P_LPUART_TypeDef* LPUARTx)
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道通信状态清除
- **
- ** \param [in] u8Idx通道号，enStatus清除哪个状态
- **
- ** \retval 状态值
- **\retval ErrorInvalidParameter清除失败
- ******************************************************************************/
+************************************************************************************
+** \brief LPUART channel communication status clear
+**
+** \param [in] u8Idx channel number, enStatus which status to clear
+**
+** \retval status value
+**\retval ErrorInvalidParameter clear failed
+********************************************************************/
 en_result_t LPUart_ClrStatus(M0P_LPUART_TypeDef* LPUARTx,en_lpuart_status_t enStatus)
 {
     ASSERT(IS_VALID_STATUS(enStatus));
@@ -283,14 +286,14 @@ en_result_t LPUart_ClrStatus(M0P_LPUART_TypeDef* LPUARTx,en_lpuart_status_t enSt
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道发送数据函数,查询方式调用此函数，中断方式发送不适用
- **
- ** \param [in] u8Idx通道号，Data发送数据
- **
- ** \retval Ok发送成功
- **\retval ErrorInvalidParameter发送失败
- ******************************************************************************/
+****************************************************************************
+** \brief LPUART channel data sending function. Call this function in query mode; interrupt mode is not applicable.
+**
+** \param [in] u8Idx channel number, Data to send data
+**
+** \retval Ok Send successful
+**\retval ErrorInvalidParameter Send failed
+************************************************************************/
 en_result_t LPUart_SendData(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data)
 {
     while(FALSE == LPUart_GetStatus(LPUARTx,LPUartTxe))
@@ -303,13 +306,13 @@ en_result_t LPUart_SendData(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data)
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道发送数据函数,查询方式调用此函数，中断方式发送不适用
- **
- ** \param [in] u8Idx通道号，Data发送数据
- **
- ** \retval @ref en_result_t
- ******************************************************************************/
+******************************************************************************
+** \brief LPUART channel data sending function. Call this function in query mode; interrupt mode is not applicable.
+**
+** \param [in] u8Idx channel number, Data to send data
+**
+** \retval @ref en_result_t
+******************************************************************************/
 en_result_t LPUart_SendDataTimeOut(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data, uint32_t u32TimeOut)
 {
     uint32_t u32Cnt = 0;
@@ -336,14 +339,14 @@ en_result_t LPUart_SendDataTimeOut(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data, 
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道发送数据函数,中断方式调用此函数
- **
- ** \param [in] u8Idx通道号，Data发送数据
- **
- ** \retval Ok发送成功
- **\retval ErrorInvalidParameter发送失败
- ******************************************************************************/
+************************************************************************
+** \brief LPUART channel data sending function, called via interrupt
+**
+** \param [in] u8Idx channel number, Data sending data
+**
+** \retval Ok Sending success
+**\retval ErrorInvalidParameter Sending failure
+************************************************************************/
 en_result_t LPUart_SendDataIt(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data)
 {
     LPUARTx->SBUF_f.DATA = u8Data;
@@ -352,28 +355,28 @@ en_result_t LPUart_SendDataIt(M0P_LPUART_TypeDef* LPUARTx, uint8_t u8Data)
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道接收数据函数
- **
- ** \param [in] u8Idx通道号
- **
- ** \retval 接收数据
- **\retval ErrorInvalidParameter接收失败
- ******************************************************************************/
+************************************************************************************
+** \brief LPUART channel data receiving function
+**
+** \param [in] u8Idx channel number
+**
+** \retval Received data
+**\retval ErrorInvalidParameter Receive failed
+**************************************************************************/
 uint8_t LPUart_ReceiveData(M0P_LPUART_TypeDef* LPUARTx)
 {
     return (LPUARTx->SBUF_f.DATA);
 }
 
 /**
- ******************************************************************************
- ** \brief  LPUART通道初始化函数
- **
- ** \param [in] u8Idx通道号，pstcCfg初始化结构体  @ref stc_lpuart_cfg_t
- **
- ** \retval OK配置成功
- **\retval ErrorInvalidParameter配置失败
- ******************************************************************************/
+******************************************************************************
+** \brief LPUART channel initialization function
+**
+** \param [in] u8Idx channel number, pstcCfg initialization structure @ref stc_lpuart_cfg_t
+**
+** \retval OK Configuration successful
+** \retval ErrorInvalidParameter Configuration failed
+**********************************************************************/
 en_result_t LPUart_Init(M0P_LPUART_TypeDef* LPUARTx,stc_lpuart_cfg_t* pstcCfg)
 {
     en_result_t enRet = Error;
