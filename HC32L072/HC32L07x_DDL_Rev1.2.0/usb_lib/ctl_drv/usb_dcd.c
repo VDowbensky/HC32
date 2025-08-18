@@ -93,31 +93,31 @@ void DCD_Init(USB_OTG_CORE_HANDLE *pdev ,
     uint32_t i;
     USB_OTG_EP *ep;
 
-    USB_OTG_SelectCore (pdev , coreID);  //初始化寄存器地址,端点数等也在该函数初始化
+    USB_OTG_SelectCore (pdev , coreID);  //Initialize register addresses, endpoint number, etc. in this function
 
-    pdev->dev.device_status = USB_OTG_DEFAULT; //设备初始状态
-    pdev->dev.device_address = 0;              //设备地址为0
+    pdev->dev.device_status = USB_OTG_DEFAULT; //Device initial status
+    pdev->dev.device_address = 0;              //Device address is 0
 
     /* Init ep structure */
     for (i = 0; i < pdev->cfg.dev_endpoints ; i++)
     {
-        ep = &pdev->dev.in_ep[i];         //获取输入端点结构体的地址
+        ep = &pdev->dev.in_ep[i];         //Get the address of the input endpoint structure
         /* Init ep structure */
-        ep->is_in = 1;                    //数据为从设备到主机
-        ep->num = i;                      //输入端点序号
-        ep->tx_fifo_num = i;              //发送FIFO序号
+        ep->is_in = 1;                    //Data is from device to host
+        ep->num = i;                      //Input endpoint number
+        ep->tx_fifo_num = i;              //Transmit FIFO number
         /* Control until ep is actvated */
-        ep->type = EP_TYPE_CTRL;                 //初始的类型为控制节点
-        ep->maxpacket =  USB_OTG_MAX_EP0_SIZE;   //初始最大数据包
-        ep->xfer_buff = 0;                       //发送缓存空
-        ep->xfer_len = 0;                        //发送数据空
+        ep->type = EP_TYPE_CTRL;                 //Initial type is control node
+        ep->maxpacket =  USB_OTG_MAX_EP0_SIZE;   //Initial maximum packet size
+        ep->xfer_buff = 0;                       //Transmit buffer empty
+        ep->xfer_len = 0;                        //Transmit data empty
     }
 
     for (i = 0; i < pdev->cfg.dev_endpoints; i++)
     {
         ep = &pdev->dev.out_ep[i];
         /* Init ep structure */
-        ep->is_in = 0;                    //数据为从主机到设备
+        ep->is_in = 0;                    //Data from host to device
         ep->num = i;
         ep->tx_fifo_num = i;
         /* Control until ep is activated */
@@ -127,21 +127,21 @@ void DCD_Init(USB_OTG_CORE_HANDLE *pdev ,
         ep->xfer_len = 0;
     }
 
-    USB_OTG_DisableGlobalInt(pdev);              //使能全局中断GlblIntrMsk->操作位置：usb_core.c
+    USB_OTG_DisableGlobalInt(pdev);              //Enable global interrupt GlblIntrMsk->Operation location: usb_core.c
 
     /*Init the Core (common init.) */
-    USB_OTG_CoreInit(pdev);                      //内核初始化，内核软复位和相关寄存器的配置
+    USB_OTG_CoreInit(pdev);                      //Core initialization, core soft reset, and related register configuration
 
     /* Force Device Mode*/
 #ifndef USE_OTG_MODE
-    USB_OTG_SetCurrentMode(pdev, DEVICE_MODE);   //强制工作在设备模式
+    USB_OTG_SetCurrentMode(pdev, DEVICE_MODE);   //Force operation in device mode
 #endif
 
     /* Init Device */
-    USB_OTG_CoreInitDev(pdev);                   //设备初始化：内部含中断的设置
+    USB_OTG_CoreInitDev(pdev);                   //Device initialization: internal interrupt settings
 
     /* Enable USB Global interrupt */
-    USB_OTG_EnableGlobalInt(pdev);               //使能全局中断GlblIntrMsk->操作位置：usb_core.c
+    USB_OTG_EnableGlobalInt(pdev);               //Enable global interrupt GlblIntrMsk->Operation location: usb_core.c
 }
 
 /**

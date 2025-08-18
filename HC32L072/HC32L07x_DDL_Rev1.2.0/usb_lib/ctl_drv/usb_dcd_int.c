@@ -213,23 +213,23 @@ uint32_t USBD_OTG_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
 
     if (USB_OTG_IsDeviceMode(pdev)) /* ensure that we are in device mode */
     {
-        gintr_status.d32 = USB_OTG_ReadCoreItr(pdev);        //读取全局中断寄存器：GINTSTS
+        gintr_status.d32 = USB_OTG_ReadCoreItr(pdev);        // Read the global interrupt register: GINTSTS
         if (!gintr_status.d32) /* avoid spurious interrupt */
         {
             return 0;
         }
         /* Out endpoint interrupt */
-        if (gintr_status.b.outepintr)  //GINTSTS.OEPInt = 1 表示其中的一个OUT端点发生中断，具体中断要进一步判断
+        if (gintr_status.b.outepintr)  // GINTSTS.OEPInt = 1 indicates an OUT endpoint interrupt has occurred. The specific interrupt needs further determination.
         {
             retval |= DCD_HandleOutEP_ISR(pdev);
         }
         /* In endpoint interrupt */
-        if (gintr_status.b.inepint)  //GINTSTS.IEPInt = 1 表示其中的一个IN端点发生中断，具体中断要进一步判断
+        if (gintr_status.b.inepint)  // GINTSTS.IEPInt = 1 indicates an interrupt has occurred on one of the IN endpoints. The specific interrupt needs further evaluation.
         {
             retval |= DCD_HandleInEP_ISR(pdev);           
         }
         /* Mode mismatch interrupt */
-        if (gintr_status.b.modemismatch)//GINTSTS.ModeMis = 1 模式不匹配中断
+        if (gintr_status.b.modemismatch)// GINTSTS.ModeMis = 1 Mode mismatch interrupt
         {
             USB_OTG_GINTSTS_TypeDef  gintsts;
 
@@ -239,42 +239,41 @@ uint32_t USBD_OTG_ISR_Handler (USB_OTG_CORE_HANDLE *pdev)
             USB_OTG_WRITE_REG32(&pdev->regs.GREGS->GINTSTS, gintsts.d32);
         }
         /* Resume/remote wakeup detected interrupt */
-        if (gintr_status.b.wkupintr)//GINTSTS.WkUpInt = 1 发生继续/远程唤醒检测中断
+        if (gintr_status.b.wkupintr)// GINTSTS.WkUpInt = 1 Resume/remote wakeup detection interrupt has occurred
         {
             retval |= DCD_HandleResume_ISR(pdev);
         }
         /* USB suspend interrupt */
-        if (gintr_status.b.usbsuspend)//GINTSTS.USBSusp = 1 发生挂起中断
+        if (gintr_status.b.usbsuspend)//GINTSTS.USBSusp = 1, indicating a suspend interrupt has occurred
         {
             retval |= DCD_HandleUSBSuspend_ISR(pdev);
         }
         /* Start of frame interrupt */
-        if (gintr_status.b.sofintr)   //GINTSTS.Sof = 1 表示一个接收到一个帧其实包SOF
+        if (gintr_status.b.sofintr)   //GINTSTS.Sof = 1, indicating a frame has been received, indicating a SOF packet
         {
             retval |= DCD_HandleSof_ISR(pdev);
         }
         /* RxFIFO non-empty interrupt */
-        if (gintr_status.b.rxstsqlvl) //GINTSTS.RxFLvl = 1 表示RxFIFO非空，至少有一个包等待读取
+        if (gintr_status.b.rxstsqlvl) //GINTSTS.RxFLvl = 1 indicates the RxFIFO is not empty and there is at least one packet waiting to be read
         {
             retval |= DCD_HandleRxStatusQueueLevel_ISR(pdev);
         }
         /* USB reset interrupt */
-        if (gintr_status.b.usbreset)  //GINTSTS.USBRst = 1 表示USB 检测到复位
-        {
+        if (gintr_status.b.usbreset)  //GINTSTS.USBRst = 1 indicates a USB reset has been detected
             retval |= DCD_HandleUsbReset_ISR(pdev);
         }
         /* Enumeration done interrupt */
-        if (gintr_status.b.enumdone)    //GINTSTS.EnumDone = 1 表示速度枚举完成
+        if (gintr_status.b.enumdone)    //GINTSTS.EnumDone = 1 indicates speed enumeration is complete
         {
             retval |= DCD_HandleEnumDone_ISR(pdev);
         }
         /* Incomplete periodic transfer */
-        if (gintr_status.b.incomplisoin)  //GINTSTS.incompplSOIN = 1 表示在当前微帧至少一个同步IN端点传输未完成
+        if (gintr_status.b.incomplisoin)  //GINTSTS.incompplSOIN = 1 indicates that at least one isochronous IN endpoint transfer is incomplete in the current microframe
         {
             retval |= DCD_IsoINIncomplete_ISR(pdev);
         }
         /* Incomplete isochronous IN transfer */
-        if (gintr_status.b.incomplisoout) //GINTSTS.incomplSOOUT = 1 表示在当前微帧至少一个同步OUT端点传输未完成
+        if (gintr_status.b.incomplisoout) //GINTSTS.incomplSOOUT = 1 indicates that at least one isochronous OUT endpoint transfer is incomplete in the current microframe
         {
             retval |= DCD_IsoOUTIncomplete_ISR(pdev);
         }
@@ -425,19 +424,19 @@ static uint32_t DCD_HandleInEP_ISR(USB_OTG_CORE_HANDLE *pdev)
 
     diepint.d32 = 0;
 
-    ep_intr = USB_OTG_ReadDevAllInEPItr(pdev);//获取DAINT里面IN发生中断的IN端点
+    ep_intr = USB_OTG_ReadDevAllInEPItr(pdev);// Get the IN endpoint where the interrupt occurred in DAINT
 
     while ( ep_intr )
     {
         if (ep_intr&0x1) /* In ITR */
         {
-            diepint.d32 = DCD_ReadDevInEP(pdev , epnum); //读取寄存器DIEPINT
-            if ( diepint.b.xfercompl )                   //判断数据是否传输完成标志位DIEPINT.XferCompl   
+            diepint.d32 = DCD_ReadDevInEP(pdev , epnum); // Read the DIEPINT register
+            if ( diepint.b.xfercompl )                   // Check if the data transfer is complete (DIEPINT.XferCompl) 
             {
 //                fifoemptymsk = 0x1 << epnum;
 //                USB_OTG_MODIFY_REG32(&pdev->regs.DREGS->DIEPEMPMSK, fifoemptymsk, 0);
 //                intmsk.b.nptxfempty = 1;             //GINTMSK.NPTxFEmpMsk：non-periodic TxFIFO Empty Mask
-//                USB_OTG_MODIFY_REG32( &pdev->regs.GREGS->GINTMSK, 0, intmsk.d32);//GINTMSK.NTPxFEmpMsk置位
+//                USB_OTG_MODIFY_REG32( &pdev->regs.GREGS->GINTMSK, 0, intmsk.d32);//GINTMSK.NTPxFEmpMsk is set
 
                 CLEAR_IN_EP_INTR(epnum, xfercompl);
                 /* TX COMPLETE */
@@ -455,21 +454,21 @@ static uint32_t DCD_HandleInEP_ISR(USB_OTG_CORE_HANDLE *pdev)
             }
             if ( diepint.b.timeout )
             {
-                CLEAR_IN_EP_INTR(epnum, timeout);       //清除中断标志位：DIEPINTn.TimeOUT
+                CLEAR_IN_EP_INTR(epnum, timeout);       // Clear interrupt flag: DIEPINTn.TimeOUT
             }
-            if (diepint.b.intktxfemp)                   //清除中断标志位：DIEPINTn.INTknTXFEmp
+            if (diepint.b.intktxfemp)                   // Clear interrupt flag: DIEPINTn.INTknTXFEmp
             {
                 CLEAR_IN_EP_INTR(epnum, intktxfemp);
             }
-            if (diepint.b.inepnakeff)                   //清除中断标志位：DIEPINTn.INEPNakEff
+            if (diepint.b.inepnakeff)                   // Clear interrupt flag: DIEPINTn.INEPNakEff
             {
                 CLEAR_IN_EP_INTR(epnum, inepnakeff);
             }
-            if ( diepint.b.epdisabled )                 //清除中断标志位：DIEPINTn.EPDisbld
+            if ( diepint.b.epdisabled )                 // Clear interrupt flag: DIEPINTn.EPDisbld
             {
                 CLEAR_IN_EP_INTR(epnum, epdisabled);
             }
-            if (diepint.b.emptyintr)                    //清除中断标志位：DIEPINTn.TxFEmp
+            if (diepint.b.emptyintr)                    // Clear interrupt flag: DIEPINTn.TxFEmp
             {
                 DCD_WriteEmptyTxFifo(pdev , epnum);
                 CLEAR_IN_EP_INTR(epnum, emptyintr);
@@ -604,15 +603,15 @@ static uint32_t DCD_HandleOutEP_ISR(USB_OTG_CORE_HANDLE *pdev)
     doepint.d32 = 0;
 
     /* Read in the device interrupt bits */
-    ep_intr = USB_OTG_ReadDevAllOutEp_itr(pdev);  //获取中断的OUT端点 DAINT.OutEPInt
+    ep_intr = USB_OTG_ReadDevAllOutEp_itr(pdev);  // Get the interrupted OUT endpoint DAINT.OutEPInt
 
-    while ( ep_intr )                             //循环处理所发送中断的OUT端点
+    while ( ep_intr )                             // Loop through the sent interrupted OUT endpoints
     {
         if (ep_intr&0x1)
         {
-            doepint.d32 = USB_OTG_ReadDevOutEP_itr(pdev, epnum);//获取发生中断的OUT端点的终端类型：DOEPINT
+            doepint.d32 = USB_OTG_ReadDevOutEP_itr(pdev, epnum);// Get the terminal type of the interrupted OUT endpoint: DOEPINT
             /* Transfer complete */
-            if ( doepint.b.xfercompl )//DOEPINTn.XferComppl = 1 传输完成中断
+            if ( doepint.b.xfercompl )//DOEPINTn.XferComppl = 1 transfer completion interrupt
             {
                 /* Clear the bit in DOEPINTn for this interrupt */
                 CLEAR_OUT_EP_INTR(epnum, xfercompl);
@@ -660,7 +659,7 @@ static uint32_t DCD_HandleOutEP_ISR(USB_OTG_CORE_HANDLE *pdev)
                 CLEAR_OUT_EP_INTR(epnum, setup);
             }
         }
-/****************************注：以下部分待优化******************************/
+/******************************Note: The following parts need to be optimized******************************/
         {
             enpnum=USB_OTG_ReadDevOutEP_itr(pdev, epnum);//USB_OTG_READ_REG32(pdev->regs.OUTEP_REGS[0]->DOEPINT);
             doepint.d32=enpnum;
@@ -918,7 +917,7 @@ static uint32_t DCD_HandleEnumDone_ISR(USB_OTG_CORE_HANDLE *pdev)
 
     /* Clear interrupt */
     gintsts.d32 = 0;
-    gintsts.b.enumdone = 1;                //清除枚举完成中断GINTSTS.EnumDone
+    gintsts.b.enumdone = 1;                //Clear the enumeration completion interrupt
     USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTSTS, gintsts.d32 );
     return 1;
 }
@@ -976,8 +975,8 @@ static uint32_t DCD_IsoOUTIncomplete_ISR(USB_OTG_CORE_HANDLE *pdev)
 static uint32_t DCD_ReadDevInEP (USB_OTG_CORE_HANDLE *pdev, uint8_t epnum)
 {
     uint32_t v, msk, emp;
-    msk = USB_OTG_READ_REG32(&pdev->regs.DREGS->DIEPMSK);         //读取DIEPMSK寄存器的数值
-    emp = USB_OTG_READ_REG32(&pdev->regs.DREGS->DIEPEMPMSK);      //去读DIEPEMPMSK寄存器的数值
+    msk = USB_OTG_READ_REG32(&pdev->regs.DREGS->DIEPMSK);         // Read the value of the DIEPMSK register
+    emp = USB_OTG_READ_REG32(&pdev->regs.DREGS->DIEPEMPMSK);      // Read the value of the DIEPMSK register
     msk |= ((emp >> epnum) & 0x1) << 7;
     v = USB_OTG_READ_REG32(&pdev->regs.INEP_REGS[epnum]->DIEPINT) & msk;
     return v;

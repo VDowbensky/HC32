@@ -100,8 +100,8 @@ static void USB_OTG_EnableCommonInt(USB_OTG_CORE_HANDLE *pdev)
     /* Clear any pending interrupts */
     USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTSTS, 0xBFFFFFFF);
     /* Enable the interrupts in the INTMSK */
-    int_mask.b.wkupintr = 1;               //允许继续/远程唤醒监测中断：GINTMSK.WkUpIntMsk=1
-    int_mask.b.usbsuspend = 1;             //允许设备挂起中断：GINTMSK.USBSuspMsk=1
+    int_mask.b.wkupintr = 1;               // Enable resume/remote wakeup monitor interrupts: GINTMSK.WkUpIntMsk = 1
+    int_mask.b.usbsuspend = 1;             // Enable device suspend interrupts: GINTMSK.USBSuspMsk = 1
 
 #ifdef USE_OTG_MODE
     int_mask.b.vbusvint = 1;
@@ -119,11 +119,11 @@ static void USB_OTG_EnableCommonInt(USB_OTG_CORE_HANDLE *pdev)
 static USB_OTG_STS USB_OTG_CoreReset(USB_OTG_CORE_HANDLE *pdev)
 {
     USB_OTG_STS status = USB_OTG_OK;
-    __IO USB_OTG_GRSTCTL_TypeDef  greset;//复位寄存器
+    __IO USB_OTG_GRSTCTL_TypeDef  greset;// Reset register
     uint32_t count = 0;
 
     greset.d32 = 0;
-    /*等待GRSTCTL寄存器的AHBIdle位变为：1'b1*/
+    /* Wait for the AHBIdle bit in the GRSTCTL register to become: 1'b1*/
     do
     {
         USB_OTG_BSP_uDelay(1);
@@ -136,7 +136,7 @@ static USB_OTG_STS USB_OTG_CoreReset(USB_OTG_CORE_HANDLE *pdev)
     while (greset.b.ahbidle == 0);
     /* Core Soft Reset */
     count = 0;
-    greset.b.csftrst = 1;     //内核软件复位  CRSTCTL.CSftRst
+    greset.b.csftrst = 1;     // Core Software Reset CRSTCTL.CSftRst
     USB_OTG_WRITE_REG32(&pdev->regs.GREGS->GRSTCTL, greset.d32 );
     do
     {
@@ -147,9 +147,9 @@ static USB_OTG_STS USB_OTG_CoreReset(USB_OTG_CORE_HANDLE *pdev)
         }
         USB_OTG_BSP_uDelay(1);
     }
-    while (greset.b.csftrst == 1);       //等待软件内核软件复位
+    while (greset.b.csftrst == 1);       //Wait for software kernel software reset
     /* Wait for 3 PHY Clocks*/
-    USB_OTG_BSP_uDelay(3);               //等待3个PHY时钟周期
+    USB_OTG_BSP_uDelay(3);               //Wait for 3 PHY clock cycles
     return status;
 }
 
@@ -418,7 +418,7 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
     usbcfg.d32 = 0;
     ahbcfg.d32 = 0;
 
-    USB_OTG_CoreReset(pdev);        //内核软件复位
+    USB_OTG_CoreReset(pdev);        //Core software reset
 
     if (pdev->cfg.phy_itface == USB_OTG_ULPI_PHY)
     {
@@ -438,8 +438,7 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
         USB_OTG_WRITE_REG32 (&pdev->regs.GREGS->GUSBCFG, usbcfg.d32);
 
         /* Reset after a PHY select  */
-        USB_OTG_CoreReset(pdev);    //内核软件复位
-
+        USB_OTG_CoreReset(pdev);    //Core software reset
         if(pdev->cfg.dma_enable == 1)
         {
 
@@ -449,14 +448,14 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
 
         }
     }
-    else /* FS interface (embedded Phy) 以下为执行部分，选择PHY模式*/
+    else /* FS interface (embedded Phy) The following is the execution part, select PHY mode */
     {
         usbcfg.d32 = USB_OTG_READ_REG32(&pdev->regs.GREGS->GUSBCFG);
-        usbcfg.b.physel  = 1; /* FS Interface  表示USB1.1full-speed serial transceiver */
+        usbcfg.b.physel  = 1; /* FS Interface represents USB1.1full-speed serial transceiver */
         USB_OTG_WRITE_REG32 (&pdev->regs.GREGS->GUSBCFG, usbcfg.d32);
       
         /* Reset after a PHY select and set Host mode */
-        USB_OTG_CoreReset(pdev);        //内核软件复位
+        USB_OTG_CoreReset(pdev);        //Core software reset
 
         USB_OTG_BSP_mDelay(20);
     }
@@ -466,7 +465,7 @@ USB_OTG_STS USB_OTG_CoreInit(USB_OTG_CORE_HANDLE *pdev)
     {
         ahbcfg.d32 = USB_OTG_READ_REG32(&pdev->regs.GREGS->GAHBCFG);
         ahbcfg.b.hburstlen = 5; /* 64 x 32-bits*/  //GAHBCFC.HBstLen
-        ahbcfg.b.dmaenable = 1;   //GAHBCFG.DMAEn  1：内核工作在DMA模式，0：内核工作在Slave模式
+        ahbcfg.b.dmaenable = 1;   //GAHBCFG.DMAEn 1: Core works in DMA mode, 0: Core works in Slave mode
         USB_OTG_WRITE_REG32(&pdev->regs.GREGS->GAHBCFG, ahbcfg.d32);
     }
     /* initialize OTG features */
@@ -493,7 +492,7 @@ USB_OTG_STS USB_OTG_EnableGlobalInt(USB_OTG_CORE_HANDLE *pdev)
     USB_OTG_GAHBCFG_TypeDef  ahbcfg;
 
     ahbcfg.d32 = 0;
-    ahbcfg.b.glblintrmsk = 1;      //使能全局中断
+    ahbcfg.b.glblintrmsk = 1;      //Enable global interrupt
     USB_OTG_MODIFY_REG32(&pdev->regs.GREGS->GAHBCFG, 0, ahbcfg.d32);
     return status;
 }
@@ -511,11 +510,11 @@ USB_OTG_STS USB_OTG_DisableGlobalInt(USB_OTG_CORE_HANDLE *pdev)
     USB_OTG_STS status = USB_OTG_OK;
     USB_OTG_GAHBCFG_TypeDef  ahbcfg;
     ahbcfg.d32 = 0;
-    ahbcfg.b.glblintrmsk = 1;      //使能全局中断
+    ahbcfg.b.glblintrmsk = 1;      // Enable global interrupt
     USB_OTG_MODIFY_REG32(&pdev->regs.GREGS->GAHBCFG, ahbcfg.d32, 0);
     return status;
 }
-//本函数可以参考编程手册的P166:  7.6.4与7.6.5
+//For more information about this function, refer to P166: 7.6.4 and 7.6.5 of the programming manual.
 USB_OTG_STS USB_OTG_stop_xfer (USB_OTG_CORE_HANDLE *pdev , uint32_t num )
 {
 	USB_OTG_STS status = USB_OTG_OK;
@@ -527,16 +526,16 @@ USB_OTG_STS USB_OTG_stop_xfer (USB_OTG_CORE_HANDLE *pdev , uint32_t num )
 
 	depctl.d32 = 0;
 
-	depctl.b.epdis = 1;       //Disable 第num个IN端点
-	depctl.b.snak = 1;        //设置第num个IN端点NAK
+	depctl.b.epdis = 1;       //Disable the numth IN endpoint
+	depctl.b.snak = 1;        //Set the numth IN endpoint NAK
 	USB_OTG_WRITE_REG32( &pdev->regs.INEP_REGS[num]->DIEPCTL, depctl.d32 );
-    //等待第num个IN端点发生Disabled中断标志位置1：也即发生disabled中断
+  //Wait for the disabled interrupt flag of the num-th IN endpoint to be set to 1: a disabled interrupt has occurred.
 	do
 	{
 		diepint.d32 = USB_OTG_READ_REG32(&pdev->regs.INEP_REGS[num]->DIEPINT);
 	} while (!diepint.b.epdisabled);
 	diepint.d32 = 0;
-	diepint.b.epdisabled = 1;      //清除第num个IN端点的disabled中断
+	diepint.b.epdisabled = 1;      //Clear the disabled interrupt of the num-th IN endpoint.
 	USB_OTG_WRITE_REG32( &pdev->regs.INEP_REGS[num]->DIEPINT, diepint.d32 );
 
 	depctl.b.epdis = 0;
@@ -560,8 +559,8 @@ USB_OTG_STS USB_OTG_FlushTxFifo (USB_OTG_CORE_HANDLE *pdev , uint32_t num )
 
     uint32_t count = 0;
     greset.d32 = 0;
-    greset.b.txfflsh = 1;        //写GRSTCTL.TxFFlsh=1
-    greset.b.txfnum  = num;      //写GRSTCTL.TxFNum
+    greset.b.txfflsh = 1;        //Write GRSTCTL.TxFFlsh=1
+    greset.b.txfnum  = num;      //Write GRSTCTL.TxFNum
     USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GRSTCTL, greset.d32 );
     do
     {
@@ -572,7 +571,7 @@ USB_OTG_STS USB_OTG_FlushTxFifo (USB_OTG_CORE_HANDLE *pdev , uint32_t num )
         }
         USB_OTG_BSP_uDelay(1);
     }
-    while (greset.b.txfflsh == 1);           //等待GRSTCTL.TxFFlsh=0
+    while (greset.b.txfflsh == 1);           //Waiting for GRSTCTL.TxFFlsh=0
     /* Wait for 3 PHY Clocks*/
     USB_OTG_BSP_uDelay(3);
     return status;
@@ -650,14 +649,14 @@ USB_OTG_STS USB_OTG_SetCurrentMode(USB_OTG_CORE_HANDLE *pdev , uint8_t mode)
 USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
 {
     USB_OTG_STS             status       = USB_OTG_OK;
-    USB_OTG_DEPCTL_TypeDef  depctl;                     //寄存器：DIEPCTL
+    USB_OTG_DEPCTL_TypeDef  depctl;                     //Register: DIEPCTL
     uint32_t i;
-    USB_OTG_DCFG_TypeDef    dcfg;                       //寄存器：DCFG
-    USB_OTG_FSIZ_TypeDef    nptxfifosize;               //寄存器：GNPTXFSIZ
+    USB_OTG_DCFG_TypeDef    dcfg;                       //Register: DCFG
+    USB_OTG_FSIZ_TypeDef    nptxfifosize;               //Register: GNPTXFSIZ
 #ifdef USB_OTG_HS_CORE
     USB_OTG_FSIZ_TypeDef    txfifosize;
 #endif
-    USB_OTG_DCTL_TypeDef	  dctl;                     //寄存器：DCTL
+    USB_OTG_DCTL_TypeDef	  dctl;                     //Register: DCTL
 
     depctl.d32 = 0;
     dcfg.d32 = 0;
@@ -667,15 +666,15 @@ USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
 #endif
     /* Device configuration register */
     dcfg.d32 = USB_OTG_READ_REG32( &pdev->regs.DREGS->DCFG);
-    dcfg.b.perfrint = DCFG_FRAME_INTERVAL_80;           //周期帧传输间隔：80%
+    dcfg.b.perfrint = DCFG_FRAME_INTERVAL_80;           //Periodic frame transmission interval: 80%
     USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DCFG, dcfg.d32 );
 
 #ifdef USB_OTG_FS_CORE
     if(pdev->cfg.coreID == USB_OTG_FS_CORE_ID  )
     {
         /* Set Full speed phy */
-        USB_OTG_InitDevSpeed (pdev , USB_OTG_SPEED_PARAM_FULL);//DCFG.DevSpd=3：全速(USB1.1 transceiver clock is 48MHz)
-        //以下部分参考《DWC_otg_programming_changes》的P29: 2.1.1.1 Shared TxFIFO Operation
+        USB_OTG_InitDevSpeed (pdev , USB_OTG_SPEED_PARAM_FULL);//DCFG.DevSpd = 3: Full speed (USB1.1 transceiver clock is 48MHz)
+        //For the following, refer to P29: 2.1.1.1 Shared TxFIFO Operation in "DWC_otg_programming_changes"
         /* set Rx FIFO size */
         USB_OTG_WRITE_REG32(&pdev->regs.GREGS->GRXFSIZ, RX_FIFO_FS_SIZE);//GRXFSIZ.RxFDep=128：接收FIFO的大小位32字
 			
@@ -759,19 +758,19 @@ USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
     }
 #endif
     /* Clear all pending Device Interrupts */
-    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DIEPMSK, 0 );         //屏蔽设备IN端点通用中断
-    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DOEPMSK, 0 );         //屏蔽设备OUT端点通用中断
+    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DIEPMSK, 0 );         //Mask device IN endpoint general interrupt
+    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DOEPMSK, 0 );         //Disable the device OUT endpoint general interrupt
     USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DAINT, 0xFFFFFFFF );  //
-    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DAINTMSK, 0 );         //屏蔽设备所有端点中断
+    USB_OTG_WRITE_REG32( &pdev->regs.DREGS->DAINTMSK, 0 );         //Disable all device endpoint interrupts
 
     for (i = 0; i < pdev->cfg.dev_endpoints; i++)
     {
         depctl.d32 = USB_OTG_READ_REG32(&pdev->regs.INEP_REGS[i]->DIEPCTL);
-        if (depctl.b.epena)                  //如果设备端点使能
+        if (depctl.b.epena)                  //If the device endpoint is enabled
         {
             depctl.d32 = 0;
-            depctl.b.epdis = 1;              //输入设备输入端点DISABLE
-            depctl.b.snak = 1;               //置位NAK
+            depctl.b.epdis = 1;              //Disable the input device input endpoint
+            depctl.b.snak = 1;               //Set NAK
         }
         else
         {
@@ -801,10 +800,10 @@ USB_OTG_STS USB_OTG_CoreInitDev (USB_OTG_CORE_HANDLE *pdev)
     }
   	/* Clear the DCTL.SftDiscon bit */
 	dctl.d32 = USB_OTG_READ_REG32(&pdev->regs.DREGS->DCTL);
-	dctl.b.sftdiscon = 0;                                    //软件断开连接
+	dctl.b.sftdiscon = 0;                                    //Software disconnect
 	USB_OTG_WRITE_REG32(&pdev->regs.DREGS->DCTL, dctl.d32);
 
-    USB_OTG_EnableDevInt(pdev);                              //中断配置
+    USB_OTG_EnableDevInt(pdev);                              //Interrupt configuration 
     return status;
 }
 
@@ -822,15 +821,15 @@ USB_OTG_STS USB_OTG_EnableDevInt(USB_OTG_CORE_HANDLE *pdev)
     intmsk.d32 = 0;
 
     /* Disable all interrupts. */
-    USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTMSK, 0);           //屏蔽全局中断
+    USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTMSK, 0);           // Mask global interrupts
     /* Clear any pending interrupts */
-    USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTSTS, 0xBFFFFFFF);   //清除中断标志
+    USB_OTG_WRITE_REG32( &pdev->regs.GREGS->GINTSTS, 0xBFFFFFFF);   // Clear interrupt flags
     /* Enable the common interrupts */
     USB_OTG_EnableCommonInt(pdev);
 
-    if (pdev->cfg.dma_enable == 0)      //如果是非DMA的方式
+    if (pdev->cfg.dma_enable == 0)      // If non-DMA mode is used
     {
-        intmsk.b.rxstsqlvl = 1;          //使能接收FIFO非空中断：GINTMSK.RxFLvlMsk=1
+        intmsk.b.rxstsqlvl = 1;          // Enable receive FIFO not empty interrupt:
     }
 
     /* Enable interrupts matching to the Device mode ONLY */
@@ -867,8 +866,8 @@ uint32_t USB_OTG_GetEPStatus(USB_OTG_CORE_HANDLE *pdev ,USB_OTG_EP *ep)
     depctl.d32 = 0;
     if (ep->is_in == 1)
     {
-        depctl_addr = &(pdev->regs.INEP_REGS[ep->num]->DIEPCTL);  //获取寄存器DIEPCTL寄存器地址
-        depctl.d32 = USB_OTG_READ_REG32(depctl_addr);             //获取DIEPCTL寄存器值
+        depctl_addr = &(pdev->regs.INEP_REGS[ep->num]->DIEPCTL);  //Get the DIEPCTL register address
+        depctl.d32 = USB_OTG_READ_REG32(depctl_addr);             //Get the DIEPCTL register value
 
         if (depctl.b.stall == 1)
         Status = USB_OTG_EP_TX_STALL;
@@ -928,7 +927,7 @@ USB_OTG_STS  USB_OTG_EP0Activate(USB_OTG_CORE_HANDLE *pdev)
         break;
     }
     USB_OTG_WRITE_REG32(&pdev->regs.INEP_REGS[0]->DIEPCTL, diepctl.d32);
-    dctl.b.cgnpinnak = 1;       //清除全局非周期IN NAK： DCTL.CGNPInNak=1
+    dctl.b.cgnpinnak = 1;       //Clear global aperiodic IN NAK: DCTL.CGNPInNak=1
     USB_OTG_MODIFY_REG32(&pdev->regs.DREGS->DCTL, dctl.d32, dctl.d32);
     return status;
 }
@@ -964,15 +963,15 @@ USB_OTG_STS USB_OTG_EPActivate(USB_OTG_CORE_HANDLE *pdev , USB_OTG_EP *ep)
     /* If the EP is already active don't change the EP Control
     * register. */
     depctl.d32 = USB_OTG_READ_REG32(addr);
-    if (!depctl.b.usbactep)                      //DIEPCTL.USBActEP/DOEPCTL.USBActEP 当选端点是否有效
+    if (!depctl.b.usbactep)                      //DIEPCTL.USBActEP/DOEPCTL.USBActEP selected endpoint is valid
     {
-        depctl.b.mps    = ep->maxpacket;         //DIEPCTL.MPS/DOEPCTL.MPS        最大包大小
-        depctl.b.eptype = ep->type;              //DIEPCTL.EPType/DOEPCTL.EPType  端点类型  
+        depctl.b.mps    = ep->maxpacket;         //DIEPCTL.MPS/DOEPCTL.MPS maximum packet size
+        depctl.b.eptype = ep->type;              //DIEPCTL.EPType/DOEPCTL.EPType endpoint type 
 				if(ep->tx_fifo_num != 0)
 					ep->tx_fifo_num = 1;
-        depctl.b.txfnum = ep->tx_fifo_num;       //对于non-periodic端点，该值必须设置位0，对于periodic端点，设置成相应的periodic TxFIFO序号
-        depctl.b.setd0pid = 1;                   //设置DIEPCTLn/DOEPCTLn.SetD0PID
-        depctl.b.usbactep = 1;                   //设置DIEPCTL.USBActEP/DOEPCTL.USBActEP
+        depctl.b.txfnum = ep->tx_fifo_num;       // For non-periodic endpoints, this value must be set to bit 0. For periodic endpoints, set to the corresponding periodic TxFIFO number.
+        depctl.b.setd0pid = 1;                   // Set DIEPCTLn/DOEPCTLn.SetD0PID
+        depctl.b.usbactep = 1;                   // Set DIEPCTL.USBActEP/DOEPCTL.USBActEP
         USB_OTG_WRITE_REG32(addr, depctl.d32);
     }
     /* Enable the Interrupt for this EP */
