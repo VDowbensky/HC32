@@ -58,10 +58,10 @@ extern "C"
 /******************************************************************************
  * Global function prototypes (definition in C source)                        
  ******************************************************************************/
-///<内部温度传感器使能/关闭
+///<Enable/disable internal temperature sensor>
 void Bgr_TempSensorEnable(void);
 void Bgr_TempSensorDisable(void);
-///<BGR使能/关闭
+///<BGR enable/disable
 void Bgr_BgrEnable(void);
 void Bgr_BgrDisable(void);
 

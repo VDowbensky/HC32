@@ -43,7 +43,7 @@ extern "C"
  ******************************************************************************/
 /**
  *******************************************************************************
- ** \brief AES密钥长度类型定义
+ ** \brief AES key length type definition
  ** \note
  ******************************************************************************/
 typedef enum en_aes_key_type
@@ -55,16 +55,15 @@ typedef enum en_aes_key_type
 
 /**
  *******************************************************************************
- ** \brief AES配置结构体
+ ** \brief AES configuration structure
  ** \note
  ******************************************************************************/
 typedef struct
 {
-    uint32_t*           pu32Cipher;           ///< AES 密文指针
-    uint32_t*           pu32Plaintext;        ///< AES 明文指针
-    uint32_t*           pu32Key;              ///< AES 密钥指针
-    en_aes_key_type_t   enKeyLen;             ///< AES 密钥长度类型
-
+    uint32_t* pu32Cipher; ///< AES ciphertext pointer
+    uint32_t* pu32Plaintext; ///< AES plaintext pointer
+    uint32_t* pu32Key; ///< AES key pointer
+    en_aes_key_type_t enKeyLen; ///< AES key length type
 }stc_aes_cfg_t;
 
 /******************************************************************************
@@ -82,9 +81,9 @@ typedef struct
 /******************************************************************************
  * Global function prototypes (definition in C source)                        
  ******************************************************************************/
-//AES 加密
+//AES encryption
 en_result_t AES_Encrypt(stc_aes_cfg_t* pstcAesCfg);
-//AES 解密
+//AES decryption
 en_result_t AES_Decrypt(stc_aes_cfg_t* pstcAesCfg);
 
 
