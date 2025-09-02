@@ -1,3 +1,13 @@
 HDMCU_ZLG-master/HC32F005_SDK/8.最小开发工程模板/HC32F005_TEMPLATE_Rev1.0.2.zip
 /HDMCU_ZLG-master
 HDMCU_ZLG-master.zip
+*.crf
+*.o
+*.d
+*.crf
+*.htm
+*.crf
+*.dep
+*.map
+*.Admin
+*.lnp
