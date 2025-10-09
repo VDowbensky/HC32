@@ -1,42 +1,43 @@
 ================================================================================
-                                样例使用说明
+                                Sample usage instructions
 ================================================================================
-版本历史 
-日期             版本    负责人         IAR     MDK   描述
+Version History
+Date          Version     Owner         IAR      MDK  Description
 2019-06-24       0.1      lsq           8.30    5.26  first version
 ================================================================================
-功能描述
+Functional Description
 ================================================================================
-说明：
-本样例主要展示USB模拟串口通信的功能，通过上位机设置串口通信参数(端口、波特率、数据位、校验位、停止位)，连接后通过上位机
-串口调试助手发送数据给MCU，MCU接收到最后一个数据为0x0d时，将回发一串字符串给上位机。
-
+Description:
+This example demonstrates the USB emulation serial communication function. The 
+host computer sets the serial communication parameters (port, baud rate, data 
+bits, parity, and stop bits). After connecting, the host computer uses the Serial
+ Debug Assistant to send data to the MCU. When the last data received is 0x0d, 
+ the MCU sends a string back to the host computer.
 ================================================================================
-测试环境
+Test environment
 ================================================================================
-测试用板:
+Test board:
 ---------------------
 HC32LF07X-EVB-V11
 
-辅助工具:
+Assistive tools:
 ---------------------
 
-辅助软件:
+Assistive software:
 ---------------------
 
 ================================================================================
-使用步骤
+How to use
 ================================================================================
-1）打开工程并重新编译；
-2）启动IDE的下载和调试功能；
-3）运行;
-4）通过上位机向MCU发送数据，所发送的数据以0x0d作为结束符，MCU接收到数据时将发送出
-如下的字符串:
+1) Open the project and recompile;
+2) Enable the IDE's download and debugging functions;
+3) Run the program;
+4) Send data from the host computer to the MCU, ending with 0x0d. When the MCU 
+receives the data, it will send the following string:
     "this is a sample about usb cdc"
 
 ================================================================================
-注意
-
+Notice
 ================================================================================
  
 
