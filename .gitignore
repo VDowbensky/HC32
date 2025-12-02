@@ -11,3 +11,5 @@ HDMCU_ZLG-master.zip
 *.map
 *.Admin
 *.lnp
+HARD_HC32/HC32brd.PrjPCBStructure
+HARD_HC32/HC32brd.SchDocPreview
