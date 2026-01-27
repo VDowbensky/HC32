@@ -13,3 +13,13 @@ HDMCU_ZLG-master.zip
 *.lnp
 HARD_HC32/HC32brd.PrjPCBStructure
 HARD_HC32/HC32brd.SchDocPreview
+/HC32_RFM69/Listings
+/HC32_RFM69/Objects
+*.o
+*.crf
+*.SchDocPreview
+*.PrjPCBStructure
+/HC32_RFM69/Listings
+/HC32_RFM69/Objects
+/HC32L07x/usb/usb_double_virtual_com_slave_v0.2/example/EWARM/output/release/Obj
+HC32F4xx/learnHC32F460-master.zip
